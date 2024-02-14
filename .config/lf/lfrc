@@ -107,4 +107,28 @@ cmd zip ${{
 
 # all custom mappings
 map D delete
-map g. cd ~/.config
+
+
+# [g]o [.]config/[?]__
+map g.l cd ~/.config/lf
+map g.a cd ~/.config/alacritty
+map g.n cd ~/.config/nvim
+map g.h cd ~/dotfiles/hypr
+map g.D cd ~/dotfiles/dunst
+map g.d cd ~/dotfiles
+
+# [g]o [d]irectly to [?]__
+map gd. cd ~/.config
+map gdd cd ~/Downloads
+map gdp cd ~/Pictures
+map gds cd ~/Desktop
+map gdn cd ~/notes
+map gdm cd ~/notes
+map gdD cd ~/Documents
+map gdr cd ~/rose
+
+# [g]o [?]__/[?]__
+map grl cd ~/rose/learn
+map grp cd ~/rose/py
+map grn cd ~/rose/norg
+map grd cd ~/rose/dotReferences

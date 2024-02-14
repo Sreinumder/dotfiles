@@ -25,6 +25,7 @@ alias dfia='dfi add'
 alias dfic='dfi commit -m '
 alias dfis='dfi status'
 alias dfil='dfi log'
+alias dfip='dfi push'
 # -----------------------------------------------------
 # ALIASES
 # -----------------------------------------------------
