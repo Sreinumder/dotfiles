@@ -124,9 +124,7 @@ map gdp cd ~/Pictures
 map gds cd ~/Desktop
 map gdn cd ~/notes
 map gdm cd ~/Music
-map gdA cd ~/Audio
-map gdm cd ~/Pictures
-map gdD cd ~/Documents
+map gdo cd ~/Documents
 map gdr cd ~/rose
 map gdw cd ~/wallpaper
 
