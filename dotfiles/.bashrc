@@ -18,11 +18,18 @@ PS1='[\u@\h \W]\$ '
 export EDITOR=nvim
 
 # -----------------------------------------------------
+# DOTFILE version maintenance
+# -----------------------------------------------------
+alias dfi='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+alias dfia='dfi add'
+alias dfic='dfi commit -m '
+alias dfis='dfi status'
+alias dfil='dfi log'
+# -----------------------------------------------------
 # ALIASES
 # -----------------------------------------------------
 
 alias w='~/dotfiles/scripts/./wallpaper.sh'
-alias dotfile='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 alias fixsc='~/dotfiles/scripts/./screenShareEnable.sh'
 alias rm='rmtrash'
 alias rmdir='rmdirtrash'

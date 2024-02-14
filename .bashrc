@@ -1,1 +1,0 @@
-/home/rise/dotfiles/.bashrc
