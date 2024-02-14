@@ -123,12 +123,16 @@ map gdd cd ~/Downloads
 map gdp cd ~/Pictures
 map gds cd ~/Desktop
 map gdn cd ~/notes
-map gdm cd ~/notes
+map gdm cd ~/Music
+map gdA cd ~/Audio
+map gdm cd ~/Pictures
 map gdD cd ~/Documents
 map gdr cd ~/rose
+map gdw cd ~/wallpaper
 
 # [g]o [?]__/[?]__
 map grl cd ~/rose/learn
 map grp cd ~/rose/py
 map grn cd ~/rose/norg
 map grd cd ~/rose/dotReferences
+map grt cd ~/rose/tools
