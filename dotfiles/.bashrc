@@ -21,6 +21,7 @@ export EDITOR=nvim
 # ALIASES
 # -----------------------------------------------------
 
+alias w='~/dotfiles/scripts/./wallpaper.sh'
 alias dotfile='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 alias fixsc='~/dotfiles/scripts/./screenShareEnable.sh'
 alias rm='rmtrash'
@@ -88,9 +89,8 @@ alias ascii='~/dotfiles/scripts/figlet.sh'
 # EDIT CONFIG FILES
 # -----------------------------------------------------
 
-# alias confq='$EDITOR ~/dotfiles/qtile/config.py'
-# alias confp='$EDITOR ~/dotfiles/picom/picom.conf'
 alias confb='$EDITOR ~/dotfiles/.bashrc'
+alias conf='$EDITOR ~/.config'
 
 # -----------------------------------------------------
 # EDIT NOTES

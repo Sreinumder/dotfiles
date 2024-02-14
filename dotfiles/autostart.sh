@@ -16,7 +16,7 @@
 # xrandr --output Virtual-1 --mode 1920x1080
 
 # Keyboard layout
-setxkbmap
+# setxkbmap
 
 # Load picom
 # picom &
@@ -28,7 +28,7 @@ xfce4-power-manager &
 dunst &
 
 # Setup Wallpaper and update colors
-~/dotfiles/qtile/scripts/wallpaper.sh init
+~/dotfiles/scripts/wallpaper.sh init
 
 # enables screen sharing
 exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
