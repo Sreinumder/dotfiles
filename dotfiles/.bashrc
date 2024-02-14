@@ -21,7 +21,11 @@ export EDITOR=nvim
 # DOTFILE version maintenance
 # -----------------------------------------------------
 alias dfi='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+alias dfisall='dfis stage'
 alias dfia='dfi add'
+alias dfiaa='dfia -A'
+alias dfir='dfi restore --stage'
+alias dfira='dfir -A'
 alias dfic='dfi commit -m '
 alias dfis='dfi status'
 alias dfil='dfi log'
@@ -65,7 +69,6 @@ alias tcalc=taschenrechner
 # -----------------------------------------------------
 # GIT
 # -----------------------------------------------------
-
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit -m"

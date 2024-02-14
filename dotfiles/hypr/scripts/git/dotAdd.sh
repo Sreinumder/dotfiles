@@ -1,0 +1,11 @@
+$dfia='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+dfia -A ~/.config/alacritty
+dfia -A ~/.config/btop
+dfia -A ~/.config/dunst
+dfia -A ~/.config/firefox
+dfia -A ~/.config/hypr
+dfia -A ~/.config/lf
+dfia -A ~/.config/lyrics-in-terminal
+dfia -A ~/.config/nvim
+dfia -A ~/.config/rofi
+dfia -A ~/dotfiles
