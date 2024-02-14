@@ -1,0 +1,36 @@
+
+2024/01/05 (20:28:36) | ===> btop++ v.1.2.13
+2024/01/05 (20:28:36) | ERROR: Exception in main loop -> filesystem error: directory iterator cannot open directory: No such file or directory [/usr/share/btop/themes]
+
+2024/01/14 (00:01:11) | ===> btop++ v.1.3.0
+2024/01/14 (00:01:11) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2024/01/14 (00:01:11) | ERROR: Couldn't determine terminal size of "/dev/tty"!
+
+2024/01/14 (00:43:20) | ===> btop++ v.1.3.0
+2024/01/14 (00:43:20) | ERROR: Stall in Runner thread, restarting!
+2024/01/14 (00:43:32) | ERROR: Stall in Runner thread, restarting!
+2024/01/14 (00:43:53) | ERROR: Stall in Runner thread, restarting!
+2024/01/14 (00:44:20) | ERROR: Stall in Runner thread, restarting!
+
+2024/02/06 (19:24:17) | ===> btop++ v.1.3.0
+2024/02/06 (19:24:17) | ERROR: Exception during Config::unlock() : unordered_map::at
+
+2024/02/06 (19:28:57) | ===> btop++ v.1.3.0
+2024/02/06 (19:28:57) | ERROR: Exception during Config::unlock() : unordered_map::at
+
+2024/02/06 (19:29:42) | ===> btop++ v.1.3.0
+2024/02/06 (19:29:42) | ERROR: Exception during Config::unlock() : unordered_map::at
+
+2024/02/09 (17:32:51) | ===> btop++ v.1.3.0
+2024/02/09 (17:32:51) | ERROR: Exception during Config::unlock() : unordered_map::at
+
+2024/02/09 (17:34:28) | ===> btop++ v.1.3.0
+2024/02/09 (17:34:28) | ERROR: No tty detected!
+btop++ needs an interactive shell to run.
+
+2024/02/09 (17:51:58) | ===> btop++ v.1.3.0
+2024/02/09 (17:51:58) | ERROR: Exception during Config::unlock() : unordered_map::at
+
+2024/02/10 (01:42:14) | ===> btop++ v.1.3.0
+2024/02/10 (01:42:14) | ERROR: No tty detected!
+btop++ needs an interactive shell to run.
