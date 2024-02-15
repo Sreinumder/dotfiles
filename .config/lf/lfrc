@@ -25,7 +25,7 @@ set icons
 set cursorpreviewfmt "\033[7;2m"
 
 set previewer '~/.config/lf/preview'
-set cleaner '~/.config/lf/cleaner'
+# set cleaner '~/.config/lf/cleaner'
 # use enter for shell commands
 map <enter> shell
 
