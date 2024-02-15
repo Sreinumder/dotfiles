@@ -188,6 +188,7 @@ map ee extract
 map ec $$EDITOR "$f"
 map el $$EDITOR ~/.config/lf/lfrc
 map en $$EDITOR ~/.config/nvim
+map ek $$EDITOR ~/.config/kitty
 map <space>c push :zip<space>
 map r
 map rr rename # at the very end
