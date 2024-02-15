@@ -84,19 +84,6 @@ cmd delete ${{
   [ "$ans" = "y" ] && rmtrash -rf $fx
 }}
 
-cmd trash !{{
-  set -f
-  printf "\nItems to be trashed:\n$fx\n\nTrash? [y/N]"
-  read ans
-  if [[ $ans == "y" ]]; then
-    trash -F $fx && echo "Trash complete!"
-  elif [[ $ans == "n" ]]; then
-    echo "Canceled!"
-  else
-    echo "Failed! Use y to trash."
-  fi
-}}
-
 cmd extract ${{
     set -f
     case $f in
