@@ -1,3 +1,4 @@
+set ratios 1:2:3
 # interpreter for shell commands
 set shell sh
 
@@ -23,6 +24,8 @@ set icons
 # Use the `dim` attribute instead of underline for the cursor in the preview pane
 set cursorpreviewfmt "\033[7;2m"
 
+set previewer '~/.config/lf/preview'
+set cleaner '~/.config/lf/cleaner'
 # use enter for shell commands
 map <enter> shell
 
