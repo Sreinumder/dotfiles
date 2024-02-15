@@ -75,7 +75,7 @@ cmd delete ${{
 # map <delete> trash
 # extract the current file with the right command
 # (xkcd link: https://xkcd.com/1168/)
-map e extract
+
 cmd extract ${{
     set -f
     case $f in
@@ -108,7 +108,12 @@ cmd zip ${{
 
 # all custom mappings
 map D delete
-
+map e
+map ee extract
+map z zip
+map ec $$EDITOR "$f"
+map el $$EDITOR ~/.config/lf/lfrc
+map en $$EDITOR ~/.config/nvim
 
 # [g]o [.]config/[?]__
 map g.l cd ~/.config/lf

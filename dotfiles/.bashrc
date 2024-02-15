@@ -23,8 +23,7 @@ export EDITOR=nvim
 alias dfi='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 alias dfisall='dfis stage'
 alias dfia='dfi add'
-alias dfiaa='dfia -A'
-alias dfial='dfiaa ~/.config/alacritty; dfiaa ~/.config/btop; dfiaa ~/.config/dunst; dfiaa ~/.config/firefox; dfiaa ~/.config/hypr; dfiaa ~/.config/lf; dfiaa ~/.config/nvim; dfiaa ~/.config/rofi; dfiaa ~/.config/lyrics-in-terminal; dfiaa ~/dotfiles; '
+alias dfial='dfia -A ~/.config/alacritty; dfia -A ~/.config/btop; dfia -A ~/.config/dunst; dfia -A ~/.config/firefox; dfia -A ~/.config/hypr; dfia -A ~/.config/lf; dfia -A ~/.config/nvim; dfia -A ~/.config/rofi; dfia -A ~/.config/lyrics-in-terminal; dfia -A ~/dotfiles; '
 alias dfic='dfi commit -m '
 alias dfis='dfi status'
 alias dfil='dfi log'
@@ -34,6 +33,7 @@ alias dfip='dfi push'
 # -----------------------------------------------------
 
 alias w='~/dotfiles/scripts/./wallpaper.sh'
+alias l='lf'
 alias fixsc='~/dotfiles/scripts/./screenShareEnable.sh'
 alias rm='rmtrash'
 alias rmdir='rmdirtrash'
@@ -54,6 +54,7 @@ alias ll="eza -al"
 # alias lf=lfrun
 # alias lff=lf
 alias tcalc=taschenrechner
+
 
 # if command -v python3 > /dev/null; then
 # 	export PATH= 'python3 -n site --user-base'/bin:$PATH
@@ -101,6 +102,8 @@ alias ascii='~/dotfiles/scripts/figlet.sh'
 
 alias confb='$EDITOR ~/dotfiles/.bashrc'
 alias conf='$EDITOR ~/.config'
+alias el='$EDITOR ~/.config/lf/lfrc'
+alias en='$EDITOR ~/.config/nvim'
 
 # -----------------------------------------------------
 # EDIT NOTES
