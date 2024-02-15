@@ -46,12 +46,42 @@ cmd new-folder-with-selection ${{
   mv -- $fx "$newd"
 }}
 
+# og
+# cmd delete ${{
+#     echo "can do"
+#     set -f
+#     printf "$fs\n"
+#     printf "delete?[y/n]"
+#     read ans
+#     [ "$ans" = "y" ] && rmtrash -rf $fs
+# }}
+
+# dont delte rise or home dir
+# cmd delete ${{
+#     case $1 in
+#       "rise" | "home")
+#         echo "cant delete"
+#         ;;
+#       *)
+#         echo "can do"
+#         set -f
+#         printf "$fs\n"
+#         printf "delete?[y/n]"
+#         read ans
+#         [ "$ans" = "y" ] && rmtrash -rf $fs
+#     esac
+# }}
+
 cmd delete ${{
-    set -f
-    printf "$fs\n"
-    printf "delete?[y/n]"
-    read ans
-    [ "$ans" = "y" ] && rmtrash -rf $fs
+  if [[ $PWD == "/" || $PWD == "/home" ]]; then
+    echo "cant in $PWD dir :("
+    exit 1
+  fi
+  set -f
+  echo "$fx"
+  printf "delete?[y/n]"
+  read ans
+  [ "$ans" = "y" ] && rmtrash -rf $fx
 }}
 
 cmd trash !{{
@@ -104,8 +134,7 @@ cmd select-all :unselect; invert
 # Copy the file names (including extension) of the selections separated by \n
 cmd copy-filename ${{
   names="$(echo $fx | tr ' ' '\n' | xargs -I{} basename {})"
-  echo $names | tr ' ' '\n' | pbcopy
-}}
+  echo $names | tr ' ' '\n' | pbcopy }}
 
 # Copy the absolute paths of selections separated by \n
 cmd copy-absolute-path ${{
@@ -146,8 +175,8 @@ map ` !true
 
 map H jump-prev
 map L jump-next
-map J push jjjj
-map K push kkkk
+map J push 4j
+map K push 4k
 
 map <tab> :toggle;down
 map yy copy
@@ -163,7 +192,7 @@ map ad push :mkdir<space>
 map aa push <enter>touch<space>
 map A new-folder-with-selection
 
-map V push :!nvim<space>
+map n push <enter>nvim<space>.<enter>
 
 # all custom mappings
 map D delete

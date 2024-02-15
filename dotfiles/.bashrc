@@ -109,13 +109,13 @@ alias en='$EDITOR ~/.config/nvim'
 # EDIT NOTES
 # -----------------------------------------------------
 
-alias notes='$EDITOR ~/notes.txt'
+alias notes='$EDITOR ~/notes/'
 
 # -----------------------------------------------------
 # SYSTEM
 # -----------------------------------------------------
 
-alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+# alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias setkb='setxkbmap de;echo "Keyboard set back to de."'
 
 # -----------------------------------------------------
@@ -123,8 +123,8 @@ alias setkb='setxkbmap de;echo "Keyboard set back to de."'
 # -----------------------------------------------------
 
 # Qtile
-alias res1='xrandr --output DisplayPort-0 --mode 2560x1440 --rate 120'
-alias res2='xrandr --output DisplayPort-0 --mode 1920x1080 --rate 120'
+# alias res1='xrandr --output DisplayPort-0 --mode 2560x1440 --rate 120'
+# alias res2='xrandr --output DisplayPort-0 --mode 1920x1080 --rate 120'
 
 export PATH="/usr/lib/ccache/bin/:$PATH"
 
@@ -136,10 +136,6 @@ eval "$(starship init bash)"
 # -----------------------------------------------------
 # PYWAL
 # -----------------------------------------------------
-cat ~/.cache/wal/sequences
+# cat ~/.cache/wal/sequences
 
-# -----------------------------------------------------
-# PFETCH if on wm
-# -----------------------------------------------------
 
-export PATH=$PATH:/home/rise/.spicetify
