@@ -34,3 +34,7 @@ btop++ needs an interactive shell to run.
 2024/02/10 (01:42:14) | ===> btop++ v.1.3.0
 2024/02/10 (01:42:14) | ERROR: No tty detected!
 btop++ needs an interactive shell to run.
+
+2024/02/15 (15:26:54) | ===> btop++ v.1.3.2
+2024/02/15 (15:26:54) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2024/02/15 (15:26:54) | ERROR: Couldn't determine terminal size of "/dev/tty"!

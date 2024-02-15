@@ -24,7 +24,7 @@ set icons
 # Use the `dim` attribute instead of underline for the cursor in the preview pane
 set cursorpreviewfmt "\033[7;2m"
 
-set previewer '~/.config/lf/preview'
+set previewer '~/.config/lf/previewer'
 # set cleaner '~/.config/lf/cleaner'
 # use enter for shell commands
 map <enter> shell
@@ -111,12 +111,17 @@ cmd zip ${{
 
 # all custom mappings
 map D delete
+
 map e
 map ee extract
-map z zip
+map ez zip
+
 map ec $$EDITOR "$f"
 map el $$EDITOR ~/.config/lf/lfrc
 map en $$EDITOR ~/.config/nvim
+
+map rr rename
+map r. rename
 
 # [g]o [.]config/[?]__
 map g.l cd ~/.config/lf
@@ -127,7 +132,7 @@ map g.D cd ~/dotfiles/dunst
 map g.d cd ~/dotfiles
 
 # [g]o [d]irectly to [?]__
-map gd. cd ~/.config
+map g.. cd ~/.config
 map gdd cd ~/Downloads
 map gdp cd ~/Pictures
 map gds cd ~/Desktop
