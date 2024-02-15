@@ -199,7 +199,9 @@ map re push A<c-f><c-k> # rename the extension
 # [g]o [.]config/[?]__
 map g.l cd ~/.config/lf
 map g.a cd ~/.config/alacritty
-map g.n cd ~/.config/nvim
+map g.nn cd ~/.config/nvim
+map g.np cd ~/.config/nvim/lua/risedev/plugins/
+map g.nc cd ~/.config/nvim/lua/risedev/core/
 map g.h cd ~/dotfiles/hypr
 map g.D cd ~/dotfiles/dunst
 map g.d cd ~/dotfiles

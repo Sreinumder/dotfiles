@@ -1,15 +1,37 @@
 return {
-  { 
-    "catppuccin/nvim", 
-    name = "catppuccin", 
-    priority = 10000,
+  -- {
+  --   "joshdick/onedark.vim",
+  --   priority = 1000,
+  --   config = function()
+  --     require('onedark').setup({
+  --       options = {
+  --         theme = 'onedark'
+  --       },
+  --     })
+  --   end,
+  -- },
+  -- {
+    "rmehri01/onenord.nvim", enabled = true,
+    priority = 1000,
     config = function()
-      require("catppuccin").setup({
-        flavour = "macchiato", -- latte, frappe, macchiato, mocha
+      require('onenord').setup({
+        options = {
+          theme = 'onenord'
+        },
       })
-      vim.cmd([[colorscheme catppuccin]])
     end,
-  },
+  -- },
+  -- { 
+  --   "catppuccin/nvim", 
+  --   name = "catppuccin", 
+  --   priority = 10000,
+  --   config = function()
+  --     require("catppuccin").setup({
+  --       flavour = "macchiato", -- latte, frappe, macchiato, mocha
+  --     })
+  --     vim.cmd([[colorscheme catppuccin]])
+  --   end,
+  -- },
   -- {
   --   "bluz71/vim-nightfly-guicolors",
   --   priority = 1000, -- make sure to load this before all the other start plugins
