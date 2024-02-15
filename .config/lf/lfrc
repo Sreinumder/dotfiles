@@ -48,10 +48,10 @@ cmd new-folder-with-selection ${{
 
 cmd delete ${{
     set -f
-    printf "$fx\n"
+    printf "$fs\n"
     printf "delete?[y/n]"
     read ans
-    [ "$ans" = "y" ] && rmtrash -rf $fx
+    [ "$ans" = "y" ] && rmtrash -rf $fs
 }}
 
 cmd trash !{{
@@ -100,31 +100,6 @@ cmd zip ${{
 }} 
 
 cmd select-all :unselect; invert
-
-# Bulk rename on selected files or all the non-hidden files in the current directory if no selection
-cmd bulk-rename ${{
-  old="$(mktemp)"
-  new="$(mktemp)"
-  if [ -n "$fs" ]; then
-    fs="$(basename $fs)"
-  else
-    fs="$(ls)"
-  fi
-  printf '%s\n' "$fs" >"$old"
-  printf '%s\n' "$fs" >"$new"
-  $EDITOR "$new"
-  [ "$(wc -l < "$new")" -ne "$(wc -l < "$old")" ] && exit
-  paste "$old" "$new" | while IFS= read -r names; do
-    src="$(printf '%s' "$names" | cut -f1)"
-    dst="$(printf '%s' "$names" | cut -f2)"
-    if [ "$src" = "$dst" ] || [ -e "$dst" ]; then
-        continue
-    fi
-    mv -- "$src" "$dst"
-  done
-  rm -- "$old" "$new"
-  lf -remote "send $id unselect"
-}}
 
 # Copy the file names (including extension) of the selections separated by \n
 cmd copy-filename ${{
@@ -203,7 +178,6 @@ map rr rename # at the very end
 map ra push A<c-a> # at the very beginning
 map rn push A<c-u> # rename the filename
 map re push A<c-f><c-k> # rename the extension
-map <c-r> bulk-rename
 
 # [g]o [.]config/[?]__
 map g.l cd ~/.config/lf

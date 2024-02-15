@@ -23,7 +23,7 @@ export EDITOR=nvim
 alias dfi='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 alias dfisall='dfis stage'
 alias dfia='dfi add'
-alias dfial='dfia -A ~/.config/alacritty; dfia -A ~/.config/btop; dfia -A ~/.config/dunst; dfia -A ~/.config/firefox; dfia -A ~/.config/hypr; dfia -A ~/.config/lf; dfia -A ~/.config/nvim; dfia -A ~/.config/rofi; dfia -A ~/.config/lyrics-in-terminal; dfia -A ~/dotfiles; '
+alias dfial='dfia -A ~/.config/kitty; dfia -A ~/.config/btop; dfia -A ~/.config/dunst; dfia -A ~/.config/firefox; dfia -A ~/.config/hypr; dfia -A ~/.config/lf; dfia -A ~/.config/nvim; dfia -A ~/.config/rofi; dfia -A ~/.config/lyrics-in-terminal; dfia -A ~/dotfiles; '
 alias dfic='dfi commit -m '
 alias dfis='dfi status'
 alias dfil='dfi log'
@@ -136,7 +136,7 @@ eval "$(starship init bash)"
 # -----------------------------------------------------
 # PYWAL
 # -----------------------------------------------------
-#cat ~/.cache/wal/sequences
+cat ~/.cache/wal/sequences
 
 # -----------------------------------------------------
 # PFETCH if on wm
