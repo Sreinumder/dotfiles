@@ -221,6 +221,7 @@ map n
 # [g]o [.]config/[?]__
 map g.l cd ~/.config/lf
 map g.a cd ~/.config/alacritty
+map g.r cd ~/.config/rofi
 map g.k cd ~/.config/kitty
 map g.nn cd ~/.config/nvim
 map g.np cd ~/.config/nvim/lua/risedev/plugins/
