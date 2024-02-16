@@ -16,7 +16,7 @@ PS1='[\u@\h \W]\$ '
 
 # Define Editor
 export EDITOR=nvim
-
+export IMAGEVIEWER=nsxiv
 # -----------------------------------------------------
 # DOTFILE version maintenance
 # -----------------------------------------------------
@@ -137,5 +137,6 @@ eval "$(starship init bash)"
 # PYWAL
 # -----------------------------------------------------
 # cat ~/.cache/wal/sequences
+
 
 
