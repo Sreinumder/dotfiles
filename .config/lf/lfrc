@@ -1,8 +1,7 @@
 set ratios 1:2:3
 set shell bash
 set shellopts '-eu'
-set ifs "\n"
-set scrolloff 10
+set ifs "\n" set scrolloff 10
 set cursorpreviewfmt "\033[7;2m"
 
 set incsearch
@@ -30,7 +29,7 @@ set icons
 
 cmd open &{{
   case $(file --mime-type "$(readlink -f $f)" -b) in
-    text/*|application/json|inode/x-empty|application/octet-stream) lf -remote "send $id \$$EDITOR \$fx";;
+    text/*|application/json|inode/x-empty|application/octet-stream|*/conf) lf -remote "send $id \$$EDITOR \$fx";;
     image/*)  ~/dotfiles/lf-scripts/./nsxivM.sh \$fx";;
     *) for f in $fx; do open $f > /dev/null 2> /dev/null & done;;
   esac
@@ -201,13 +200,13 @@ map ad push :mkdir<space>
 map aa push <enter>touch<space>
 map A new-folder-with-selection
 
-map n push <enter>nvim<space>.<enter>
+map nd push <enter>nvim<space>.<enter>
+map nn push <enter>nvim<space>$fx<enter>
 
 # all custom mappings
 map D delete
 
 map ee extract
-map ec $$EDITOR "$f"
 map el $$EDITOR ~/.config/lf/lfrc
 map en $$EDITOR ~/.config/nvim
 map ek $$EDITOR ~/.config/kitty
@@ -218,15 +217,19 @@ map ra push A<c-a> # at the very beginning
 map rn push A<c-u> # rename the filename
 map re push A<c-f><c-k> # rename the extension
 
+map n
 # [g]o [.]config/[?]__
 map g.l cd ~/.config/lf
 map g.a cd ~/.config/alacritty
+map g.k cd ~/.config/kitty
 map g.nn cd ~/.config/nvim
 map g.np cd ~/.config/nvim/lua/risedev/plugins/
 map g.nc cd ~/.config/nvim/lua/risedev/core/
 map g.h cd ~/dotfiles/hypr
 map g.D cd ~/dotfiles/dunst
-map g.d cd ~/dotfiles
+map gd.. cd ~/dotfiles
+map gd.h cd ~/dotfiles/hypr/
+map gd.hc cd ~/dotfiles/hypr/conf
 
 # [g]o [d]irectly to [?]__
 map g.. cd ~/.config
