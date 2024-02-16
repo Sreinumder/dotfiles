@@ -1,4 +1,4 @@
-# interpreter for shell commands
+set ratios 1:100:200
 set shell bash
 set shellopts '-eu'
 set ifs "\n"
