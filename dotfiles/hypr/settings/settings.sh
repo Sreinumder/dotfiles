@@ -7,6 +7,7 @@
 #                             |___/      
 # The Hyprland Settings Script  
 # by Stephan Raabe (2023) 
+# moded by Sreinumder
 # ----------------------------------------------------- 
 
 clear
