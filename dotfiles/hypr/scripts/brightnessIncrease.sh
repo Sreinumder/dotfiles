@@ -1,1 +1,1 @@
-pkexec /usr/bin/brillo -A 5
+pkexec /usr/bin/brillo -A $1
