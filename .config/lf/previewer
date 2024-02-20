@@ -6,10 +6,10 @@ FILE_EXTENSION_LOWER="$(printf "%s" "${FILE_EXTENSION}" | tr '[:upper:]' '[:lowe
 PV_WIDTH="${2}"
 PV_HEIGHT="${3}"
 HORIZONTAL_POS="${4}"
-VERTICAL_POS="$(( $5 + 2 ))"
+VERTICAL_POS="$(( $5 ))"
 
 image_preview_by_kitty() {
-  echo "Resolution: $(identify -format "%w×%h\n" ${1})"
+  # echo "Resolution: $(identify -format "%w×%h\n" ${1})"
   kitty icat --clear --transfer-mode file --stdin no --place \
       "${PV_WIDTH}x${PV_HEIGHT}@${HORIZONTAL_POS}x${VERTICAL_POS}" \
       "${1}" < /dev/null > /dev/tty

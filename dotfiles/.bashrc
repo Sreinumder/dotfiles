@@ -23,7 +23,7 @@ export IMAGEVIEWER=nsxiv
 alias dfi='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 alias dfisall='dfis stage'
 alias dfia='dfi add'
-alias dfial='dfia -A ~/.config/alacritty; dfia -A ~/.config/kitty; dfia -A ~/.config/btop; dfia -A ~/.config/dunst; dfia -A ~/.config/firefox; dfia -A ~/.config/hypr; dfia -A ~/.config/lf; dfia -A ~/.config/nvim; dfia -A ~/.config/rofi; dfia -A ~/.config/lyrics-in-terminal; dfia -A ~/dotfiles; '
+alias dfial='dfia -A ~/.config/zellij; dfia -A ~/.config/alacritty; dfia -A ~/.config/kitty; dfia -A ~/.config/btop; dfia -A ~/.config/dunst; dfia -A ~/.config/firefox; dfia -A ~/.config/hypr; dfia -A ~/.config/lf; dfia -A ~/.config/nvim; dfia -A ~/.config/rofi; dfia -A ~/.config/lyrics-in-terminal; dfia -A ~/dotfiles; '
 alias dfic='dfi commit -m '
 alias dfis='dfi status'
 alias dfil='dfi log'
@@ -32,6 +32,9 @@ alias dfip='dfi push'
 # ALIASES
 # -----------------------------------------------------
 
+alias zel='zellij'
+alias zells='zellij list-sessions'
+alias zelas='zellij attach'
 alias w='~/dotfiles/scripts/./wallpaper.sh'
 alias l='lf'
 alias fixsc='~/dotfiles/scripts/./screenShareEnable.sh'
@@ -103,8 +106,9 @@ alias ascii='~/dotfiles/scripts/figlet.sh'
 
 alias confb='$EDITOR ~/dotfiles/.bashrc'
 alias conf='$EDITOR ~/.config'
-alias el='$EDITOR ~/.config/lf/lfrc'
-alias en='$EDITOR ~/.config/nvim'
+alias confl='$EDITOR ~/.config/lf/lfrc'
+alias confn='$EDITOR ~/.config/nvim'
+alias confz='$EDITOR ~/.config/zellij/config.kdl'
 
 # -----------------------------------------------------
 # EDIT NOTES

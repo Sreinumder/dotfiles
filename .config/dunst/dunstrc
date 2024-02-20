@@ -180,11 +180,12 @@
 	script = ~/.config/dunst/scripts/songArtLogger.sh
 
 [urgency_low]
-	timeout = 6
+	timeout = 4
 	background = "#0d0f16"
 	foreground = "#CDD6F4"
 	frame_color = "#191d24"
 	highlight = "#7ba5dd"
+  transparency = 0.3
 
 [urgency_normal]
 	# script = ~/.config/dunst/scripts/playNotificationSound.sh
@@ -193,6 +194,7 @@
 	foreground = "#CDD6F4"
 	frame_color = "#0d0f16"
 	highlight = "#7ba5dd"
+  transparency = 0.3
 
 [urgency_critical]
 	script = ~/.config/dunst/scripts/playNotificationSound.sh
@@ -201,6 +203,7 @@
 	foreground = "#CDD6F4"
 	frame_color = "#0d0f16"
 	highlight = "#ee6a70"
+  transparency = 0.3
 
 [backlight]
 	summary = "Backlight"
