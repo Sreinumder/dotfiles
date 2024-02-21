@@ -176,7 +176,7 @@ cmd imageView &{{
     lf -remote "send dotfiles/lf-scripts/./nsxivM.sh \$fx";;
 }}
 cmd setWal &{{
-  swww img $fx
+  swww img $fx \--transition-type="wipe" \--transition-duration=1.6
 }}
 map W setWal
 map ( preview
@@ -196,7 +196,7 @@ map J push 4j
 map K push 4k
 
 map <tab> :toggle;down
-map yy copy
+map yy copyj
 map yn copy-filename
 map yP copy-absolute-path
 

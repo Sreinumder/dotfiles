@@ -17,14 +17,14 @@ rasi_file="$HOME/.cache/current_wallpaper.rasi"
 # -----------------------------------------------------
 # Load current pywal color scheme
 # -----------------------------------------------------
-source "$HOME/.cache/wal/colors.sh"
-echo "Wallpaper: $wallpaper"
+# source "$HOME/.cache/wal/colors.sh"
+# echo "Wallpaper: $wallpaper"
 
 # -----------------------------------------------------
 # Write selected wallpaper into .cache files
 # -----------------------------------------------------
-echo "$wallpaper" >"$cache_file"
-echo "* { current-image: url(\"$wallpaper\", height); }" >"$rasi_file"
+# echo "$wallpaper" >"$cache_file"
+# echo "* { current-image: url(\"$wallpaper\", height); }" >"$rasi_file"
 
 # -----------------------------------------------------
 # get wallpaper image name
