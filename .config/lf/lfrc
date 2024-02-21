@@ -175,6 +175,10 @@ cmd default &{{
 cmd imageView &{{
     lf -remote "send dotfiles/lf-scripts/./nsxivM.sh \$fx";;
 }}
+cmd setWal &{{
+  swww img $fx
+}}
+map W setWal
 map ( preview
 map * default
 map ) nopreview
@@ -268,3 +272,4 @@ cmap <backtab> cmd-menu-complete-back
 # dedicated keys for file opener actions
 map o &mimeopen $f
 map O $mimeopen --ask $f
+
