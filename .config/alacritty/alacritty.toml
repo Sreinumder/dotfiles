@@ -7,12 +7,12 @@ import = [
   "~/.config/alacritty/nord.toml"
 ]
 
-opacity = 0.5
 [colors]
 draw_bold_text_with_bright_colors = true
 
 [env]
 TERM = "xterm-256color"
+# opacity = 0.5
 
 [font]
 size = 10.0
@@ -126,8 +126,8 @@ history = 5000
 
 [window]
 dynamic_padding = false
-# opacity = 0.85
-opacity = 1.0
+opacity = 0.85
+# opacity = 1.0
 title = "Alacritty"
 
 [window.class]
