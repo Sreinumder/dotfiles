@@ -143,5 +143,4 @@ eval "$(starship init bash)"
 # -----------------------------------------------------
 # cat ~/.cache/wal/sequences
 
-
-
+export PATH="/home/rise/.local/bin/:$PATH"  
