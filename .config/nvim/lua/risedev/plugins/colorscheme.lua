@@ -10,6 +10,7 @@ return {
   --     })
   --   end,
   -- },
+-- 'shaunsingh/nord.nvim' ,
   { 
     "catppuccin/nvim", 
     name = "catppuccin", 
