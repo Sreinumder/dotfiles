@@ -172,19 +172,14 @@ cmd default &{{
 	lf -remote "send $id set preview"
 	lf -remote "send $id set ratios 1:2:3"
 }}
-cmd imageView &{{
-    lf -remote "send ./~/dotfiles/lf-scripts/./nsxivM.sh \$fx";;
-}}
-cmd setWal &{{
-    push <enter>~/./dotfiles/scripts/wallpaper.sh $fx<enter>
-}}
+
 map W push <enter>~/./dotfiles/scripts/wallpaper.sh<space>$fx<enter>
 
 map ( preview
 map * default
 map ) nopreview
 
-map ii push <enter>~/dotfiles/lf-scripts/nsxivM.sh \$fx & <enter>
+map ni push <enter>~/dotfiles/lf-scripts/nsxivM.sh<space>$fx<space>&<enter>
 
 #unbind defaults
 map e
