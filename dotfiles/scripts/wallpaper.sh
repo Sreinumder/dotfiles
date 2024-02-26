@@ -28,8 +28,8 @@ fi
 
 current_wallpaper=$(cat "$cache_file")
 
-case $1 in
-
+arg="$1"
+case $arg in
     # Load wallpaper from .cache of last session 
     "init")
         if [ -f $cache_file ]; then
@@ -51,6 +51,13 @@ case $1 in
         fi
         wal -q -i ~/wallpaper/$selected
     ;;
+    
+    # try selecting the given wallpaper if dir of image is given
+    "/"* )
+    # "specific")
+        wal -q -i $1
+        echo "setting"
+    ;;
 
     # Randomly select wallpaper 
     *)
@@ -66,21 +73,33 @@ esac
 # ----------------------------------------------------- 
 # Get new theme
 # ----------------------------------------------------- 
+transition_type="wipe"
+# transition_type="outer"
+# transition_type="random"
 source "$HOME/.cache/wal/colors.sh"
 echo "Wallpaper: $wallpaper"
-swww img "$wallpaper"
-newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
 
 # ----------------------------------------------------- 
 # Write selected wallpaper into .cache files
 # ----------------------------------------------------- 
 echo "$wallpaper" > "$cache_file"
 echo "* { current-image: url(\"$wallpaper\", height); }" > "$rasi_file"
+#get newwallpaper name
+newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
 
-sleep 1
+transition_type="wipe"
+# transition_type="outer"
+# transition_type="random"
+
+swww img $wallpaper \
+	--transition-bezier .43,1.19,1,.4 \
+	--transition-fps=60 \
+	--transition-type=$transition_type \
+	--transition-duration=0.7 \
+	--transition-pos "$(hyprctl cursorpos)"
 
 # ----------------------------------------------------- 
 # Send notification
-# ----------------------------------------------------- 
+#sleep 1 ----------------------------------------------------- 
 notify-send "Colors and Wallpaper updated" "with image $newwall"
 echo "Done."

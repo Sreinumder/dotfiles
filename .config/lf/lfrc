@@ -176,7 +176,7 @@ cmd imageView &{{
     lf -remote "send dotfiles/lf-scripts/./nsxivM.sh \$fx";;
 }}
 cmd setWal &{{
-  swww img $fx \--transition-type="wipe" \--transition-duration=1.6
+    lf -remote "send ~/dotfiles/scripts/wallpaper.sh \$fx";;
 }}
 map W setWal
 map ( preview
@@ -211,6 +211,13 @@ map A new-folder-with-selection
 
 map nd push <enter>nvim<space>.<enter>
 map nn push <enter>nvim<space>$fx<enter>
+map nm push <enter>mpv<space>$fx<enter>
+
+cmd emacso &{{
+  ( emacs $fx & )
+}}
+map em emacso
+map ed -remote "send emacs ."
 
 # all custom mappings
 map D delete
@@ -248,6 +255,7 @@ map gdp cd ~/Pictures
 map gds cd ~/Desktop
 map gdn cd ~/notes
 map gdm cd ~/Music
+map gjm cd ~/Downloads/manga/
 map gdo cd ~/Documents
 map gdr cd ~/rose
 map gdw cd ~/wallpaper
