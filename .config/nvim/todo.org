@@ -1,0 +1,6 @@
+TODO things i want to add:
+- [ ] snippets.nvim
+- [ ] mason.nvim
+- [ ] popup?
+- [ ] telescope fzf
+- [ ] nvim-cmp
