@@ -82,12 +82,18 @@ keymap.set({'n','v'}, "gk", "k", {desc = "prev text wrapped line"})
 -- keymap.set("n", "<A-h>", '"mdawb"mPh', {desc = "move word left"})
 -- keymap.set("n", "<A-l>", '"mdawwh"mph', {desc = "move word right"})
    
-keymap.set("n", "<", 'hevwbh"mdawb"mPh', {desc = "move word left"})
-keymap.set("n", ">", 'hevwbh"mde"mp', {desc = "move word right"})
- -- good not a sentence is this
+-- keymap.set("n", "<", 'hevwbh"mdawb"mPh', {desc = "move word left"})
+-- keymap.set("n", ">", 'hevwbh"mde"mp', {desc = "move word right"})
+  -- good not a sentence is this
 -- :%s/\v(\w+)\s+(\w+)/\2 \1/
    
    
 keymap.set({'n','v'}, "<CR>", "I<CR><ESC>", {desc = "next text wrapped line"})
 
 keymap.set('n', "<Leader>ee", function() vim.cmd("vsplit | wincmd l") require("oil").open() end, {desc = "oil file explorer"})
+
+-- substitute.nvim keybinds
+-- keymap.set("n", "s", require('substitute').operator, { noremap = true, desc = "substitute operator" })
+-- keymap.set("n", "ss", require('substitute').line, { noremap = true, desc = "substitute line" })
+-- keymap.set("n", "S", require('substitute').eol, { noremap = true, desc = "substitute eol" })
+-- keymap.set("x", "s", require('substitute').visual, { noremap = true, desc = "substitute visual" })

@@ -32,8 +32,7 @@ if [ ! -f $cacheWallName ] ;then
 fi
 
 # Create rasi file if not exists
-arg="$1"
-case $arg in
+case $1 in
     "init")
       sleep 1
       swww img $cacheWallpaper \
