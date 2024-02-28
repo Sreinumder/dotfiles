@@ -54,6 +54,7 @@ alias winclass="xprop | grep 'CLASS'"
 alias dot="cd ~/dotfiles"
 alias cleanup='~/dotfiles/scripts/cleanup.sh'
 alias ls="eza --icons=always"
+alias lls="eza"
 alias ll="eza -al"
 # alias lf=lfrun
 # alias lff=lf

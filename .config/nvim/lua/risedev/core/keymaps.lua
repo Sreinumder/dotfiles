@@ -77,6 +77,8 @@ keymap.set({'n','v'}, "gk", "k", {desc = "prev text wrapped line"})
 -- keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", {desc = "move line down(v)"})
    
 -- moving words left and right
+-- {jakjdkf}
+-- {jakjdkf}
 -- keymap.set("n", "<A-h>", '"mdawb"mPh', {desc = "move word left"})
 -- keymap.set("n", "<A-l>", '"mdawwh"mph', {desc = "move word right"})
    
@@ -87,3 +89,5 @@ keymap.set("n", ">", 'hevwbh"mde"mp', {desc = "move word right"})
    
    
 keymap.set({'n','v'}, "<CR>", "I<CR><ESC>", {desc = "next text wrapped line"})
+
+keymap.set('n', "<Leader>ee", function() vim.cmd("vsplit | wincmd l") require("oil").open() end, {desc = "oil file explorer"})

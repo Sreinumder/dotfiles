@@ -242,6 +242,7 @@ map g.h cd ~/dotfiles/hypr
 map g.D cd ~/dotfiles/dunst
 map gd.. cd ~/dotfiles
 map gd.h cd ~/dotfiles/hypr/
+map gd.s cd ~/dotfiles/scripts/
 map gd.hc cd ~/dotfiles/hypr/conf
 
 # [g]o [d]irectly to [?]__

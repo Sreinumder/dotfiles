@@ -6,100 +6,97 @@
 #  \____|_| |_|\__,_|_| |_|\__, |\___|   |_| |_| |_|\___|_| |_| |_|\___| 
 #                          |___/                                         
 #  
-# by Stephan Raabe (2023) 
 # edited by rise
 # ----------------------------------------------------- 
 
-# Cache file for holding the current wallpaper
-cache_file="$HOME/.cache/current_wallpaper"
-rasi_file="$HOME/.cache/current_wallpaper.rasi"
+cacheWallpaper="$HOME/.cache/current_wallpaper/wallpaper"
+cacheWallName="$HOME/.cache/current_wallpaper/wallName.txt"
 
-# Create cache file if not exists
-if [ ! -f $cache_file ] ;then
-    touch $cache_file
-    echo "$HOME/wallpaper/default.jpg" > "$cache_file"
+# transition_type="wipe"
+# transition_type="outer"
+# transition_type="simple"
+# transition_type="center"
+# transition_type="left"
+transition_type="grow"
+# transition_type="random"
+
+transition_duration=1.7
+if [ ! -f $cacheWallpaper ] ;then
+    cp "$HOME/wallpapers/default.png" $cacheWallpaper
+fi
+
+if [ ! -f $cacheWallName ] ;then
+  touch $cacheWallName
+  chmod go+rw $cacheWallName 
+  echo "HOME/wallpapers/default.png" > $cacheWallName 
 fi
 
 # Create rasi file if not exists
-if [ ! -f $rasi_file ] ;then
-    touch $rasi_file
-    echo "* { current-image: url(\"$HOME/wallpaper/default.jpg\", height); }" > "$rasi_file"
-fi
-
-current_wallpaper=$(cat "$cache_file")
-
 arg="$1"
 case $arg in
-    # Load wallpaper from .cache of last session 
     "init")
-        if [ -f $cache_file ]; then
-            wal -q -i $current_wallpaper
-        else
-            wal -q -i ~/wallpaper/
-        fi
+      sleep 1
+      swww img $cacheWallpaper \
+      --transition-type=$transition_type \
+      --transition-duration=$transition_duration \
+      --transition-pos "$(hyprctl cursorpos)" \
+      --invert-y
+      echo "$cacheWallpaper" > $cacheWallName 
+      sleep 1
+      notify-send "Wallpaper initialized"
     ;;
 
     # Select wallpaper with rofi
     "select")
-        selected=$( find "$HOME/wallpaper" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec basename {} \; | sort -R | while read rfile
-        do
-            echo -en "$rfile\x00icon\x1f$HOME/wallpaper/${rfile}\n"
-        done | rofi -dmenu -replace -l 6 -config ~/dotfiles/rofi/config-wallpaper.rasi)
-        if [ ! "$selected" ]; then
-            echo "No wallpaper selected"
-            exit
-        fi
-        wal -q -i ~/wallpaper/$selected
+      kitty -e lf $HOME/wallpaper/
     ;;
     
     # try selecting the given wallpaper if dir of image is given
     "/"* )
-    # "specific")
-        wal -q -i $1
-        echo "setting"
+    if [ -f $1 ] ;then
+      sleep 1
+      swww img $1 \
+      --transition-type=$transition_type \
+      --transition-duration=$transition_duration \
+      --transition-pos "$(hyprctl cursorpos)"\
+      --invert-y
+      echo "$1" > $cacheWallName 
+      image=$(echo $1 | awk -F '/' '{print $NF}')
+      rm -rf $cacheWallpaper
+      cp $1 $cacheWallpaper
+      sleep 1
+      notify-send "Wallpaper set to $image"
+    else 
+      notify-send "failed to set wallpaper :("
+    fi
     ;;
 
     # Randomly select wallpaper 
     *)
-        wal -q -i ~/wallpaper/
+    counter=0
+    #do while loop for selecting different wallpaper if randomly selected the same one twice
+    while true; do 
+      image=$(ls ~/wallpaper |sort -R |tail -n 1)
+      imageDir="$HOME/wallpaper/$image"
+      if [ "$(cat $cacheWallName)" != "$imageDir" ]; then # if ended up on same wallpaper then repeat selection
+        break 
+      fi
+      counter=$((counter+1))
+      echo $counter
+      if [ $counter -eq 4 ]; then #exit if the counter reaches 4
+        break
+      fi
+    done
+      rm -rf $cacheWallpaper
+      cp $imageDir $cacheWallpaper
+      sleep 1
+      swww img $imageDir \
+      --transition-type=$transition_type \
+      --transition-duration=$transition_duration \
+      --transition-pos "$(hyprctl cursorpos)"\
+      --invert-y
+      echo "$imageDir" > $cacheWallName 
+      sleep 1
+      notify-send "Wallpaper set to $image"
     ;;
-
 esac
-# ----------------------------------------------------- 
-# Reload qtile to color bar
-# ----------------------------------------------------- 
-# qtile cmd-obj -o cmd -f reload_config
-
-# ----------------------------------------------------- 
-# Get new theme
-# ----------------------------------------------------- 
-transition_type="wipe"
-# transition_type="outer"
-# transition_type="random"
-source "$HOME/.cache/wal/colors.sh"
-echo "Wallpaper: $wallpaper"
-
-# ----------------------------------------------------- 
-# Write selected wallpaper into .cache files
-# ----------------------------------------------------- 
-echo "$wallpaper" > "$cache_file"
-echo "* { current-image: url(\"$wallpaper\", height); }" > "$rasi_file"
-#get newwallpaper name
-newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
-
-transition_type="wipe"
-# transition_type="outer"
-# transition_type="random"
-
-swww img $wallpaper \
-	--transition-bezier .43,1.19,1,.4 \
-	--transition-fps=60 \
-	--transition-type=$transition_type \
-	--transition-duration=0.7 \
-	--transition-pos "$(hyprctl cursorpos)"
-
-# ----------------------------------------------------- 
-# Send notification
-#sleep 1 ----------------------------------------------------- 
-notify-send "Colors and Wallpaper updated" "with image $newwall"
-echo "Done."
