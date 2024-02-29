@@ -1,3 +1,7 @@
+-- ┌────────────────────────────────────────────┐
+-- │automatically sets html tags like <t1> </t1>│
+-- └────────────────────────────────────────────┘
 return {
-  'nvim-ts-autotag',
+  'windwp/nvim-ts-autotag',
+  event = { "InsertEnter" },
 }

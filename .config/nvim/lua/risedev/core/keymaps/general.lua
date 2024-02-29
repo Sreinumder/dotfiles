@@ -1,0 +1,19 @@
+-- set leader key to space
+vim.g.mapleader = " "
+vim.g.maplocalleader = ','
+local keymap = vim.keymap -- for conciseness
+
+
+   
+-- text wrap navigation swap
+keymap.set({'n','v'}, "j", "gj", {desc = "next text wrapped line"})
+keymap.set({'n','v'}, "gj", "j", {desc = "next text wrapped line"})
+keymap.set({'n','v'}, "k", "gk", {desc = "prev text wrapped line"})
+keymap.set({'n','v'}, "gk", "k", {desc = "prev text wrapped line"})
+   
+
+keymap.set({'n','v'}, "<CR>", "A<CR><ESC>", {desc = ""})
+keymap.set({'n','v'}, "<S-CR>", "I<CR><ESC>", {desc = ""})
+
+keymap.set('n', "<Leader>ee", function() vim.cmd("vsplit | wincmd l") require("oil").open() end, {desc = "oil file explorer"})
+

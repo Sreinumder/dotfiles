@@ -75,6 +75,7 @@ generalPackagesYay=(
     "brillo"
     "sddm-git"
     "sddm-sugar-candy-git"
+    "swww" 
 );
 
 packagesPacman=(
@@ -87,5 +88,4 @@ packagesPacman=(
 );
 
 packagesYay=(
-    "swww" 
 );

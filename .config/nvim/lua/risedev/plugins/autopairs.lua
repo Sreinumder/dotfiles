@@ -1,3 +1,6 @@
+-- ┌───────────────────────────────────┐
+-- │automatically finds and sets pairs │
+-- └───────────────────────────────────┘
 return {
   "windwp/nvim-autopairs",
   event = { "InsertEnter" },
