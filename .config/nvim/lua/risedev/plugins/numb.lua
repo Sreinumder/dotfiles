@@ -1,5 +1,6 @@
---[[ numb.nvim is a Neovim plugin that peeks lines of the buffer in non-obtrusive way.
-Peeking the buffer while entering command :{number} ]]
+--┌───────────────────────────────────────────────────┐
+--│Peeking the buffer while entering command :{number}│
+--└───────────────────────────────────────────────────┘
 return {
   'nacro90/numb.nvim',
   config = function()

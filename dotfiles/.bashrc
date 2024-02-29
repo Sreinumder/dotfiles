@@ -13,10 +13,10 @@
 [[ $- != *i* ]] && return
 PS1='[\u@\h \W]\$ '
 
-
 # Define Editor
 export EDITOR=nvim
 export IMAGEVIEWER=nsxiv
+# export KITTY_CONFIG_DIRECTORY="~/dotfiles/kitty/kitty.conf"
 # -----------------------------------------------------
 # DOTFILE version maintenance
 # -----------------------------------------------------

@@ -1,7 +1,10 @@
 local opt = vim.opt
+--opt.nofoldenable = true
+--opt.nohlsearch = true
+
 opt.termguicolors = true
-opt.relativenumber 	= false --show relative number
-opt.number		      = true
+opt.relativenumber = false --show relative number
+opt.number = true
 
 opt.ignorecase      = true -- ignore case when searching
 opt.smartcase       = true -- if you include mixed case in your search, assumes you want case-sensitive

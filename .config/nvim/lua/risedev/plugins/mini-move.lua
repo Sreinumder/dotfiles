@@ -1,3 +1,8 @@
+--┌───────────────────────┐
+--│<A-h> <A-j> <A-k> <A-l>│
+--│to move lines or words │
+--│in normal & visual mode│
+--└───────────────────────┘
 return {
   'echasnovski/mini.move',
   version = false,

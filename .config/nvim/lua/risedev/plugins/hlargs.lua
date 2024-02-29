@@ -1,6 +1,7 @@
---┌─────────────────────────────────────────────────────────────────────────────┐
---│Highlight arguments' definitions and usages, asynchronously, using Treesitter│
---└─────────────────────────────────────────────────────────────────────────────┘
+--┌──────────────────────────────────────┐
+--│Highlight arguments, definitions and  │
+--│usages asynchronously using Treesitter│
+--└──────────────────────────────────────┘
 
 return {
   'm-demare/hlargs.nvim',

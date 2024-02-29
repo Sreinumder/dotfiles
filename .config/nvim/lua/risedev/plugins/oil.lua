@@ -1,3 +1,6 @@
+--┌────────────────────────────────────────────────┐
+--│edit your filesystem like a normal Neovim buffer│
+--└────────────────────────────────────────────────┘
 return {
   'stevearc/oil.nvim',
   opts = {},

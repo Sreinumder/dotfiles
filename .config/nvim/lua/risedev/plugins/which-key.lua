@@ -1,3 +1,6 @@
+--┌──────────────────────────────────┐
+--│shows all possible key combination│
+--└──────────────────────────────────┘
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",

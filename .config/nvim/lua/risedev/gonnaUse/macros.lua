@@ -1,3 +1,9 @@
+--┌───────────────────────────────────────────────────┐
+--│macros made easy                                   │
+--│MacroYank [register]:Yanks macro from register     │
+--│MacroSave [register]:Saves macro into JSON file    │
+--│MacroSelect|MacroDelete:Brings up your macro menu. │
+--└───────────────────────────────────────────────────┘
 return {
   "kr40/nvim-macros",
   cmd = {"MacroSave", "MacroYank", "MacroSelect", "MacroDelete"},
@@ -10,7 +16,7 @@ return {
   },
   config = function()
     require('nvim-macros').setup({
-      json_file_path = "~/rose/rise/macros.json",
+      json_file_path = "~/.config/nvim/macros.json",
       default_macro_register = "a",
       json_formatter = "jq",
     })
