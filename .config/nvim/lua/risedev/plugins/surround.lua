@@ -3,6 +3,7 @@
 --├───────────┼──────────┼────────────┤
 --│ surround  │ ysiw)    │(surround)  │  
 --│ string    │ ys$"     │"strings"   │   
+--│ "lol"     │ ysa"}    │{"lol"}     │   
 --│ [ar*ound] │ ds]      │around      │
 --│ <b>tag</b>│ dst      │tags        │
 --│ 'quote'   │ cs'"     │"quote"     │

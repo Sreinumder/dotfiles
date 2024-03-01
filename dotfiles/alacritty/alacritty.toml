@@ -1,18 +1,21 @@
-import = [
-  # uncomment the flavour you want below:
-  # "~/.config/alacritty/catppuccin-latte.toml"
-  # "~/.config/alacritty/catppuccin-frappe.toml"
-  "~/dotfiles/alacritty/catppuccin-macchiato.toml"
-  # "~/.config/alacritty/catppuccin-mocha.toml"
-  # "~/.config/alacritty/nord.toml"
+import = [ 
+  # "~/dotfiles/alacritty/catppuccin-latte.toml"
+  # "~/dotfiles/alacritty/catppuccin-frappe.toml"
+  # "~/dotfiles/alacritty/catppuccin-macchiato.toml"
+  # "~/dotfiles/alacritty/catppuccin-mocha.toml"
+  "~/dotfiles/alacritty/nord.toml"
 ]
 
+[window]
+dynamic_padding = false
+opacity = 0.85
+#option_as_alt = 'Both'
+title = "Alacritty"
 [colors]
 draw_bold_text_with_bright_colors = true
 
 [env]
 TERM = "xterm-256color"
-# opacity = 0.5
 
 [font]
 size = 10.0
@@ -134,12 +137,6 @@ mods = "Control"
 [scrolling]
 history = 5000
 
-[window]
-dynamic_padding = false
-opacity = 0.85
-#option_as_alt = 'Both'
-# opacity = 1.0
-title = "Alacritty"
 
 [window.class]
 general = "Alacritty"
