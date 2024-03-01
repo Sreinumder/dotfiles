@@ -12,7 +12,7 @@ n=0
 ls | while read p; do
 	n=$((n+1))
 	if [[ "$p" = "$NAME" ]]; then
-		ls | nsxiv -q -bfin $n
+		ls | nsxiv -q -bin $n
 		break
 	fi
 done
