@@ -66,6 +66,9 @@ packagesPacman=(
     "xclip"
     "zathura"
     "zathura-pdf-poppler"
+    fcitx
+    fcitx-mozc 
+    fcitx-configtool
 );
 
 generalPackagesYay=(

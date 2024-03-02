@@ -19,3 +19,9 @@ keymap.set({'n','v'}, "<S-CR>", "I<CR><ESC>", {desc = ""})
 
 keymap.set('n', "<Leader>ee", function() vim.cmd("vsplit | wincmd l") require("oil").open() end, {desc = "oil file explorer"})
 
+keymap.set('i', "<A-h>", "<Left>", {desc = "Left"})
+keymap.set('i', "<A-j>", "<Down>", {desc = "Down"})
+keymap.set('i', "<A-k>", "<Up>", {desc = "Up"})
+keymap.set('i', "<A-l>", "<Right>", {desc = "Right"})
+keymap.set('i', "<A-u>", "<Backspace>", {desc = "Left"})
+keymap.set('i', "<A-i>", "<Down>", {desc = "Down"})

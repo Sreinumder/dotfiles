@@ -1,10 +1,4 @@
 #!/bin/bash
-#   ___ _____ ___ _     _____   ____  _             _
-#
-#
-# by Stephan Raabe (2023)
-# -----------------------------------------------------
-
 # My screen resolution
 # xrandr --rate 120
 
@@ -24,11 +18,11 @@ xfce4-power-manager &
 dunst &
 
 # Setup Wallpaper and update colors
-~/dotfiles/scripts/wallpaper.sh init
+~/dotfiles/scripts/wallpaper.sh init &
+
+fcitx -d &
 
 # enables screen sharing
-exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-pacman -Q | grep xdg-desktop-portal-
+exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+# pacman -Q | grep xdg-desktop-portal-
 
-# MPD daemon start (if no other user instance exists)
-[ ! -s ~/.config/mpd/pid ] && mpd
