@@ -28,13 +28,13 @@ alias dfic='dfi commit -m '
 alias dfis='dfi status'
 alias dfil='dfi log'
 alias dfip='dfi push'
+
 # -----------------------------------------------------
 # ALIASES
 # -----------------------------------------------------
 
-alias zel='zellij'
-alias zells='zellij list-sessions'
-alias zelas='zellij attach'
+alias yy='youtube-viewer -A'
+alias ym='youtube-viewer -n -a --category=music'
 alias w='~/dotfiles/scripts/./wallpaper.sh'
 alias l='lf'
 alias fixsc='~/dotfiles/scripts/./screenShareEnable.sh'
@@ -83,23 +83,6 @@ alias gst="git stash"
 alias gsp="git stash; git pull"
 alias gcheck="git checkout"
 
-# -----------------------------------------------------
-# SCRIPTS
-# -----------------------------------------------------
-
-alias gr='python ~/dotfiles/scripts/growthrate.py'
-alias ChatGPT='python ~/mychatgpt/mychatgpt.py'
-alias chat='python ~/mychatgpt/mychatgpt.py'
-alias ascii='~/dotfiles/scripts/figlet.sh'
-
-# -----------------------------------------------------
-# VIRTUAL MACHINE
-# -----------------------------------------------------
-
-# alias vm='~/private/launchvm.sh'
-# alias lg='~/dotfiles/scripts/looking-glass.sh'
-# alias vmstart='virsh --connect qemu:///system start win11'
-# alias vmstop='virsh --connect qemu:///system destroy win11'
 
 # -----------------------------------------------------
 # EDIT CONFIG FILES
@@ -122,7 +105,7 @@ alias notes='$EDITOR ~/notes/'
 # -----------------------------------------------------
 
 # alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-alias setkb='setxkbmap de;echo "Keyboard set back to de."'
+# alias setkb='setxkbmap de;echo "Keyboard set back to de."'
 
 # -----------------------------------------------------
 # SCREEN RESOLUTINS
