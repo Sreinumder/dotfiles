@@ -1,11 +1,16 @@
+-- ┌──────────────────────────────────────┐
+-- │ toggle diagram mode with :VBox       │
+-- │ draw a box with f                    │
+-- │ HJKL for line drawing                │
+-- └──────────────────────────────────────┘
 --   ┌────────┐                ┌─────┐      
---   │creating├────────────────┤those│      
---   └─┬──┬───┘        ┌────┐  └──┬──┘  
---     │  │    ┌──┐ ┌──┤this├─────┼──►
---     │  └────┤is├─┘  └─┬──┘     │
---     │       └──┘      │        │
---     │ ┌────┐          │ ┌──────┴─┐        
---     └─┤lmao├──────────┴─┤diagrams│        
+--   │creating├──────────────► │those│      
+--   └────────┘        ┌────┐  └──┬──┘  
+--     ▲  ▲    ┌──┐  ┌─┤this│     │
+--     │  └────┤is│◄─┘ └────┘     │
+--     │       └──┘               ▼
+--     │ ┌────┐            ┌────────┐        
+--     └─┤lmao│ ◄──────────┤ boxes  │        
 --       └────┘            └────────┘        
 return {
   'jbyuki/venn.nvim',
@@ -32,8 +37,3 @@ return {
       vim.api.nvim_set_keymap('n', '<leader>v', ":lua Toggle_venn()<CR>", { noremap = true})
   end,
 }
--- ┌──────────────────────────────────────┐
--- │ toggle diagram mode with :VBox       │
--- │ draw a box with f                    │
--- │ HJKL for line drawing                │
--- └──────────────────────────────────────┘

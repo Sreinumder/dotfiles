@@ -29,6 +29,8 @@ alias dfic='dfi commit -m '
 alias dfis='dfi status'
 alias dfil='dfi log'
 alias dfip='dfi push'
+alias md='mangadesk'
+alias n='nvim'
 
 # -----------------------------------------------------
 # ALIASES
