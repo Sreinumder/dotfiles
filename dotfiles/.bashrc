@@ -92,6 +92,7 @@ alias gcheck="git checkout"
 # -----------------------------------------------------
 
 alias confb='$EDITOR ~/dotfiles/.bashrc'
+alias confa='$EDITOR ~/dotfiles/autostart.sh'
 alias conf='$EDITOR ~/.config'
 alias confl='$EDITOR ~/.config/lf/lfrc'
 alias confn='$EDITOR ~/.config/nvim'

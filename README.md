@@ -1,4 +1,4 @@
-My [hyprland](https://github.com/hyprwm/Hypr) dotfiles, heavily modified mostly from Stephan Raabe's brilliant[ML4W dotfiles](https://gitlab.com/stephan-raabe/dotfiles).
+My [hyprland](https://github.com/hyprwm/Hypr) dotfiles, heavily modified mostly from Stephan Raabe's brilliant [ML4W dotfiles](https://gitlab.com/stephan-raabe/dotfiles).
 
 I used:
 1. [nvim](https://github.com/neovim/neovim)

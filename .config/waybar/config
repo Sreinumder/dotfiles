@@ -1,22 +1,11 @@
-// __        __          _                 
-// \ \      / /_ _ _   _| |__   __ _ _ __  
-//  \ \ /\ / / _` | | | | '_ \ / _` | '__| 
-//   \ V  V / (_| | |_| | |_) | (_| | |    
-//    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    
-//                 |___/                   
-//  
-// by Stephan Raabe (2023) 
-// ----------------------------------------------------- 
-//
 {
     // General Settings
-
     // Position TOP
-    "layer": "top",
-    "margin-bottom": 0,
+    //"layer": "top",
+    //"margin-bottom": 0,
 
     // Position BOTTOM
-    // "position": "bottom",
+     "position": "bottom",
     // "margin-top": 0,
     // "margin-bottom": 14,
     
@@ -40,14 +29,15 @@
 
     // Modules Right    
     "modules-right": [
-        // "custom/updates",
+      //"custom/cliphist",
+        "backlight",
         "pulseaudio",
-       // "bluetooth",
+        //"bluetooth",
         "battery", 
         "network",
         //"group/hardware",
-        //"custom/cliphist",
         //"custom/exit",
+        //"cpu"
         "clock"
     ]
 }

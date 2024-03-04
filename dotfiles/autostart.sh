@@ -20,7 +20,7 @@ dunst &
 # Setup Wallpaper and update colors
 ~/dotfiles/scripts/wallpaper.sh init &
 
-fcitx -d &
+
 
 # enables screen sharing
 exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
