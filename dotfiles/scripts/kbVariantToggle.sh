@@ -11,7 +11,8 @@ if [ ! -f "$kb_config" ]; then
 fi
 
 # Read the current opacity value
-current_variant=$(grep -oP '(?<=kb_variant = )\d+' "$kb_config")
+# current_variant=$(grep -oP '(?<=kb_variant = )\d+' "$kb_config")
+current_variant=$(awk -F= '/kb_variant/ {print $2}') < "$kb_config"
 # kbvariant = '$(grep 'kb_variant' "$kb_config")'
 notify-send -u normal "$current_variant -"
 
