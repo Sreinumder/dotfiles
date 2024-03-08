@@ -1,7 +1,7 @@
 local opt = vim.opt
 --opt.nofoldenable = true
 --opt.nohlsearch = true
-
+opt.lazyredraw = true
 opt.termguicolors = true
 opt.relativenumber = false --show relative number
 opt.number = true
@@ -27,5 +27,3 @@ opt.splitbelow = true -- split horizontal window to the bottom
 -- doesnt work here needs to be in root init.lua
 -- -- autocomment in newline after pressing o 
 -- opt.formatoptions:remove({'c','r','o'})
-
-
