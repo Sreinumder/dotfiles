@@ -51,7 +51,7 @@
         "tooltip": false
     },
 
-    "custom/updates": {
+"custom/updates": {
         "format": "  {}",
         "tooltip-format": "{}",
         "escape": true,
@@ -74,8 +74,7 @@
 
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        // "format-alt": "{:%Y-%m-%d}",
-        "format": "{:%Y/%m/%d %H:%M}"
+        "format": "{:%m%d %H%M}"
     },
 
     "custom/system": {
@@ -147,14 +146,16 @@
     // Network
     "network": {
         "format": "{ifname}",
-        "format-wifi": "{signalStrength}  ",
+        //"format-wifi": " {bandwidthUpBytes} {bandwidthDownBytes}",
+        "format-wifi": "{bandwidthUpBytes} {bandwidthDownBytes} {signalStrength} ",
         "format-ethernet": "{ipaddr}  ",
         "tooltip-format": " {ifname} via {gwaddri}",
         "tooltip-format-wifi": "   {essid} ({signalStrength})",
         "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
         "tooltip-format-disconnected": "",
-        "max-length": 50,
-        "on-click": "alacritty -e nmtui"
+        "interval": 6,
+        "max-length": 60,
+        "on-click": ""
     },
 
     // Battery

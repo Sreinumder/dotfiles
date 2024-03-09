@@ -179,7 +179,6 @@ map ( preview
 map * default
 map ) nopreview
 
-map ni push <enter>~/dotfiles/lf-scripts/nsxivM.sh<space>$fx<space>&<enter>
 
 #unbind defaults
 map e
@@ -205,6 +204,8 @@ map ad push :mkdir<space>
 map aa push <enter>touch<space>
 map A new-folder-with-selection
 
+map ni push <enter>~/dotfiles/lf-scripts/nsxivM.sh<space>$fx<space>&<enter>
+map nz push <enter>zathura<space>$fx<space>&<enter>
 map nd push <enter>nvim<space>.<enter>
 map nn push <enter>nvim<space>$fx<enter>
 map nm push <enter>mpv<space>$fx<enter>
@@ -233,6 +234,7 @@ map n
 # [g]o [.]config/[?]__
 map g.l cd ~/.config/lf
 map g.a cd ~/.config/alacritty
+map g.w cd ~/.config/waybar
 map g.r cd ~/.config/rofi
 map g.k cd ~/.config/kitty
 map g.nn cd ~/.config/nvim

@@ -29,12 +29,11 @@
 
     // Modules Right    
     "modules-right": [
-      //"custom/cliphist",
+        "network",
         "backlight",
         "pulseaudio",
         //"bluetooth",
         "battery", 
-        "network",
         //"group/hardware",
         //"custom/exit",
         //"cpu"
