@@ -253,7 +253,7 @@ map gdd cd ~/Downloads
 map gdp cd ~/Pictures
 map gds cd ~/Desktop
 map gdn cd ~/notes
-map gdm cd ~/Music
+map gdm cd ~/music
 map gjm cd ~/Downloads/manga/
 map gdo cd ~/Documents
 map gdr cd ~/rose
