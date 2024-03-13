@@ -132,3 +132,9 @@ eval "$(starship init bash)"
 # cat ~/.cache/wal/sequences
 
 export PATH="/home/rise/.local/bin/:$PATH"  
+
+PATH="/home/rise/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/rise/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/rise/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/rise/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/rise/perl5"; export PERL_MM_OPT;
