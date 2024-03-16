@@ -1,28 +1,18 @@
-/**
- * ROFI Color theme
- * NAME: dt-center.rasi
- * DESCRIPTION: This is a centered prompt.
- * AUTHOR: Derek Taylor (DT)
- */
-
 * {
-    background-color:            #282c34;
-    border-color:                #51afef;
-    text-color:                  #bbc2cf;
+    background-color:            rgba(46,52,64,1);
+    border-color:                #000000;
+    text-color:                  #d8dee9;
     font:                        "Ubuntu Mono 11";
     prompt-font:                 "Ubuntu Bold 10";
-    prompt-background:           #51afef;
+    prompt-background:           rgba(165,171,182,1);
     prompt-foreground:           #282c34;
-    prompt-padding:              4px;
-    alternate-normal-background: #1c1f24;
-    alternate-normal-foreground: @text-color;
-    selected-normal-background:  #ae3f3e;
+    selected-normal-background:  rgba(76,86,106,1);
     selected-normal-foreground:  #ffffff;
     spacing:                     3;
 }
 #window {
-    border:  2;
-    padding: 5;
+    border:  1;
+    padding: 3;
 }
 #mainbox {
     border:  0;
@@ -30,7 +20,7 @@
 }
 #message {
     border:       1px dash 0px 0px ;
-    padding:      1px ;
+    padding:      0px ;
 }
 #listview {
     fixed-height: 0;
@@ -38,19 +28,15 @@
     border-color: #1c1f24;
     spacing:      2px ;
     scrollbar:    true;
-    padding:      2px 0px 0px ;
+    padding:      0px 0px 0px ;
 }
 #element {
     border:  0;
-    padding: 1px ;
+    padding: 0px ;
 }
 #element.selected.normal {
     background-color: @selected-normal-background;
     text-color:       @selected-normal-foreground;
-}
-#element.alternate.normal {
-    background-color: @alternate-normal-background;
-    text-color:       @alternate-normal-foreground;
 }
 #scrollbar {
     width:        0px ;
@@ -67,18 +53,17 @@
 }
 #inputbar {
     spacing:    0;
-    padding:    1px ;
+    padding:    0px ;
 }
 #case-indicator {
     spacing:    0;
 }
 #entry {
-    padding: 4px 4px;
+    padding: 0px 0px;
     expand: false;
-    width: 10em;
+    width: 6em;
 }
 #prompt {
-    padding:          @prompt-padding;
     background-color: @prompt-background;
     text-color:       @prompt-foreground;
     font:             @prompt-font;
@@ -90,10 +75,3 @@ element-text {
     text-color:       inherit;
 }
 
-/* Not actually relevant for this configuration, but it might
-be useful to someone having issues with their icons' background color
-
-element-icon {
-    background-color: inherit;
-}
-*/

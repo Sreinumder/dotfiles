@@ -208,7 +208,8 @@ map A new-folder-with-selection
 map ni push <enter>~/dotfiles/lf-scripts/nsxivM.sh<space>$fx<space>&<enter>
 map nz push <enter>zathura<space>$fx<space>&<enter>
 map nd push <enter>nvim<space>.<enter>
-map nn push <enter>nvim<space>$fx<enter>
+map nnn push <enter>nvim<space>$fx<enter>
+map nnw push <enter>alacritty<space>-e<space>nvim<space>$fx<space>&<enter>
 map nm push <enter>mpv<space>$fx<enter>
 
 cmd emacso &{{

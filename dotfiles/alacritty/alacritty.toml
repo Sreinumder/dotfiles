@@ -4,7 +4,7 @@ import = [
 
 [window]
 dynamic_padding = false
-opacity = 0.85
+opacity = 1.00
 #option_as_alt = 'Both'
 title = "Alacritty"
 [colors]

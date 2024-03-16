@@ -1,22 +1,16 @@
-/**
- * ROFI Color theme
- * NAME: dt-dmenu.rasi
- * DESCRIPTION: This is a horizontal prompt similar to dmenu.
- * AUTHOR: Derek Taylor (DT)
- */
-
 * {
-    background-color:           #282c34;
-    border-color:               #282c34;
-    text-color:                 #bbc2cf;
-    height:                     20px;
-    font:                       "SauceCodePro Nerd Font Mono 9";
-    prompt-font:                "Ubuntu Bold 9";
-    prompt-background:          #51afef;
-    prompt-foreground:          #282c34;
-    prompt-padding:             2px;
-    selected-normal-background: #ae3f3e;
-    selected-normal-foreground: #ffffff;
+    background-color:            rgba(46,52,64,1);
+    border-color:                #000000;
+    text-color:                  #d8dee9;
+    height:                      20px;
+    font:                        "SauceCodePro Nerd Font Mono 9";
+    prompt-font:                 "Ubuntu Bold 10";
+    prompt-background:           rgba(165,171,182,1);
+    prompt-foreground:           #282c34;
+    selected-normal-background:  rgba(76,86,106,1);
+    selected-normal-foreground:  #ffffff;
+    spacing:                     3;
+
 }
 #window {
     anchor: north;
@@ -25,6 +19,7 @@
     padding: 0px;
     children: [ horibox ];
 }
+
 #horibox {
     orientation: horizontal;
     children: [ prompt, entry, listview ];
