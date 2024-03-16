@@ -256,7 +256,7 @@ map g.q cd ~/.config/qutebrowser
 map g.. cd ~/.config
 map gdd cd ~/Downloads
 map gdp cd ~/Pictures
-map gds cd ~/Desktop
+map gds cd ~/screenshots/
 map gdn cd ~/notes
 map gdm cd ~/music
 map gjm cd ~/Downloads/manga/
