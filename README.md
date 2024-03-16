@@ -22,12 +22,12 @@
 ![qute-browser!](dotfiles/rice-screenshots/qute-browser.png)
 
 [8. btop](https://github.com/aristocratos/btop)
-![!btop](dotfiles/rice-screenshots/btop.png)
+![!btop](dotfiles/rice-screenshots/btop.png)AR
 
 [9. nsxiv](https://github.com/nsxiv/nsxiv)
 ![!nsxiv](dotfiles/rice-screenshots/nsxiv.png)
 
-[10. Zathura](https://github.com/pwmt/zathura)
-![!Zathura](dotfiles/rice-screenshots/zathura.png)
+<!-- [10. Zathura](https://github.com/pwmt/zathura) -->
+<!-- ![!Zathura](dotfiles/rice-screenshots/zathura.png) -->
 
 Special Thanks to Stephan Raabe's excellent his [dotfiles](https://gitlab.com/stephan-raabe/dotfiles).

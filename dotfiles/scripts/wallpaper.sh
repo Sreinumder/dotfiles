@@ -13,13 +13,13 @@ transition_type="grow"
 
 transition_duration=1.7
 if [ ! -f $cacheWallpaper ] ;then
-    cp "$HOME/wallpapers/default.png" $cacheWallpaper
+    cp "$HOME/dotfiles/wallpapers/default.png" $cacheWallpaper
 fi
 
 if [ ! -f $cacheWallName ] ;then
   touch $cacheWallName
   chmod go+rw $cacheWallName 
-  echo "HOME/wallpapers/default.png" > $cacheWallName 
+  echo "HOME/dotfiles/wallpapers/default.png" > $cacheWallName 
 fi
 
 # Create rasi file if not exists
@@ -38,7 +38,7 @@ case $1 in
 
     # Select wallpaper with rofi
     "select")
-      kitty -e lf $HOME/wallpaper/
+      kitty -e lf $HOME/dotfiles/wallpaper/
     ;;
     
     # try selecting the given wallpaper if dir of image is given
@@ -66,8 +66,8 @@ case $1 in
     counter=0
     #do while loop for selecting different wallpaper if randomly selected the same one twice
     while true; do 
-      image=$(ls ~/wallpaper |sort -R |tail -n 1)
-      imageDir="$HOME/wallpaper/$image"
+      image=$(ls ~/dotfiles/wallpaper |sort -R |tail -n 1)
+      imageDir="$HOME/dotfiles/wallpaper/$image"
       if [ "$(cat $cacheWallName)" != "$imageDir" ]; then # if ended up on same wallpaper then repeat selection
         break 
       fi
