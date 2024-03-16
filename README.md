@@ -24,10 +24,11 @@
 [8. btop](https://github.com/aristocratos/btop)
 ![!btop](dotfiles/rice-screenshots/btop.png)
 
-[9. nsxiv](https://github.com/nsxiv/nsxiv)
+[9. Zathura](https://github.com/pwmt/zathura)
+![!Zathura](dotfiles/rice-screenshots/zathura.png)
+
+[10. nsxiv](https://github.com/nsxiv/nsxiv)
 ![!nsxiv](dotfiles/rice-screenshots/nsxiv.png)
 
-[10. Zathura](https://github.com/pwmt/zathura)
-![!Zathura](dotfiles/rice-screenshots/zathura.png)
 
 Special Thanks to Stephan Raabe's excellent his [dotfiles](https://gitlab.com/stephan-raabe/dotfiles).
