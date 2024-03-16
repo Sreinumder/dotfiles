@@ -27,5 +27,7 @@
 [9. nsxiv](https://github.com/nsxiv/nsxiv)
 ![!nsxiv](dotfiles/rice-screenshots/nsxiv.png)
 
+[10. Zathura](https://github.com/pwmt/zathura)
+![!Zathura](dotfiles/rice-screenshots/zathura.png)
 
 Special Thanks to Stephan Raabe's excellent his [dotfiles](https://gitlab.com/stephan-raabe/dotfiles).
