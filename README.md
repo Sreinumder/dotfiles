@@ -1,4 +1,4 @@
-[nord](https://www.nordtheme.com/) themed [hyprland](https://github.com/hyprwm/Hypr) config.
+[Nord](https://www.nordtheme.com/) themed [Hyprland](https://github.com/hyprwm/Hypr) config.
 
 [1. alacritty](https://github.com/alacritty/alacritty)
 ![alacritty!](dotfiles/rice-screenshots/alacritty.png)
