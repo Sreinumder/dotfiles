@@ -24,7 +24,7 @@ export IMAGEVIEWER=nsxiv
 alias dfi='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 alias dfisall='dfis stage'
 alias dfia='dfi add'
-alias dfial='dfia -A ~/.config/qutebrowser/; dfia -A ~/.config/yazi; dfia -A ~/.config/lyrics-in-terminal; dfia -A ~/.config/alacritty; dfia -A ~/.config/kitty; dfia -A ~/.config/btop; dfia -A ~/.config/dunst; dfia -A ~/.config/firefox; dfia -A ~/.config/hypr; dfia -A ~/.config/lf; dfia -A ~/.config/nvim; dfia -A ~/.config/rofi; dfia -A ~/.config/lyrics-in-terminal; dfia -A ~/.config/waybar; dfia -A ~/dotfiles; dfia ~/README.md'
+alias dfial='dfia -A ~/.config/qutebrowser/; dfia -A ~/.config/yazi; dfia -A ~/.config/alacritty; dfia -A ~/.config/kitty; dfia -A ~/.config/btop; dfia -A ~/.config/dunst; dfia -A ~/.config/firefox; dfia -A ~/.config/hypr; dfia -A ~/.config/lf; dfia -A ~/.config/nvim; dfia -A ~/.config/rofi; dfia -A ~/.config/waybar; dfia -A ~/dotfiles; dfia ~/README.md'
 alias dfic='dfi commit -m '
 alias dfis='dfi status'
 alias dfil='dfi log'
