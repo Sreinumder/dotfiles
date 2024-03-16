@@ -1,8 +1,4 @@
 import = [ 
-  # "~/dotfiles/alacritty/catppuccin-latte.toml"
-  # "~/dotfiles/alacritty/catppuccin-frappe.toml"
-  # "~/dotfiles/alacritty/catppuccin-macchiato.toml"
-  # "~/dotfiles/alacritty/catppuccin-mocha.toml"
   "~/dotfiles/alacritty/nord.toml"
 ]
 
