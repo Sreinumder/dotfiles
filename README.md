@@ -22,7 +22,7 @@
 ![qute-browser!](dotfiles/rice-screenshots/qute-browser.png)
 
 [8. btop](https://github.com/aristocratos/btop)
-![!btop](dotfiles/rice-screenshots/btop.png)AR
+![!btop](dotfiles/rice-screenshots/btop.png)
 
 [9. nsxiv](https://github.com/nsxiv/nsxiv)
 ![!nsxiv](dotfiles/rice-screenshots/nsxiv.png)
