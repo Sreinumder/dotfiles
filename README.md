@@ -6,12 +6,11 @@ I used:
 [alacritty](https://github.com/alacritty/alacritty)
 [kitty](https://github.com/kovidgoyal/kitty)
 [nord-theme](https://www.nordtheme.com/)
-[waybar] (https://github.com/Alexays/Waybar)
+[waybar](https://github.com/Alexays/Waybar)
 [rofi](https://github.com/davatorium/rofi)
 [quteBrowser](https://qutebrowser.org/)
 [btop](https://github.com/aristocratos/btop)
 [nsxiv](https://github.com/nsxiv/nsxiv)
- 
 
 Screenshots:
 ![nvim!](dotfiles/rice-screenshots/nvim.png)
