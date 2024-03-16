@@ -85,6 +85,7 @@ cmd delete ${{
   [ "$ans" = "y" ] && rmtrash -rf $fx
 }}
 
+
 cmd extract ${{
     set -f
     case $f in
@@ -229,6 +230,9 @@ map rr rename # at the very end
 map ra push A<c-a> # at the very beginning
 map rn push A<c-u> # rename the filename
 map re push A<c-f><c-k> # rename the extension
+map sd push <enter>dragon-drop<space>$fx<space>&<enter>
+map rd push <enter>dragon-drop<space>-t<space>&<enter>
+
 
 map n
 # [g]o [.]config/[?]__
@@ -246,6 +250,7 @@ map gd.. cd ~/dotfiles
 map gd.h cd ~/dotfiles/hypr/
 map gd.s cd ~/dotfiles/scripts/
 map gd.hc cd ~/dotfiles/hypr/conf
+map g.q cd ~/.config/qutebrowser
 
 # [g]o [d]irectly to [?]__
 map g.. cd ~/.config

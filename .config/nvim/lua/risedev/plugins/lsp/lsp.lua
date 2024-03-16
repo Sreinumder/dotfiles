@@ -10,7 +10,8 @@
 -- Description: LSP setup and config
 -- Author: Kien Nguyen-Tuan <kiennt2609@gmail.com>
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-return {{
+return {
+  {
     -- Mason
     "williamboman/mason.nvim",
     cmd = {"Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog"},
@@ -40,21 +41,24 @@ return {{
     config = function(_, opts)
         require("mason").setup(opts)
     end
-}, {
+  },
+  {
     -- LSP - Quickstart configs for Nvim LSP
     "neovim/nvim-lspconfig",
     event = {"BufReadPre", "BufNewFile"},
     lazy = true,
     dependencies = { -- Mason
-    -- Portable package manager for Neovim that runs everywhere Neovim runs.
-    -- Easily install and manage LSP servers, DAP servers, linters, and formatters.
-    {"williamboman/mason.nvim"}, {"williamboman/mason-lspconfig.nvim"}, -- Autocomplete
-    -- A completion plugin for neovim coded in Lua.
-    {
-        "hrsh7th/nvim-cmp",
-        dependencies = {"L3MON4D3/LuaSnip", "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-path", "hrsh7th/cmp-buffer",
-                        "saadparwaiz1/cmp_luasnip"}
-    }},
+      -- Portable package manager for Neovim that runs everywhere Neovim runs.
+      -- Easily install and manage LSP servers, DAP servers, linters, and formatters.
+      {"williamboman/mason.nvim"}, {"williamboman/mason-lspconfig.nvim"}, -- Autocomplete
+
+      -- A completion plugin for neovim coded in Lua.
+      {
+          "hrsh7th/nvim-cmp",
+          dependencies = {"L3MON4D3/LuaSnip", "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-path", "hrsh7th/cmp-buffer",
+                          "saadparwaiz1/cmp_luasnip"}
+      }
+    },
     opts = {
         -- Automatically format on save
         autoformat = true,

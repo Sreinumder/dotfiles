@@ -4,14 +4,14 @@
 --└─────────────────────────┘
 
 return {
-   {
-    "rmehri01/onenord.nvim", enabled = false,
-    priority = 1000,
-    config = function()
-      require('onenord').setup({theme = 'onenord' })
-      -- vim.cmd([[colorscheme onenord]])
-    end,
-  },
+  --  {
+  --   "rmehri01/onenord.nvim", enabled = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require('onenord').setup({theme = 'onenord' })
+  --     -- vim.cmd([[colorscheme onenord]])
+  --   end,
+  -- },
   {
     'sainnhe/everforest' ,
     config = function()
