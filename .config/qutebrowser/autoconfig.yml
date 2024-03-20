@@ -12,5 +12,7 @@ settings:
     global: black
   colors.webpage.darkmode.enabled:
     global: true
+  colors.webpage.darkmode.threshold.background:
+    global: 256
   window.hide_decoration:
     global: true
