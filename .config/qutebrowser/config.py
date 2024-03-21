@@ -5,6 +5,10 @@ for mode in ["normal", "caret"]:
 config.set("colors.webpage.darkmode.enabled", True)
 config.set("colors.webpage.bg", "grey")
 
+config.bind('xs', 'config-cycle statusbar.show always never')
+config.bind('xt', 'config-cycle tabs.show always never')
+config.bind('xx', 'config-cycle tabs.show always never;; config-cycle statusbar.show always never')
+
 c.url.searchengines = {
     'DEFAULT':  'https://google.com/search?hl=en&q={}',
     '!a':       'https://www.amazon.com/s?k={}',
@@ -23,6 +27,7 @@ c.url.searchengines = {
     '!sd':      'https://slickdeals.net/newsearch.php?q={}&searcharea=deals&searchin=first',
     '!t':       'https://www.thesaurus.com/browse/{}',
     '!tw':      'https://twitter.com/search?q={}',
+    '!mal':     'https://myanimelist.net/search/all?q={}&cat=all',
     '!w':       'https://en.wikipedia.org/wiki/{}',
     '!yelp':    'https://www.yelp.com/search?find_desc={}',
     '!yt':      'https://www.youtube.com/results?search_query={}'

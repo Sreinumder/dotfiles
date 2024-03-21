@@ -11,8 +11,12 @@ settings:
   colors.tabs.odd.fg:
     global: black
   colors.webpage.darkmode.enabled:
-    global: true
+    global: false
   colors.webpage.darkmode.threshold.background:
-    global: 256
+    global: 180
+  statusbar.show:
+    global: always
+  tabs.show:
+    global: always
   window.hide_decoration:
     global: true
