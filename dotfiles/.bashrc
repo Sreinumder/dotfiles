@@ -12,10 +12,12 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 PS1='[\u@\h \W]\$ '
-
 # Define Editor
 export EDITOR=nvim
 export IMAGEVIEWER=nsxiv
+# export GTK_IM_MODULE=fcitx
+# export QT_IM_MODULE=fcitx
+# export XMODIFIERS=@im=fcitx
 
 # export KITTY_CONFIG_DIRECTORY="~/dotfiles/kitty/kitty.conf"
 # -----------------------------------------------------

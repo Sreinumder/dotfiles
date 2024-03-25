@@ -4,7 +4,6 @@
 
 # For Virtual Machine
 # xrandr --output Virtual-1 --mode 1920x1080
-
 # Keyboard layout
 # setxkbmap
 
@@ -26,3 +25,4 @@ exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRE
 
 # Setup Wallpaper and update colors
 exec-once=~/dotfiles/scripts/wallpaper.sh init &
+sleep 2
