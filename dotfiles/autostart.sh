@@ -17,8 +17,8 @@ xfce4-power-manager &
 # Load notification service
 dunst &
 
-
-
+#load touchpad gestures
+fusuma &
 
 # enables screen sharing
 exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
