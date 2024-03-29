@@ -263,7 +263,7 @@ map gdm cd ~/music
 map gjm cd ~/Downloads/manga/
 map gdo cd ~/Documents
 map gdr cd ~/rose
-map gdw cd ~/wallpaper
+map gdw cd ~/dotfiles/wallpaper
 
 # [g]o [?]__/[?]__
 map grl cd ~/rose/learn

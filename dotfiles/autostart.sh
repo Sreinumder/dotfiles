@@ -16,6 +16,10 @@ xfce4-power-manager &
 # Load notification service
 dunst &
 
+# Setup Wallpaper and update colors
+exec-once=~/dotfiles/scripts/wallpaper.sh init &
+sleep 2
+
 #load touchpad gestures
 fusuma &
 
@@ -23,6 +27,6 @@ fusuma &
 exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
 # pacman -Q | grep xdg-desktop-portal-
 
-# Setup Wallpaper and update colors
-exec-once=~/dotfiles/scripts/wallpaper.sh init &
+sleep 10
+exec-once=fcitx5 &
 sleep 2

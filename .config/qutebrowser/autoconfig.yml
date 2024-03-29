@@ -15,7 +15,7 @@ settings:
   colors.webpage.darkmode.threshold.background:
     global: 180
   statusbar.show:
-    global: never
+    global: always
   tabs.show:
     global: always
   window.hide_decoration:
