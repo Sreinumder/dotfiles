@@ -10,10 +10,14 @@ settings:
     global: black
   colors.tabs.odd.fg:
     global: black
+  colors.webpage.darkmode.algorithm:
+    global: lightness-cielab
   colors.webpage.darkmode.enabled:
     global: false
+  colors.webpage.darkmode.policy.images:
+    global: never
   colors.webpage.darkmode.threshold.background:
-    global: 180
+    global: 200
   statusbar.show:
     global: always
   tabs.show:

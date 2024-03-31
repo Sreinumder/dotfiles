@@ -20,6 +20,8 @@ export IMAGEVIEWER=nsxiv
 # export XMODIFIERS=@im=fcitx
 
 # export KITTY_CONFIG_DIRECTORY="~/dotfiles/kitty/kitty.conf"
+
+alias py=python3
 # -----------------------------------------------------
 # DOTFILE version maintenance
 # -----------------------------------------------------
