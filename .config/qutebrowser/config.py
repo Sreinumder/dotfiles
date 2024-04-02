@@ -10,7 +10,7 @@ config.bind('xt', 'config-cycle tabs.show always never')
 config.bind('xx', 'config-cycle tabs.show always never;; config-cycle statusbar.show always never')
 
 c.url.searchengines = {
-    'DEFAULT':  'https://duckduckgo.com/search?hl=en&q={}',
+    'DEFAULT':  'https://duckduckgo.com/?q={}&ia=web',
     '!d':       'https://duckduckgo.com/?ia=web&q={}',
     '!dd':      'https://thefreedictionary.com/{}',
     '!e':       'https://www.ebay.com/sch/i.html?_nkw={}',
