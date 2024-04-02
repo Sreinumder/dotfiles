@@ -6,6 +6,19 @@
 
 config_version: 2
 settings:
+  bindings.commands:
+    global:
+      caret:
+        gS: spawn --userscript yomichad --prefix-search
+        gs: spawn --userscript yomichad
+      normal:
+        alt+s: O!
+        gS: spawn --userscript yomichad --prefix-search
+        gs: spawn --userscript yomichad
+        xs: config-cycle statusbar.show always never
+        xt: config-cycle tabs.show always never
+        xx: config-cycle tabs.show always never;; config-cycle statusbar.show always
+          never
   colors.tabs.even.fg:
     global: black
   colors.tabs.odd.fg:
