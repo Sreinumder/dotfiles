@@ -12,8 +12,10 @@ settings:
         gS: spawn --userscript yomichad --prefix-search
         gs: spawn --userscript yomichad
       normal:
-        alt+s: O!
+        cc: click-element
+        cm: clear-messages
         gS: spawn --userscript yomichad --prefix-search
+        gT: tab-take
         gs: spawn --userscript yomichad
         xs: config-cycle statusbar.show always never
         xt: config-cycle tabs.show always never
