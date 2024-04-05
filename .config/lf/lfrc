@@ -286,7 +286,4 @@ cmap <backtab> cmd-menu-complete-back
 map o &mimeopen $f
 map O $mimeopen --ask $f
 
-map <a-m> push h
-map <a-n> push j
-map <a-e> push k
-map <a-i> push l
+map <a-l> push <enter>lazygit<enter>
