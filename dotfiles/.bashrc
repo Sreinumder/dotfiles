@@ -21,10 +21,13 @@ export IMAGEVIEWER=nsxiv
 
 # export KITTY_CONFIG_DIRECTORY="~/dotfiles/kitty/kitty.conf"
 
-alias py=python3
+alias py=python
+alias py3=python3
+alias pyenv='python -m venv env; source env/bin/activate; pip install -r requirements.txt'
 # -----------------------------------------------------
 # DOTFILE version maintenance
 # -----------------------------------------------------
+alias lazydot='lazygit -git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dfi='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 alias dfisall='dfis stage'
 alias dfia='dfi add'
@@ -71,6 +74,7 @@ alias tcalc=taschenrechner
 # if command -v python3 > /dev/null; then
 # 	export PATH= 'python3 -n site --user-base'/bin:$PATH
 # fi
+alias hlq="harlequin"
 
 # -----------------------------------------------------
 # Window Managers
