@@ -16,6 +16,8 @@ keymap.set({'n','v'}, "k", "gk", {desc = "prev text wrapped line"})
 keymap.set({'n','v'}, "gk", "k", {desc = "prev line"})
 keymap.set({'n','v'}, "H", "^", {desc = "same as ^"})
 keymap.set({'n','v'}, "L", "$", {desc = "same as $"})
+keymap.set({'n','v'}, "<A-H>", "^", {desc = "same as ^"})
+keymap.set({'n','v'}, "<A-L>", "$", {desc = "same as $"})
 
 keymap.set({'n','v'}, "<CR>", "A<CR><ESC>", {desc = ""})
 keymap.set({'n','v'}, "<S-CR>", "I<CR><ESC>", {desc = ""})
