@@ -12,6 +12,7 @@ settings:
         gS: spawn --userscript yomichad --prefix-search
         gs: spawn --userscript yomichad
       normal:
+        <Ctrl+o>: open -b
         cc: click-element
         cm: clear-messages
         gS: spawn --userscript yomichad --prefix-search
@@ -33,6 +34,10 @@ settings:
     global: never
   colors.webpage.darkmode.threshold.background:
     global: 200
+  content.media.audio_capture:
+    http://localhost:8501: true
+  content.register_protocol_handler:
+    https://mail.google.com?extsrc=mailto&url=%25s: false
   statusbar.show:
     global: always
   tabs.show:
