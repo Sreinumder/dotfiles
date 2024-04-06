@@ -2,10 +2,13 @@ local keymap = vim.keymap -- for conciseness
 
 -- delete with x d or D and cut with alt + x + d + D
 keymap.set({'n','v','x'}, "x", '"_x')
+keymap.set({'n','v','x'}, "X", '"_X')
 keymap.set({'n','v','x'}, "d", '"_d')
 keymap.set({'n','v','x'}, "D", '"_D')
 keymap.set({'n','v','x'}, "c", '"_c')
 
+-- keymap.set({'n','v','x'}, "<A-x>", 'x')
+-- keymap.set({'n','v','x'}, "<A-X>", 'X')
 keymap.set({'n','v','x'}, "<A-d>", 'd')
 keymap.set({'n','v','x'}, "<A-d><A-d>", 'dd')
 keymap.set({'n','v','x'}, "<A-D>", 'D')

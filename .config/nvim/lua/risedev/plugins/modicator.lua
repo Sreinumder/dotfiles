@@ -1,3 +1,6 @@
+-- ┌────────────────────────────────────────────┐
+-- │changes line number color according to mode │
+-- └────────────────────────────────────────────┘
 return {
   'mawkler/modicator.nvim',
   dependencies = 'mawkler/onedark.nvim', -- Add your colorscheme plugin here

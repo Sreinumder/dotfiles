@@ -9,3 +9,10 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 -- keymap.set("n", "<A-k>", ":m .-2<CR>==", {desc = "move line down(n)"})
 -- keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", {desc = "move line up(v)"})
 -- keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", {desc = "move line down(v)"})
+
+keymap.set("n", "<c-h>", '', {desc = "move line up(v)"})
+
+-- keymap.set("s", )
+-- keymap.set("v", "<A-l>", 'viw', {desc = "move line down(v)"})
+-- rose rise
+
