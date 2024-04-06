@@ -3,7 +3,7 @@ local opt = vim.opt
 --opt.nohlsearch = true
 opt.lazyredraw = true
 opt.termguicolors = true
-opt.relativenumber = false --show relative number
+opt.relativenumber = true --show relative number
 opt.number = true
 
 opt.ignorecase      = true -- ignore case when searching
