@@ -175,6 +175,8 @@ cmd default &{{
 }}
 
 map W push <enter>~/./dotfiles/scripts/wallpaper.sh<space>$fx<enter>
+map w
+map w push <enter>cd<space>$(pwd))<enter>
 
 map ( preview
 map * default
