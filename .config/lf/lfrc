@@ -174,13 +174,17 @@ cmd default &{{
 	lf -remote "send $id set ratios 1:2:3"
 }}
 
+cmd onlycentre &{{
+	lf -remote "send $id set preview"
+	lf -remote "send $id set ratios 1:200:1"
+}}
+
 map W push <enter>~/./dotfiles/scripts/wallpaper.sh<space>$fx<enter>
-map w
-map w push <enter>cd<space>$(pwd))<enter>
 
 map ( preview
 map * default
 map ) nopreview
+map | onlycentre
 
 
 #unbind defaults
@@ -207,6 +211,7 @@ map ad push :mkdir<space>
 map aa push <enter>touch<space>
 map A new-folder-with-selection
 
+map nw push <enter>(<space>alacritty<space>&<space>)<enter>
 map ni push <enter>~/dotfiles/lf-scripts/nsxivM.sh<space>$fx<space>&<enter>
 map nz push <enter>zathura<space>$fx<space>&<enter>
 map nd push <enter>nvim<space>.<enter>
@@ -288,4 +293,4 @@ cmap <backtab> cmd-menu-complete-back
 map o &mimeopen $f
 map O $mimeopen --ask $f
 
-map <a-l> push <enter>lazygit<enter>
+map <a-l> push <enter>lazygit<space>&<enter>
