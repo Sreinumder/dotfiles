@@ -9,3 +9,11 @@ https://bigcomics.jp/series/8082b80580bd3/pagingList?s=2&page=1&limit=50 ひら�
 https://monkeytype.com/ Monkeytype | A minimalistic, customizable typing test
 https://adventofcode.com/2023/leaderboard Leaderboard - Advent of Code 2023
 https://github.com/ThePrimeagen/.dotfiles ThePrimeagen/.dotfiles
+https://github.com/smjonas/live-command.nvim?tab=readme-ov-file smjonas/live-command.nvim: Easily create previewable commands in Neovim.
+https://github.com/gbprod/yanky.nvim gbprod/yanky.nvim: Improved Yank and Put functionalities for Neovim
+https://github.com/Zeioth/dooku.nvim?tab=readme-ov-file Zeioth/dooku.nvim: Code documentation generator for Neovim
+https://github.com/keaising/im-select.nvim keaising/im-select.nvim: Switch Input Method automatically depends on Neovim's edit mode
+https://github.com/mfussenegger/nvim-dap mfussenegger/nvim-dap: Debug Adapter Protocol client implementation for Neovim
+https://github.com/00sapo/visual.nvim 00sapo/visual.nvim: First select, then edit. A helix/kakoune-like editing in neovim
+https://github.com/f-person/git-blame.nvim f-person/git-blame.nvim: Git Blame plugin for Neovim written in Lua
+https://neovimcraft.com/plugin/folke/noice.nvim/ folke/noice.nvim: 💥 Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
