@@ -20,6 +20,7 @@ export IMAGEVIEWER=nsxiv
 # export XMODIFIERS=@im=fcitx
 
 # export KITTY_CONFIG_DIRECTORY="~/dotfiles/kitty/kitty.conf"
+eval "$(zoxide init bash)"
 
 alias py=python
 alias py3=python3
@@ -74,7 +75,8 @@ alias tcalc=taschenrechner
 # if command -v python3 > /dev/null; then
 # 	export PATH= 'python3 -n site --user-base'/bin:$PATH
 # fi
-alias hlq="harlequin"
+alias hsql="harlequin"
+alias hsqlt="harlequin -a sqlite"
 
 # -----------------------------------------------------
 # Window Managers
@@ -128,6 +130,15 @@ alias notes='$EDITOR ~/notes/'
 # alias res2='xrandr --output DisplayPort-0 --mode 1920x1080 --rate 120'
 
 export PATH="/usr/lib/ccache/bin/:$PATH"
+
+function yaz() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 # -----------------------------------------------------
 # START STARSHIP
