@@ -1,6 +1,7 @@
 local opt = vim.opt
 --opt.nofoldenable = true
 --opt.nohlsearch = true
+vim.o.cmdheight = 0           -- sets cmd height as 0
 opt.lazyredraw = true
 opt.termguicolors = true
 opt.relativenumber = true --show relative number
@@ -24,6 +25,7 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
--- doesnt work here needs to be in root init.lua
--- -- autocomment in newline after pressing o 
+-- want to  autocomment in newline after pressing o 
+-- this autocmd doesnt work here needs to be in root init.lua
 -- opt.formatoptions:remove({'c','r','o'})
+

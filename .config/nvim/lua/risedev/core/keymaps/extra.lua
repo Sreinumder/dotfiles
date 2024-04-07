@@ -4,13 +4,12 @@ local keymap = vim.keymap -- for conciseness
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- now mini.move does it better
--- moving sentences up and down
--- keymap.set("n", "<A-j>", ":m .+1<CR>==", {desc = "move line up(n)"})
--- keymap.set("n", "<A-k>", ":m .-2<CR>==", {desc = "move line down(n)"})
--- keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", {desc = "move line up(v)"})
--- keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", {desc = "move line down(v)"})
-
-keymap.set("n", "<c-h>", '', {desc = "move line up(v)"})
+-- clone sentences up and down
+keymap.set("v", "<A-K>", '"by"bpgv', {desc =  "clone line Up(v)"})
+keymap.set("v", "<A-J>", '"by"bPgv', {desc =  "clone line Down(v)"})
+keymap.set("n", "<A-K>", 'V"by"bpgv', {desc = "clone line Up(n)"})
+keymap.set("n", "<A-J>", 'V"by"bPgv', {desc = "clone line Down(n)"})
+-- keymap.set("n", "<c-h>", '', {desc = "move line up(v)"})
 
 -- keymap.set("s", )
 -- keymap.set("v", "<A-l>", 'viw', {desc = "move line down(v)"})

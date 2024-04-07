@@ -10,6 +10,7 @@ return {
     red    = '#ff5189',
     violet = '#d183e8',
     grey   = '#303030',
+    green  = '#A7C080'
   }
 
   local bubbles_theme = {
@@ -19,13 +20,13 @@ return {
       c = { fg = colors.white },
     },
 
-    insert = { a = { fg = colors.black, bg = colors.blue } },
+    insert = { a = { fg = colors.black, bg = colors.green } },
     visual = { a = { fg = colors.black, bg = colors.red } },
     replace = { a = { fg = colors.black, bg = colors.violet } },
 
     inactive = {
-      a = { fg = colors.white, bg = colors.black },
-      b = { fg = colors.white, bg = colors.black },
+      a = { fg = colors.white, bg = colors.grey },
+      b = { fg = colors.white, bg = colors.grey },
       c = { fg = colors.white },
     },
   }
@@ -37,16 +38,12 @@ return {
       section_separators = { left = '', right = '' },
     },
     sections = {
-      lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
-      lualine_b = { 'filename', 'branch' },
-      lualine_c = {
-        '%=', --[[ add your center compoentnts here in place of this comment ]]
-      },
+        lualine_a = { { 'mode', separator = { left = '' }, right_padding = 0 } },
+      lualine_b = { 'filename' , 'branch'},
+      lualine_c = { '%=', --[[ add your center compoentnts here in place of this comment ]] },
       lualine_x = {},
-      lualine_y = { 'filetype', 'progress' },
-      lualine_z = {
-        { 'location', separator = { right = '' }, left_padding = 2 },
-      },
+      lualine_y = { 'filetype', },
+      lualine_z = { 'progress', { 'location'}, },
     },
     inactive_sections = {
       lualine_a = { 'filename' },
