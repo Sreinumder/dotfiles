@@ -1,5 +1,3 @@
-# function yy() {
-# 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 # 	yazi "$@" --cwd-file="$tmp"
 # 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
 # 		cd -- "$cwd"
@@ -70,7 +68,7 @@ keymap = [
 	{ on = [ "o" ],         run = "open",                       desc = "Open the selected files" },
 	{ on = [ "O" ],         run = "open --interactive",         desc = "Open the selected files interactively" },
 	{ on = [ "<Enter>" ],   run = "open",                       desc = "Open the selected files" },
-	{ on = [ "<C-Enter>" ], run = "open --interactive",         desc = "Open the selected files interactively" },
+    { on = [ "<C-Enter>" ], run = "open --interactive",         desc = "Open the selected files interactively" },
 	{ on = [ "y" ],         run = "yank",                       desc = "Copy the selected files" },
 	{ on = [ "Y" ],         run = "unyank",                     desc = "Cancel the yank status of files" },
 	{ on = [ "x" ],         run = "yank --cut",                 desc = "Cut the selected files" },
@@ -152,12 +150,21 @@ keymap = [
 	# Goto
 	{ on = [ "g", "h" ],       run = "cd ~",             desc       = "Go to the home directory" },
 	{ on = [ "g", ".", "." ],  run = "cd ~/.config",     desc       = "Go to the config directory" },
-	{ on = [ "g", ".", "n" ],  run = "cd ~/.config/nvim/lua/risedev/plugins",     desc = "nvim config dir" },
-	{ on = [ "g", ".", "y" ],  run = "cd ~/.config/yazi/",     desc = "yazi config dir" },
+	{ on = [ "g", ".", "n", "c" ],  run = "cd ~/.config/nvim/lua/risedev/core",     desc = "nvim core dir" },
+	{ on = [ "g", ".", "n", "p" ],  run = "cd ~/.config/nvim/lua/risedev/plugins",     desc = "nvim config dir" },
+    { on = [ "g", ".", "y" ],  run = "cd ~/.config/yazi/",     desc = "yazi config dir" },
+	{ on = [ "g", ".", "q" ],  run = "cd ~/.config/qutebrowser/",     desc = "qutebrowser config dir" },
 	{ on = [ "g", "d", "d"],   run = "cd ~/Downloads",   desc       = "Go to the downloads directory" },
 	{ on = [ "g", "t" ],       run = "cd /tmp",          desc       = "Go to the temporary directory" },
 	{ on = [ "g", "<Space>" ], run = "cd --interactive", desc       = "Go to a directory interactively" },
+	{ on = [ "g", "<Space>" ], run = "cd --interactive", desc       = "Go to a directory interactively" },
 
+    { on = ["g","r","l"], run = "cd ~/rose/learn",      desc = "Go to learn"},
+    { on = ["g","j","m"], run = "cd ~/rose/Downloads/manga/",   desc = "Go to manga"},
+    { on = ["g","r","p"], run = "cd ~/rose/py/lab",     desc = "Go to lab"},
+    { on = ["g","d","p"], run = "cd ~/djangoProjects/", desc = "Go to djangoProjects"},
+
+    # map <a-l> push <enter>lazygit<space>&<enter>
 	# Help
 	{ on = [ "~" ], run = "help", desc = "Open help" },
 ]
@@ -272,6 +279,11 @@ keymap = [
 
 	# Help
 	{ on = [ "~" ], run = "help", desc = "Open help" }
+    # {on = [" ","s","d"], run = "dragon-drop $fx &", desx "send dragon-drop"}
+    # {on = [" ","r","d"], run = "dragon-drop -t &", desx "send dragon-drop"}
+
+    # map sd push <enter>dragon-drop<space>$fx<space>&<enter>
+    # map rd push <enter>dragon-drop<space>-t<space>&<enter>
 ]
 
 [completion]
