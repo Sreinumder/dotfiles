@@ -25,6 +25,7 @@ eval "$(zoxide init bash)"
 alias py=python
 alias py3=python3
 alias pyenv='python -m venv env; source env/bin/activate; pip install -r requirements.txt'
+alias pyact='source env/bin/activate;' 
 # -----------------------------------------------------
 # DOTFILE version maintenance
 # -----------------------------------------------------
