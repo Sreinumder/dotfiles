@@ -12,6 +12,8 @@ settings:
         gS: spawn --userscript yomichad --prefix-search
         gs: spawn --userscript yomichad
       normal:
+        '"': set-mark
+        <Alt+j>: gJ
         <Ctrl+o>: open -b
         cc: click-element
         cm: clear-messages
