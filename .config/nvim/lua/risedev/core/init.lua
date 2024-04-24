@@ -2,7 +2,7 @@ require("risedev.core.options.options")
 require("risedev.core.options.indentation")
 
 -- require("risedev.core.keymaps.colemakLayer")
-require("risedev.core.keymaps.delete")
+require("risedev.core.keymaps.deleteAndPaste")
 require("risedev.core.keymaps.extra")
 require("risedev.core.keymaps.insertMode")
 require("risedev.core.keymaps.general")

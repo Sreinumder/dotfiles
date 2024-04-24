@@ -1,7 +1,12 @@
 local keymap = vim.keymap -- for conciseness
 
 -- window management
-keymap.set("n", "<leader>w", "<C-w>", { desc = "Split window vertically" }) -- split window vertically
+keymap.set("n", "<leader>w", "<C-w>", { desc = "window control" }) -- split window vertically
+keymap.set("n", "<C-h>", "<C-w>h", { desc = "move left a window" }) -- split window vertically
+keymap.set("n", "<C-j>", "<C-w>j", { desc = "move down a window" }) -- split window vertically
+keymap.set("n", "<C-k>", "<C-w>k", { desc = "move up a window" }) -- split window vertically
+keymap.set("n", "<C-l>", "<C-w>l", { desc = "move right a window" }) -- split window vertically
+
 
 -- keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
 -- keymap.set("n", "<leader>wh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally

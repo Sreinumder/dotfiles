@@ -25,7 +25,5 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
--- want to  autocomment in newline after pressing o 
--- this autocmd doesnt work here needs to be in root init.lua
--- opt.formatoptions:remove({'c','r','o'})
-
+-- hide the ~ character on empty lines at the end of the buffer
+opt.fcs = "eob: "

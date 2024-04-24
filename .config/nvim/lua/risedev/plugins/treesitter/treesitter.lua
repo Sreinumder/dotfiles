@@ -1,5 +1,4 @@
 return {
-  {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPre", "BufNewFile" },
     build = ":TSUpdate",
@@ -31,6 +30,7 @@ return {
           "yaml",
           "html",
           "css",
+          "python",
           "prisma",
           "markdown",
           "markdown_inline",
@@ -57,5 +57,4 @@ return {
       -- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
       -- require('ts_context_commentstring').setup {}
     end,
-  },
 }

@@ -2,38 +2,33 @@
 --│color schemes            │
 --│uncomment them to use lol│
 --└─────────────────────────┘
-
 return {
   {
-    "rmehri01/onenord.nvim", enabled = false,
+    "mcauley-penney/ice-cave.nvim",
     priority = 1000,
     config = function()
-      require('onenord').setup({theme = 'onenord' })
-      -- vim.cmd([[colorscheme onenord]])
+      -- vim.cmd.colorscheme("ice-cave")
+      vim.cmd([[colorscheme everforest]])
+      -- vim.cmd([[colorscheme catppuccin]])
+      -- vim.cmd([[colorscheme nord]])
+      -- vim.cmd([[colorscheme tokyonight]])
     end,
   },
   {
     'sainnhe/everforest' ,
-    config = function()
-      vim.cmd([[colorscheme everforest]])
-    end,
   },
   {
     'shaunsingh/nord.nvim' ,
-    config = function()
-      -- vim.cmd([[colorscheme nord]])
-    end,
   },
-  { "catppuccin/nvim", 
-    name = "catppuccin", 
+  { "catppuccin/nvim",
+    name = "catppuccin",
     config = function()
       require("catppuccin").setup({
         -- flavour = "latte",
         -- flavour = "frappe",
-        flavour = "macchiato",
+        -- flavour = "macchiato",
         -- flavour = "mocha",
       })
-      -- vim.cmd([[colorscheme catppuccin]])
     end,
   },
   { "bluz71/vim-nightfly-guicolors",
@@ -46,7 +41,6 @@ return {
       require("tokyonight").setup({
         style = "storm",
       })
-      -- vim.cmd([[colorscheme tokyonight]])
     end,
   },
 }

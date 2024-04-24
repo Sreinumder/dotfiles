@@ -22,3 +22,7 @@ keymap.set({'v', 'x'}, 'p', '"_dp')
 keymap.set({'v', 'x'}, '<A-p>', 'p')
 keymap.set({'v', 'x'}, 'P', '"_dP')
 keymap.set({'v', 'x'}, '<A-P>', 'P')
+
+-- like gv for last paste
+keymap.set({'n'}, '<A-g><A-v>', '`[v`]')
+keymap.set({'n'}, '<A-g>v>', '`[v`]')
