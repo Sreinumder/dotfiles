@@ -2,10 +2,10 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 local keymap = vim.keymap -- for conciseness
 
--- keymap.set('i', "<A-h>", "<C-o>h", {desc = "same as ^"})
--- keymap.set('i', "<A-j>", "<C-o>j", {desc = "same as ^"})
--- keymap.set('i', "<A-k>", "<C-o>k", {desc = "same as ^"})
--- keymap.set('i', "<A-l>", "<C-o>l", {desc = "same as ^"})
+-- Turn the word Under cursor to upper case
+keymap.set("i", "<c-u>", "<Esc>viw~ea")
+-- Turn the current word into title case
+keymap.set("i", "<c-t>", "<Esc>b~lea")
 
 keymap.set("i", "<A-h>", "<Left>", { desc = "Insert mode left" })
 keymap.set("i", "<A-j>", "<Down>", { desc = "Insert mode down" })
@@ -19,6 +19,10 @@ keymap.set("i", "<A-L>", "<C-Right>", { desc = "Insert mode Right" })
 
 keymap.set("i", "<A-n>", "<esc>wwct,", { desc = "change next csv" })
 keymap.set("i", "<A-N>", "<esc>bbcT, ", { desc = "change inside next csv surrounded by ?" })
+
+-- Go to the beginning and end of current line in insert mode quickly
+keymap.set("i", "<C-A>", "<HOME>")
+keymap.set("i", "<C-E>", "<END>")
 
 -- CTRL-O h  move cursor left CTRL-O l  move cursor right
 -- CTRL-O j  move cursor down

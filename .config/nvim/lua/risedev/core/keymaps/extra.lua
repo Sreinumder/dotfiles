@@ -12,11 +12,42 @@ keymap.set("v", "<A-J>", '"by"bPgv', { desc = "clone line Down(v)" })
 keymap.set("n", "<A-K>", 'V"by"bpgv', { desc = "clone line Up(n)" })
 keymap.set("n", "<A-J>", 'V"by"bPgv', { desc = "clone line Down(n)" })
 
--- nnoremap <silent> gl "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l>
--- nnoremap <silent> gh "_yiw?\w\+\_W\+\%#<CR>:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
+-- Insert a blank line below or above current line (do not move the cursor),
+-- see https://stackoverflow.com/a/16136133/6064933
+keymap.set("n", "<space>o", "printf('m`%so<ESC>``', v:count1)", {
+	expr = true,
+	desc = "insert line below",
+})
+keymap.set("n", "<space>O", "printf('m`%sO<ESC>``', v:count1)", {
+	expr = true,
+	desc = "insert line above",
+})
 
--- keymap.set("n", "<c-h>", '', {desc = "move line up(v)"})
--- clone clone clone clone clone efji
--- keymap.set("s", )
--- keymap.set("v", "<A-l>", 'viw', {desc = "move line down(v)"})
--- rise rose, row, 12
+-- Do not include white space characters when using $ in visual mode,
+-- see https://vi.stackexchange.com/q/12607/15292
+keymap.set("x", "$", "g_")
+
+-- -- Save your finger
+-- keymap.set({ "n", "x" }, ";", ":")
+
+-- Shortcut for faster save and quit
+keymap.set("n", "<leader>w", "<cmd>update<cr>", { silent = true, desc = "save buffer" })
+
+-- Saves the file if modified and quit
+keymap.set("n", "<leader>q", "<cmd>x<cr>", { silent = true, desc = "quit current window" })
+
+-- Quit all opened buffers
+keymap.set("n", "<leader>Q", "<cmd>qa!<cr>", { silent = true, desc = "quit nvim" })
+
+-- Navigation in the location and quickfix list
+keymap.set("n", "[l", "<cmd>lprevious<cr>zv", { silent = true, desc = "previous location item" })
+keymap.set("n", "]l", "<cmd>lnext<cr>zv", { silent = true, desc = "next location item" })
+
+keymap.set("n", "[L", "<cmd>lfirst<cr>zv", { silent = true, desc = "first location item" })
+keymap.set("n", "]L", "<cmd>llast<cr>zv", { silent = true, desc = "last location item" })
+
+keymap.set("n", "[q", "<cmd>cprevious<cr>zv", { silent = true, desc = "previous qf item" })
+keymap.set("n", "]q", "<cmd>cnext<cr>zv", { silent = true, desc = "next qf item" })
+
+keymap.set("n", "[Q", "<cmd>cfirst<cr>zv", { silent = true, desc = "first qf item" })
+keymap.set("n", "]Q", "<cmd>clast<cr>zv", { silent = true, desc = "last qf item" })

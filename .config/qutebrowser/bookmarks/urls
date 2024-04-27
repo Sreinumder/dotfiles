@@ -32,3 +32,22 @@ https://github.com/kana/vim-textobj-user kana/vim-textobj-user: Vim plugin: Crea
 https://github.com/junegunn/goyo.vim junegunn/goyo.vim: :tulip: Distraction-free writing in Vim
 https://github.com/vyfor/cord.nvim vyfor/cord.nvim: 🚀 Discord Rich Presence plugin for Neovim written in Rust
 https://github.com/rizsotto/Bear rizsotto/Bear: Bear is a tool that generates a compilation database for clang tooling.
+https://github.com/nvim-treesitter/nvim-treesitter-textobjects nvim-treesitter/nvim-treesitter-textobjects
+https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-align.md mini.nvim/readmes/mini-align.md at main · echasnovski/mini.nvim
+https://elianiva.my.id/post/improving-nvim-startup-time Home | Elianiva
+https://github.com/svermeulen/vim-yoink svermeulen/vim-yoink: Vim plugin that maintains a yank history to cycle between when pasting
+https://github.com/svermeulen/vim-easyclip svermeulen/vim-easyclip: Simplified clipboard functionality for Vim
+https://www.reddit.com/r/neovim/comments/sk6nlm/favourite_plugins/ FAVOURITE PLUGINS : r/neovim
+https://julialang.org/ The Julia Programming Language
+https://github.com/rcarriga/vim-ultest rcarriga/vim-ultest: The ultimate testing plugin for (Neo)Vim
+https://github.com/mhartington/formatter.nvim mhartington/formatter.nvim
+https://github.com/mattn/emmet-vim mattn/emmet-vim: emmet for vim: http://emmet.io/
+https://github.com/Rasukarusan/nvim-select-multi-line Rasukarusan/nvim-select-multi-line: Neovim plugin. select multiple lines that are not adjacent.
+https://github.com/kevinhwang91/nvim-bqf kevinhwang91/nvim-bqf: Better quickfix window in Neovim, polish old quickfix window.
+https://github.com/Bekaboo/dropbar.nvim Bekaboo/dropbar.nvim: IDE-like breadcrumbs, out of the box
+https://github.com/ibhagwan/fzf-lua ibhagwan/fzf-lua: Improved fzf.vim written in lua
+https://github.com/echasnovski/mini.operators echasnovski/mini.operators: Text edit operators. Part of 'mini.nvim' library.
+https://github.com/gennaro-tedesco/dotfiles/blob/master/nvim/lua/plugins/dropbar.lua dotfiles/nvim/lua/plugins/dropbar.lua at master · gennaro-tedesco/dotfiles
+https://github.com/Bekaboo/dropbar.nvim?tab=readme-ov-file Bekaboo/dropbar.nvim: IDE-like breadcrumbs, out of the box
+https://github.com/anuvyklack/hydra.nvim anuvyklack/hydra.nvim: Create custom submodes and menus
+https://github.com/doctorfree/nvim-multi doctorfree/nvim-multi: neovim config using lazy with multiple configs selectable in settings or dashboard

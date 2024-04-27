@@ -10,7 +10,7 @@ return {
 		-- OPTIONAL:
 		--   `nvim-notify` is only needed, if you want to use the notification view.
 		--   If not available, we use `mini` as the fallback
-		"rcarriga/nvim-notify",
+		{ "rcarriga/nvim-notify", enabled = false },
 	},
 	config = function()
 		require("noice").setup({
@@ -29,6 +29,10 @@ return {
 				long_message_to_split = true, -- long messages will be sent to a split
 				inc_rename = false, -- enables an input dialog for inc-rename.nvim
 				lsp_doc_border = false, -- add a border to hover docs and signature help
+			},
+			notify = {
+				enabled = false,
+				view = "notify",
 			},
 		})
 	end,
