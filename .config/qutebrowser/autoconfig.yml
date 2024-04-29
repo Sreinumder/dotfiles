@@ -14,6 +14,7 @@ settings:
       normal:
         '"': set-mark
         <Alt+j>: gJ
+        <Alt+o>: :open -w
         <Ctrl+o>: open -b
         cc: click-element
         cm: clear-messages
