@@ -41,6 +41,7 @@ alias dfil='dfi log'
 alias dfip='dfi push'
 alias md='mangadesk'
 alias n='nvim'
+alias XR='sudo xremap ~/.config/xremap/config.yml'
 
 # -----------------------------------------------------
 # ALIASES

@@ -21,12 +21,12 @@ exec-once=~/dotfiles/scripts/wallpaper.sh init &
 sleep 2
 
 #load touchpad gestures
-fusuma &
+# fusuma &
 
 # enables screen sharing
 exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
 # pacman -Q | grep xdg-desktop-portal-
 
-sleep 10
-exec-once=fcitx5 &
+exec-once=alacritty -e "fcitx5; fusuma; sudo xremap ~/.config/xremap/config.yml"
+# exec-once=fcitx5 &
 sleep 2
