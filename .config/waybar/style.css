@@ -52,9 +52,10 @@ window#waybar {
     padding-left: 7px;
     padding-right: 7px;
     border: 0px;
-    color: @textcolor3;
+    color: @textcolor1;
     transition: all 0.3s ease-in-out;
 }
+
 
 #workspaces button.active {
     color: @textcolor2;
@@ -125,21 +126,21 @@ window#waybar.empty #window {
  * Custom Quicklinks
  * ----------------------------------------------------- */
 
- #custom-brave, 
- #custom-browser, 
- #custom-keybindings, 
- #custom-outlook, 
- #custom-filemanager, 
- #custom-teams, 
- #custom-chatgpt, 
- #custom-calculator, 
- #custom-windowsvm, 
- #custom-cliphist, 
- #custom-wallpaper, 
- #custom-settings, 
- #custom-wallpaper, 
+ #custom-brave,
+ #custom-browser,
+ #custom-keybindings,
+ #custom-outlook,
+ #custom-filemanager,
+ #custom-teams,
+ #custom-chatgpt,
+ #custom-calculator,
+ #custom-windowsvm,
+ #custom-cliphist,
+ #custom-wallpaper,
+ #custom-settings,
+ #custom-wallpaper,
  #custom-system,
- 
+
 
 
 #clock {
@@ -240,4 +241,3 @@ label:focus {
 #network.disconnected {
     /* background-color: #f53c3c; */
 }
-

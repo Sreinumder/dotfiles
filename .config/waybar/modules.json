@@ -3,15 +3,40 @@
         "on-click": "activate",
         "active-only": false,
         "all-outputs": true,
-        "format": "{}",
+        //"format": "{icon}",
+        "format": "{name}",
         "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            //"1": "",
+            //"2": "",
+            //"3": "",
+            //"4": "",
+            //"5": "",
+            //"1": "",
+            //"2": "",
+            //"3": "",
+            //"4": "",
+            //"5": "",
+            //"1": "壱",
+            //"2": "貳",
+            //"3": "参",
+            //"4": "肆",
+            //"5": "伍",
+            //"6": "陸",
+            //"7": "柒",
+            //"8": "捌",
+            //"9": "玖",
 			"urgent": "",
 			"active": "",
 			"default": ""
         },
         "persistent-workspaces": {
              "*": 0
-        }       
+        }
     },
 
     "wlr/taskbar": {
@@ -55,7 +80,7 @@
         "format": "  {}",
         "tooltip-format": "{}",
         "escape": true,
-        "return-type": "json",       
+        "return-type": "json",
         "exec": "~/dotfiles/scripts/updates.sh",
         "restart-interval": 60,
         "on-click": "alacritty -e ~/dotfiles/scripts/installupdates.sh",
@@ -97,7 +122,7 @@
         "format": "D {percentage_used} ",
         "path": "/",
         "on-click": "alacritty -e htop"
-    }, 
+    },
 
     "hyprland/language": {
         "format": "/ K {short}"
@@ -110,7 +135,7 @@
             "transition-duration": 300,
             "children-class": "not-memory",
             "transition-left-to-right": false
-        },        
+        },
         "modules": [
             "custom/system",
             "disk",
@@ -119,14 +144,14 @@
             "hyprland/language"
         ]
     },
-    
+
     "group/settings": {
         "orientation": "inherit",
         "drawer": {
             "transition-duration": 300,
             "children-class": "not-memory",
             "transition-left-to-right": false
-        },        
+        },
         "modules": [
             "custom/settings",
             "custom/waybarthemes",

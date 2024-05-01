@@ -8,10 +8,10 @@
      "position": "bottom",
     // "margin-top": 0,
     // "margin-bottom": 14,
-    
+
     "layer": "top",
     "margin-left": 0,
-    "margin-right": 0,    
+    "margin-right": 0,
     "spacing": 0,
 
     // Load Modules
@@ -20,6 +20,7 @@
     // Modules Left
     "modules-left": [
         "hyprland/workspaces"
+
     ],
 
     // Modules Center
@@ -27,13 +28,13 @@
         "hyprland/window",
     ],
 
-    // Modules Right    
+    // Modules Right
     "modules-right": [
         "network",
         "backlight",
         "pulseaudio",
         //"bluetooth",
-        "battery", 
+        "battery",
         //"group/hardware",
         //"custom/exit",
         //"cpu"
