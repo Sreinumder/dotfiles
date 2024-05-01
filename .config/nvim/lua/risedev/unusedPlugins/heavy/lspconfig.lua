@@ -12,6 +12,8 @@ return {
 		-- A completion plugin for neovim coded in Lua.
 		{
 			"hrsh7th/nvim-cmp",
+			lazy = true,
+			event = { "InsertEnter" },
 			dependencies = {
 				"L3MON4D3/LuaSnip",
 				"hrsh7th/cmp-nvim-lsp",

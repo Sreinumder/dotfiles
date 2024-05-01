@@ -5,36 +5,83 @@
 --└────────────────────────────────┘
 return {
 	"monaqa/dial.nvim",
-  -- stylua: ignore
-  keys = {
-    { "<C-a>", function()
-      require("dial.map").manipulate("increment", "normal")
-    end, expr = true, desc = "Increment", mode = {"n"} },
-    { "<C-x>", function()
-      return require("dial.map").manipulate("decrement", "normal")
-    end, expr = true, desc = "Decrement", mode = {"n"} },
-    { "g<C-a>", function()
-      return require("dial.map").manipulate("increment", "gnormal")
-    end, expr = true, desc = "Increment", mode = {"n"} },
-    { "g<C-a>", function()
-      return require("dial.map").manipulate("decrement", "gnormal")
-    end, expr = true, desc = "Decrement", mode = {"n"} },
-    { "<C-a>", function()
-      return require("dial.map").manipulate("increment", "visual")
-    end, expr = true, desc = "Increment", mode = {"v"} },
-    { "<C-x>", function()
-      return require("dial.map").manipulate("decrement", "visual")
-    end, expr = true, desc = "Decrement", mode = {"v"} },
-    { "g<C-a>", function()
-      return require("dial.map").manipulate("increment", "gvisual")
-    end, expr = true, desc = "Increment", mode = {"v"} },
-    { "g<C-a>", function()
-      return require("dial.map").manipulate("decrement", "gvisual")
-    end, expr = true, desc = "Decrement", mode = {"v"} },
-    -- { "<C-x>", function() return M.dial(false) end, expr = true, desc = "Decrement", mode = {"n", "v"} },
-    -- { "g<C-a>", function() return M.dial(true, true) end, expr = true, desc = "Increment", mode = {"n", "v"} },
-    -- { "g<C-x>", function() return M.dial(false, true) end, expr = true, desc = "Decrement", mode = {"n", "v"} },
-  },
+	keys = {
+		{
+			"<C-a>",
+			function()
+				require("dial.map").manipulate("increment", "normal")
+			end,
+			expr = true,
+			desc = "Increment",
+			mode = { "n" },
+		},
+		{
+			"<C-x>",
+			function()
+				return require("dial.map").manipulate("decrement", "normal")
+			end,
+			expr = true,
+			desc = "Decrement",
+			mode = { "n" },
+		},
+		{
+			"g<C-a>",
+			function()
+				return require("dial.map").manipulate("increment", "gnormal")
+			end,
+			expr = true,
+			desc = "Increment",
+			mode = { "n" },
+		},
+		{
+			"g<C-a>",
+			function()
+				return require("dial.map").manipulate("decrement", "gnormal")
+			end,
+			expr = true,
+			desc = "Decrement",
+			mode = { "n" },
+		},
+		{
+			"<C-a>",
+			function()
+				return require("dial.map").manipulate("increment", "visual")
+			end,
+			expr = true,
+			desc = "Increment",
+			mode = { "v" },
+		},
+		{
+			"<C-x>",
+			function()
+				return require("dial.map").manipulate("decrement", "visual")
+			end,
+			expr = true,
+			desc = "Decrement",
+			mode = { "v" },
+		},
+		{
+			"g<C-a>",
+			function()
+				return require("dial.map").manipulate("increment", "gvisual")
+			end,
+			expr = true,
+			desc = "Increment",
+			mode = { "v" },
+		},
+		{
+			"g<C-a>",
+			function()
+				return require("dial.map").manipulate("decrement", "gvisual")
+			end,
+			expr = true,
+			desc = "Decrement",
+			mode = { "v" },
+		},
+		-- { "<C-x>", function() return M.dial(false) end, expr = true, desc = "Decrement", mode = {"n", "v"} },
+		-- { "g<C-a>", function() return M.dial(true, true) end, expr = true, desc = "Increment", mode = {"n", "v"} },
+		-- { "g<C-x>", function() return M.dial(false, true) end, expr = true, desc = "Decrement", mode = {"n", "v"} },
+	},
 	opts = function()
 		local augend = require("dial.augend")
 

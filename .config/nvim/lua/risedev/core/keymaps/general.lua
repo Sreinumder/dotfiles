@@ -12,7 +12,8 @@ keymap.set({ "n", "v" }, "gk", "k", { desc = "prev line" })
 
 keymap.set({ "n", "v", "o" }, "H", "^", { desc = "Start of line" })
 keymap.set({ "n", "v", "o" }, "<A-M>", "gM", { desc = "Middle of Line" })
-keymap.set({ "n", "v", "o" }, "L", "$", { desc = "End of Line" })
+keymap.set({ "n", "v", "o" }, "L", "g_", { desc = "End of Line" }) -- Do not include white space characters when using $ in visual mode, see https://vi.stackexchange.com/q/12607/15292
+keymap.set("x", "$", "g_")
 keymap.set("n", "<A-H>", "H", { desc = "Default H" })
 keymap.set("n", "<A-L>", "L", { desc = "Default K" })
 

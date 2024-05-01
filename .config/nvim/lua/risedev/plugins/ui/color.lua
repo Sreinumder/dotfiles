@@ -7,7 +7,7 @@ return {
 		"sainnhe/everforest",
 		config = function()
 			-- vim.cmd.colorscheme("ice-cave")
-			vim.cmd([[colorscheme everforest]])
+			-- vim.cmd([[colorscheme everforest]])
 			-- vim.cmd([[colorscheme catppuccin]])
 			-- vim.cmd([[colorscheme nord]])
 			-- vim.cmd([[colorscheme tokyonight]])

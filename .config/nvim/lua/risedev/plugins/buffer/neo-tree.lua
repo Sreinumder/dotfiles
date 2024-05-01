@@ -8,7 +8,7 @@ return {
 	},
 	cmd = "Neotree",
 	keys = {
-		{ "<leader>ee", ":Neotree reveal<CR>", { desc = "NeoTree reveal" } },
+		{ "<leader>ee", ":Neotree toggle right<CR>", { desc = "NeoTree reveal" } },
 	},
 	opts = {
 		filesystem = {
@@ -16,7 +16,11 @@ return {
 				mappings = {
 					["<leader>ee"] = "close_window",
 					["h"] = "navigate_up",
+					["l"] = "set_root",
+					-- ["L"] = "open",
 					["P"] = { "toggle_preview", config = { use_float = false, use_image_nvim = true } },
+					["s"] = "split",
+					["<A-l>"] = "focus_preview",
 				},
 			},
 		},

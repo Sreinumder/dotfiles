@@ -7,10 +7,10 @@ keymap.set("i", "<c-u>", "<Esc>viw~ea")
 -- Turn the current word into title case
 keymap.set("i", "<c-t>", "<Esc>b~lea")
 
-keymap.set("i", "<A-h>", "<Left>", { desc = "Insert mode left" })
-keymap.set("i", "<A-j>", "<Down>", { desc = "Insert mode down" })
-keymap.set("i", "<A-k>", "<Up>", { desc = "Insert mode up" })
-keymap.set("i", "<A-l>", "<Right>", { desc = "Insert mode Right" })
+keymap.set({ "i", "c" }, "<A-h>", "<Left>", { desc = "Insert mode left" })
+keymap.set({ "i", "c" }, "<A-j>", "<Down>", { desc = "Insert mode down" })
+keymap.set({ "i", "c" }, "<A-k>", "<Up>", { desc = "Insert mode up" })
+keymap.set({ "i", "c" }, "<A-l>", "<Right>", { desc = "Insert mode Right" })
 
 keymap.set("i", "<A-H>", "<C-Left>", { desc = "Insert mode left" })
 keymap.set("i", "<A-J>", "<C-Down>", { desc = "Insert mode down" })
@@ -21,9 +21,13 @@ keymap.set("i", "<A-n>", "<esc>wwct,", { desc = "change next csv" })
 keymap.set("i", "<A-N>", "<esc>bbcT, ", { desc = "change inside next csv surrounded by ?" })
 
 -- Go to the beginning and end of current line in insert mode quickly
-keymap.set("i", "<C-A>", "<HOME>")
-keymap.set("i", "<C-E>", "<END>")
-
+keymap.set({ "i", "c" }, "<C-A>", "<HOME>")
+keymap.set({ "i", "c" }, "<C-E>", "<END>")
+keymap.set("c", "<A-K>", "\\(.*\\)")
+-- keymap.set("c", "<A-S-\'>", "\"\"<Left>")
+-- keymap.set("c", "<A-\">", "\'\'<Left>")
+-- keymap.set("c", "<A-S-,>", "<><Left>")
+-- keymap.set("c", "<A-S-9>", "()<Left>")
 -- CTRL-O h  move cursor left CTRL-O l  move cursor right
 -- CTRL-O j  move cursor down
 -- CTRL-O k  move cursor up

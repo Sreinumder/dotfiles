@@ -7,10 +7,10 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- now mini.move does it better
 -- clone sentences up and down
-keymap.set("v", "<A-K>", '"by"bpgv', { desc = "clone line Up(v)" })
-keymap.set("v", "<A-J>", '"by"bPgv', { desc = "clone line Down(v)" })
-keymap.set("n", "<A-K>", 'V"by"bpgv', { desc = "clone line Up(n)" })
+keymap.set("n", "<A-K>", 'V"by"bgpgv', { desc = "clone line Up(n)" })
 keymap.set("n", "<A-J>", 'V"by"bPgv', { desc = "clone line Down(n)" })
+keymap.set("v", "<A-K>", '"by"bgpgv', { desc = "clone line Up(v)" })
+keymap.set("v", "<A-J>", '"by"bPgv', { desc = "clone line Down(v)" })
 
 -- Insert a blank line below or above current line (do not move the cursor),
 -- see https://stackoverflow.com/a/16136133/6064933
@@ -23,9 +23,7 @@ keymap.set("n", "<space>O", "printf('m`%sO<ESC>``', v:count1)", {
 	desc = "insert line above",
 })
 
--- Do not include white space characters when using $ in visual mode,
--- see https://vi.stackexchange.com/q/12607/15292
-keymap.set("x", "$", "g_")
+keymap.set("n", "<leader>j", "*``cgn", { desc = "replace word" })
 
 -- -- Save your finger
 -- keymap.set({ "n", "x" }, ";", ":")

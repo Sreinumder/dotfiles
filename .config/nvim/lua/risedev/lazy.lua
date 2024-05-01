@@ -16,6 +16,7 @@ require("lazy").setup({
 	{ import = "risedev.plugins.essential" },
 	{ import = "risedev.plugins.tools" },
 	{ import = "risedev.plugins.buffer" },
+	{ import = "risedev.plugins.note" },
 	{ import = "risedev.plugins.treesitter" },
 	{ import = "risedev.plugins.lsp" },
 }, {
