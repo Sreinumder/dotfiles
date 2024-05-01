@@ -2,6 +2,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 local keymap = vim.keymap -- for conciseness
 
+keymap.set("n", "<leader>L", ":Lazy<CR>", { desc = "next text wrapped line" })
+
 keymap.set({ "n", "v" }, "j", "gj", { desc = "next text wrapped line" })
 keymap.set({ "n", "v" }, "k", "gk", { desc = "prev text wrapped line" })
 

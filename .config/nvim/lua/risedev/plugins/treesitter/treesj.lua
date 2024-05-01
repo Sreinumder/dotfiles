@@ -1,8 +1,6 @@
 return {
-    'Wansmer/treesj',
-    keys = { '<space>m' },
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    config = function()
-        require('treesj').setup({--[[ your config ]]})
-    end,
+	"Wansmer/treesj",
+	opts = {},
+	keys = { { "<space>m", ":lua require('treesj').toggle()", { desc = "split-join" } } },
+	dependencies = { "nvim-treesitter/nvim-treesitter" },
 }

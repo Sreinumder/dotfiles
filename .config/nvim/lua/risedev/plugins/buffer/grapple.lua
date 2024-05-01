@@ -3,7 +3,7 @@ return {
 	opts = {
 		scope = "git", -- also try out "git_branch"
 	},
-	event = { "BufReadPost", "BufNewFile" },
+	-- event = { "BufReadPost", "BufNewFile" },
 	cmd = "Grapple",
 	keys = {
 		{ "<leader>gg", "<cmd>Grapple toggle<cr>", desc = "Grapple toggle tag" },

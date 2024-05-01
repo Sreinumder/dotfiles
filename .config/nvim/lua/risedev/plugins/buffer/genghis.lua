@@ -2,22 +2,73 @@
 -- │  handle files easily            │
 -- │  <space>g                       │
 -- └─────────────────────────────────┘
-
 return {
 	"chrisgrieser/nvim-genghis",
+	version = "*",
 	dependencies = "stevearc/dressing.nvim",
-	config = function()
-		local keymap = vim.keymap.set
-		local genghis = require("genghis")
-		keymap("n", "<leader>eyp", genghis.copyFilepath)
-		keymap("n", "<leader>eyn", genghis.copyFilename)
-		keymap("n", "<leader>ecx", genghis.chmodx)
-		keymap("n", "<leader>er", genghis.renameFile)
-		keymap("n", "<leader>emm", genghis.moveAndRenameFile)
-		keymap("n", "<leader>emc", genghis.moveToFolderInCwd)
-		keymap("n", "<leader>en", genghis.createNewFile)
-		keymap("n", "<leader>eyy", genghis.duplicateFile)
-		keymap("n", "<leader>edf", genghis.trashFile)
-		keymap("x", "<leader>en", genghis.moveSelectionToNewFile)
-	end,
+	keys = {
+		{
+			"<leader>eyp",
+			function()
+				require("genghis").copyFilepath()
+			end,
+			{ desc = "yank filepath" },
+		},
+		{
+			"<leader>eyn",
+			function()
+				require("genghis").copyFilename()
+			end,
+			{ desc = "yank filename" },
+		},
+		{
+			"<leader>ecx",
+			function()
+				require("genghis").chmodx()
+			end,
+			{ desc = "chmodx" },
+		},
+		{
+			"<leader>er",
+			function()
+				require("genghis").renameFile()
+			end,
+			{ desc = "renameFile" },
+		},
+		{
+			"<leader>emm",
+			function()
+				require("genghis").moveAndRenameFile()
+			end,
+			{ desc = "moveAndRenameFile" },
+		},
+		{
+			"<leader>emc",
+			function()
+				require("genghis").moveToFolderInCwd()
+			end,
+			{ desc = "moveToFolderInCwd" },
+		},
+		{
+			"<leader>en",
+			function()
+				require("genghis").createNewFile()
+			end,
+			{ desc = "createNewFile" },
+		},
+		{
+			"<leader>eyy",
+			function()
+				require("genghis").duplicateFile()
+			end,
+			{ desc = "duplicateFile" },
+		},
+		{
+			"<leader>edf",
+			function()
+				require("genghis").trashFile()
+			end,
+			{ desc = "trashFile" },
+		},
+	},
 }

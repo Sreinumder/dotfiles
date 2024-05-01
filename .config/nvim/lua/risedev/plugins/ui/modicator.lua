@@ -3,13 +3,22 @@
 -- └────────────────────────────────────────────┘
 return {
 	"mawkler/modicator.nvim",
-	dependencies = "mawkler/onedark.nvim", -- Add your colorscheme plugin here
-	init = function()
-		vim.o.cursorline = true
-		vim.o.number = true
-		vim.o.termguicolors = true
-	end,
+	event = "ModeChanged",
 	opts = {
-		-- show_warnings = true,
+		show_warnings = true,
+		highlights = {
+			-- Default options for bold/italic
+			defaults = {
+				bold = false,
+				italic = false,
+			},
+		},
+		integration = {
+			lualine = {
+				enabled = true,
+				mode_section = nil,
+				highlight = "bg",
+			},
+		},
 	},
 }

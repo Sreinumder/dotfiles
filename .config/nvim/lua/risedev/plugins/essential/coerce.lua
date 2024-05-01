@@ -3,7 +3,10 @@
 --│key bind prefix: cr in visual mode       │
 --└─────────────────────────────────────────┘
 return {
-  "gregorias/coerce.nvim",
-  tag = 'v0.3',
-  config = true,
+	"gregorias/coerce.nvim",
+	tag = "v0.3",
+	keys = {
+		{ "cr", mode = { "v", "n" } },
+	},
+	config = true,
 }

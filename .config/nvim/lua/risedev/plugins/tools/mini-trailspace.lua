@@ -5,11 +5,22 @@
 -- │ >                                            <│
 -- └───────────────────────────────────────────────┘
 return {
-  'echasnovski/mini.trailspace',
-  version = '*',
-  config = function()
-    require('mini.trailspace').setup()
-    vim.keymap.set('n', "<Leader>dtf", function() require('mini.trailspace').trim_last_lines() end, {desc = "trim empty lines at eof"})
-    vim.keymap.set('n', "<Leader>dte", function() require('mini.trailspace').trim() end, {desc = "trim empty spaces at eol"})
-  end,
+	"echasnovski/mini.trailspace",
+	version = "*",
+	keys = {
+		{
+			"<Leader>dtf",
+			function()
+				require("mini.trailspace").trim_last_lines()
+			end,
+			{ desc = "trim empty lines at eof" },
+		},
+		{
+			"<Leader>dte",
+			function()
+				require("mini.trailspace").trim()
+			end,
+			{ desc = "trim empty spaces at eol" },
+		},
+	},
 }

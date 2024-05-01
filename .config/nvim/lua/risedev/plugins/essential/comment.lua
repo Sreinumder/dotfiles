@@ -6,11 +6,9 @@
 --└───────────────────┘
 
 return {
-    'numToStr/Comment.nvim',
-    event = {"BufReadPre", "BufNewFile"},
-    opts = {
-        -- add any options here
-    },
-    config = true,
-    lazy = false,
+	"numToStr/Comment.nvim",
+	event = { "BufReadPre", "BufNewFile" },
+	opts = {},
+	config = true,
+	lazy = true,
 }
