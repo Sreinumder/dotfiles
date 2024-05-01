@@ -11,6 +11,9 @@ config.bind(
     "xx",
     "config-cycle tabs.show always never;; config-cycle statusbar.show always never",
 )
+config.bind("Alt+o", "cmd-set-text -s :open -b")
+config.bind("Alt+O", "cmd-set-text -s :open -w")
+
 
 c.url.searchengines = {
     "DEFAULT": "https://duckduckgo.com/?q={}&ia=web",
@@ -30,5 +33,5 @@ c.url.searchengines = {
     "!mal": "https://myanimelist.net/search/all?q={}&cat=all",
     "!w": "https://en.wikipedia.org/wiki/{}",
     "!yt": "https://www.youtube.com/results?search_query={}",
-    "!jisho": "https://jisho.org/search/{}",
+    "!ji": "https://jisho.org/search/{}",
 }

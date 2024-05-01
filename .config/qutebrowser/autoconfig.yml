@@ -16,6 +16,7 @@ settings:
         <Alt+j>: gJ
         <Alt+o>: :open -w
         <Ctrl+o>: open -b
+        Alt+O: cmd-set-text -s :open -w
         cc: click-element
         cm: clear-messages
         gS: spawn --userscript yomichad --prefix-search
