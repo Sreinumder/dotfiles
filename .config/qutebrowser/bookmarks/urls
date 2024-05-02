@@ -68,3 +68,13 @@ https://github.com/simrat39/symbols-outline.nvim simrat39/symbols-outline.nvim: 
 https://github.com/hedyhli/outline.nvim hedyhli/outline.nvim: Code outline sidebar powered by LSP. Significantly enhanced & refactored fork of symbols-outline.nvim.
 https://github.com/folke/neoconf.nvim folke/neoconf.nvim: 💼 Neovim plugin to manage global and project-local settings
 https://github.com/LazyVim/LazyVim/discussions/categories/general LazyVim/LazyVim General · Discussions · GitHub
+https://github.com/fynnfluegge/monet.nvim fynnfluegge/monet.nvim: Neovim theme inspired by Claude Monet's iconic water lilies
+https://github.com/folke/lazy.nvim/discussions/1167#discussioncomment-8287614 How to handle many colorscheme and lazy loading at the same time? · folke/lazy.nvim · Discussion #1167
+https://vonheikemen.github.io/devlog/ Devlog
+https://vonheikemen.github.io/devlog/tools/how-to-survive-without-multiple-cursors-in-vim/ How to survive without multiple cursors in vim | Devlog
+https://www.howtogeek.com/181/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/ The Best Keyboard Shortcuts for Bash (aka the Linux and macOS Terminal)
+https://github.com/LintaoAmons/cd-project.nvim LintaoAmons/cd-project.nvim: I tried quite a lot `Project Management` plugins. In the end, I found all I need is just an easier way to `cd` to another project directory.
+https://github.com/Wansmer/sibling-swap.nvim Wansmer/sibling-swap.nvim: Neovim plugin for swaps closest siblings with Tree-Sitter
+https://github.com/gabrielpoca/replacer.nvim gabrielpoca/replacer.nvim: A powerful refactoring tool for nvim.
+https://nanotipsforvim.prose.sh/lesser-known-nvim-plugins Lesser known nvim plugins
+https://github.com/Exafunction/codeium.nvim Exafunction/codeium.nvim: A native neovim extension for Codeium
