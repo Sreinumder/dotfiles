@@ -6,17 +6,20 @@ return {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-tree/nvim-web-devicons",
 		"fdschmidt93/telescope-egrepify.nvim",
+		{ "2kabhishek/nerdy.nvim", cmd = "Nerdy" },
 	},
 	keys = {
-		{ "<leader><leader>b", "<cmd>Telescope buffers<cr>", { desc = "Fuzzy find files in cwd" } },
-		{ "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" } },
-		{ "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" } },
-		{ "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" } },
-		{ "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" } },
-		{ "<leader>fe", "<cmd>Telescope egrepify<cr>", { desc = "Find string under cursor in cwd" } },
-		{ "<leader>fr", "<cmd>Telescope resume<cr>", { desc = "Find string under cursor in cwd" } },
-		{ "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Find string under cursor in cwd" } },
-		{ "<leader>fu", "<cmd>Telescope colorscheme<cr>", { desc = "Find string under cursor in cwd" } },
+		{"<leader>fs", "<cmd>Telescope buffers<cr>",       { desc = " buffers" } },
+		{"<leader>ff", "<cmd>Telescope find_files<cr>",    { desc = " files in cwd" } },
+    {"<leader>fj", "<cmd>Telescope oldfiles<cr>",      { desc = " old files" } },
+		{"<leader>fe", "<cmd>Telescope egrepify<cr>",      { desc = " egrepify" } },
+		{"<leader>fk", "<cmd>Telescope keymaps<cr>",       { desc = " keymaps" } },
+		{"<leader>fc", "<cmd>Telescope colorscheme<cr>",   { desc = " colorscheme" } },
+		{"<leader>fu", "<cmd>Telescope nerdy<cr>",         { desc = " dev-icon" } },
+    {"<leader>f<leader>", "<cmd>Telescope resume<cr>", { desc = " resume" } },
+    {"<leader>fh", "<cmd>Telescope help_tags<cr>",     { desc = " help tags"}}
+    -- { "<leader>fl", "<cmd>Telescope live_grep<cr>  ", { desc = " live-grep  " } },
+    -- { "<leader>ft", "<cmd>Telescope grep_string<cr>", { desc = " grep_string" } },
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -26,9 +29,9 @@ return {
 				path_display = { "truncate " },
 				mappings = {
 					i = {
-						["<C-k>"] = require("telescope.actions").move_selection_previous, -- move to prev result
-						["<C-j>"] = require("telescope.actions").move_selection_next, -- move to next result
-						["<C-q>"] = require("telescope.actions").send_selected_to_qflist + actions.open_qflist,
+						["<A-k>"] = require("telescope.actions").move_selection_previous, -- move to prev result
+						["<A-j>"] = require("telescope.actions").move_selection_next, -- move to next result
+						["<A-l>"] = require("telescope.actions").send_selected_to_qflist + actions.open_qflist,
 					},
 				},
 			},
@@ -40,6 +43,7 @@ return {
 		})
 		telescope.load_extension("fzf")
 		telescope.load_extension("egrepify")
+		telescope.load_extension("nerdy")
 
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness

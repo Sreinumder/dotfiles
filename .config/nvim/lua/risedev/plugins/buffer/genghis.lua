@@ -70,5 +70,13 @@ return {
 			end,
 			{ desc = "trashFile" },
 		},
+    {
+      "<leader><leader>d",
+      mode = {"x"},
+      function()
+        require("genghis").moveSelectionToNewFile()
+      end,
+      {desc = " move selection to new file"},
+    },
 	},
 }

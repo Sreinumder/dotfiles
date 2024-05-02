@@ -2,7 +2,7 @@ return {
 	"toppair/reach.nvim",
 	keys = {
 		{
-			"<leader>rbr",
+			"<leader>fr",
 			function()
 				require("reach").buffers(buffer_options)
 			end,
@@ -13,3 +13,4 @@ return {
 		require("reach").setup()
 	end,
 }
+
