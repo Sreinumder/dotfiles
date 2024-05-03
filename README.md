@@ -18,16 +18,13 @@
 [6. rofi](https://github.com/davatorium/rofi)
 ![rofi!](dotfiles/rice-screenshots/rofi.png)
 
-[7. quteBrowser](https://qutebrowser.org/)
-![qute-browser!](dotfiles/rice-screenshots/qute-browser.png)
-
-[8. btop](https://github.com/aristocratos/btop)
+[7. btop](https://github.com/aristocratos/btop)
 ![!btop](dotfiles/rice-screenshots/btop.png)
 
-[9. Zathura](https://github.com/pwmt/zathura)
+[8. Zathura](https://github.com/pwmt/zathura)
 ![!Zathura](dotfiles/rice-screenshots/zathura.png)
 
-[10. nsxiv](https://github.com/nsxiv/nsxiv)
+[9. nsxiv](https://github.com/nsxiv/nsxiv)
 ![!nsxiv](dotfiles/rice-screenshots/nsxiv.png)
 
 
