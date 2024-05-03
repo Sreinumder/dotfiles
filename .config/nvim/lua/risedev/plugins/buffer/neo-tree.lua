@@ -15,6 +15,7 @@ return {
 			},
 		},
 	},
+  event = "BufEnter",
 	cmd = "Neotree",
 	keys = {
 		{ "<leader>ee", ":Neotree toggle right<CR>", { desc = "NeoTree toggle" } },
@@ -23,6 +24,8 @@ return {
 	},
 	opts = {
 		filesystem = {
+      -- hijack_netrw_behavior = "open_default",
+      hijack_netrw_behavior = "open_current",
 			window = {
 				position = "right",
 				width = 30,

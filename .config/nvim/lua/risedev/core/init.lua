@@ -1,3 +1,5 @@
+vim.g.mapleader = " "
+-- vim.g.maplocalleader = "\"
 require("risedev.core.options.options")
 require("risedev.core.options.indentation")
 

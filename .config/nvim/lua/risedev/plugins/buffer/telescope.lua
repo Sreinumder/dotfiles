@@ -6,18 +6,26 @@ return {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-tree/nvim-web-devicons",
 		"fdschmidt93/telescope-egrepify.nvim",
-		{ "2kabhishek/nerdy.nvim", cmd = "Nerdy" },
+		{ "2kabhishek/nerdy.nvim"},
+    "folke/todo-comments.nvim",
+    -- { "princejoogie/dir-telescope.nvim"},
 	},
 	keys = {
-		{"<leader>fs", "<cmd>Telescope buffers<cr>",       { desc = " buffers" } },
-		{"<leader>ff", "<cmd>Telescope find_files<cr>",    { desc = " files in cwd" } },
-    {"<leader>fj", "<cmd>Telescope oldfiles<cr>",      { desc = " old files" } },
-		{"<leader>fe", "<cmd>Telescope egrepify<cr>",      { desc = " egrepify" } },
-		{"<leader>fk", "<cmd>Telescope keymaps<cr>",       { desc = " keymaps" } },
-		{"<leader>fc", "<cmd>Telescope colorscheme<cr>",   { desc = " colorscheme" } },
-		{"<leader>fu", "<cmd>Telescope nerdy<cr>",         { desc = " dev-icon" } },
-    {"<leader>f<leader>", "<cmd>Telescope resume<cr>", { desc = " resume" } },
-    {"<leader>fh", "<cmd>Telescope help_tags<cr>",     { desc = " help tags"}}
+		{"<leader>ss", "<cmd>Telescope buffers<cr>",       { desc = " buffers" } },
+		{"<leader>sj", "<cmd>Telescope find_files<cr>",    { desc = " files in cwd" } },
+    {"<leader>sf", "<cmd>Telescope oldfiles<cr>",      { desc = " old files" } },
+		{"<leader>sa", "<cmd>Telescope find_files search_dirs=~<cr>",{desc = " files in ~" } },
+		{"<leader>sn", "<cmd>Telescope find_files search_dirs=~/notes<cr>",{desc = " files in notes" } },
+		{"<leader>se", "<cmd>Telescope egrepify<cr>",      { desc = " egrepify" } },
+		{"<leader>sk", "<cmd>Telescope keymaps<cr>",       { desc = " keymaps" } },
+		{"<leader>sc", "<cmd>Telescope colorscheme<cr>",   { desc = " colorscheme" } },
+		{"<leader>su", "<cmd>Telescope nerdy<cr>",         { desc = " dev-icon" } },
+    {"<leader>sr", "<cmd>Telescope resume<cr>", { desc = " resume" } },
+    {"<leader>sh", "<cmd>Telescope help_tags<cr>",     { desc = " help tags"}},
+    { "<leader>st", ":TodoTelescope<CR>", {desc = " TODO"}, },
+    { "<leader>sqt", ":TodoQuickFix<CR>", {desc = "quickfix TODO"}, },
+    -- {"<leader><leader>jd", "<cmd>Telescope dir live_grep<CR>", { desc = " dir live_grep"}},
+    -- {"<leader><leader>jh", "<cmd>Telescope dir find_files<CR>", { desc = " dir files"}},
     -- { "<leader>fl", "<cmd>Telescope live_grep<cr>  ", { desc = " live-grep  " } },
     -- { "<leader>ft", "<cmd>Telescope grep_string<cr>", { desc = " grep_string" } },
 	},
@@ -35,7 +43,7 @@ return {
 					},
 				},
 			},
-			pickers = {
+			picks = {
 				colorscheme = {
 					enable_preview = true,
 				},
@@ -44,6 +52,8 @@ return {
 		telescope.load_extension("fzf")
 		telescope.load_extension("egrepify")
 		telescope.load_extension("nerdy")
+		-- telescope.load_extension("dir")
+		-- telescope.load_extension("smart_open")
 
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness

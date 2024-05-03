@@ -8,13 +8,18 @@ return {
   keys = { "<C-a>", "<C-x>", "g<C-a>", "g<C-x>", mode = {"n", "x"}},
   config = function()
     local augend = require("dial.augend")
-    local rose_rise = augend.constant.new({ elements = { "Rose", "Rise", "rise", "rose"}, word = true, cyclic = true })
+    local direction_word = augend.constant.new({ elements = { "up", "down", "left", "right"}, word = false, cyclic = true })
+    -- local direction_word = augend.constant.new({ elements = { "{U,u}p", "{D,d}own", "{L,l}eft", "{R,r}ight"}, word = true, cyclic = true })
     local logical_alias = augend.constant.new({ elements = { "&&", "||" }, word = false, cyclic = true })
     local logical_word_alias = augend.constant.new({ elements = { "and", "or" }, word = true, cyclic = true })
     local capitalized_boolean = augend.constant.new({ elements = { "True", "False" }, word = true, cyclic = true })
-    local ordinal_numbers = augend.constant.new({ elements = {"first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth"},word = false, cyclic = true, })
     local weekdays = augend.constant.new({ elements = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }, word = true, cyclic = true, })
     local months = augend.constant.new({ elements = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", }, word = true, cyclic = true, })
+    -- local ordinal_numbers_a = augend.constant.new({ elements = { "first", "second", "third", "fourth"}, word = false, cyclic = false,})
+    -- local numbers_word_a = augend.constant.new({ elements = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"},word = false, cyclic = false, })
+    -- local ordinal_numbers_b = augend.constant.new({ elements = { "tenth", "eleventh", "twelveth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth", "nineteenth", "twentieth", "twentyfirst", },word = true, cyclic = false, })
+    -- local numbers_word_b = augend.constant.new({ elements = { "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty" },word = true, cyclic = true, })
+    -- local numbers_word_c = augend.constant.new({ elements = { "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety", "hundred" },word = false, cyclic = true, })
     local dial_config = require "dial.config"
     local augend_base = {
       augend.integer.alias.decimal, -- nonnegative decimal number (0, 1, 2, 3, ...)
@@ -23,8 +28,7 @@ return {
       augend.constant.alias.bool, -- boolean value (true <-> false)
       logical_word_alias, -- and<->or
       logical_alias, -- &&<->||
-      rose_rise, -- Rise <-> Rose
-      ordinal_numbers,
+      direction_word,
       weekdays, months,
       augend.semver.alias.semver, -- versioning (v6.8.3)
     }

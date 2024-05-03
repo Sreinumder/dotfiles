@@ -4,14 +4,13 @@
 -- NOTE: fjei
 -- PERF: fjei
 -- TEST: fjei
+-- SUCHANA: sucahna
 return {
   "folke/todo-comments.nvim",
   dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
   keys = {
     {"]t", function() require("todo-comments").jump_next() end, { desc = "Next todo comment" }},
     {"[t", function() require("todo-comments").jump_prev() end, { desc = "Previous todo comment" } },
-    { "<leader>ft", ":TodoTelescope<CR>", {desc = " TODO"}, },
-    { "<leader>qt", ":TodoQuickFix<CR>", {desc = "quickfix TODO"}, },
   },
   opts = {
     signs = true, -- show icons in the signs column
@@ -27,7 +26,7 @@ return {
       HACK = { icon = " ", color = "warning" },
       WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
       PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
-      NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+      NOTE = { icon = " ", color = "hint", alt = { "INFO", "SUCHANA" } },
       TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
     },
     gui_style = {

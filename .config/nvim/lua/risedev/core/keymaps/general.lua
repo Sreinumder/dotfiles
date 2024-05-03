@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = ","
 local keymap = vim.keymap -- for conciseness
 
 keymap.set("n", "<leader>L", ":Lazy<CR>", { desc = "next text wrapped line" })
@@ -21,10 +19,10 @@ keymap.set("n", "<A-L>", "L", { desc = "Default K" })
 -- keymap.set({ "n", "v", "o" }, "K", "H", { desc = "Highest line of screen" })
 -- keymap.set({ "n", "v", "o" }, "J", "L", { desc = "Lowest line of screen" })
 
-vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up" })
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
-vim.keymap.set("n", "<C-o>", "<C-o>zz", { desc = "center on <c-o>" })
-vim.keymap.set("n", "<C-i>", "<C-i>zz", { desc = "center on <c-i>" })
+keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up" })
+keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
+-- keymap.set("n", "<C-o>", "<C-o>zz", { desc = "center on <c-o>" })
+-- keymap.set("n", "<C-i>", "<C-i>zz", { desc = "center on <c-i>" })
 
 -- keymap.set({'n','v'}, "<CR>", "A<CR><ESC>", {desc = ""})
 -- keymap.set({'n','v'}, "<S-CR>", "I<CR><ESC>", {desc = ""})
