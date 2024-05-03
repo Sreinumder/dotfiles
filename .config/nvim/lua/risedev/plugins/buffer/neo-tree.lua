@@ -5,21 +5,21 @@ return {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 		"MunifTanjim/nui.nvim",
-    {
-      "s1n7ax/nvim-window-picker",
-      name = 'window-picker',
-      event = 'VeryLazy',
-      version = '2.*',
-      opts = {
-        -- hint = 'statusline-winbar',
-        hint = 'floating-big-letter',
-      }
-    }
+		{
+			"s1n7ax/nvim-window-picker",
+			name = "window-picker",
+			version = "2.*",
+			opts = {
+				-- hint = 'statusline-winbar',
+				hint = "floating-big-letter",
+			},
+		},
 	},
 	cmd = "Neotree",
 	keys = {
-		{ "<leader>ee", ":Neotree toggle<CR>", { desc = "NeoTree toggle" } },
-		-- { "<leader>eb", ":Neotree Buffer toggle right<CR>", { desc = "NeoTree reveal" } },
+		{ "<leader>ee", ":Neotree toggle right<CR>", { desc = "NeoTree toggle" } },
+		{ "<leader>eb", ":Neotree Buffer toggle right<CR>", { desc = "NeoTree buffer" } },
+		{ "<leader>eg", ":Neotree git toggle right<CR>", { desc = "NeoTree git" } },
 	},
 	opts = {
 		filesystem = {
@@ -43,7 +43,7 @@ return {
 					["<esc>"] = "cancel", -- close preview or floating neo-tree window
 					["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
 					["S"] = "open_split",
-          ["<A-s>"] = "split_with_window_picker",
+					["<A-s>"] = "split_with_window_picker",
 					["v"] = "open_vsplit",
 					["<A-v>"] = "vsplit_with_window_picker",
 					-- ["t"] = "open_tabnew",

@@ -23,6 +23,8 @@ keymap.set("n", "<A-L>", "L", { desc = "Default K" })
 
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
+vim.keymap.set("n", "<C-o>", "<C-o>zz", { desc = "center on <c-o>" })
+vim.keymap.set("n", "<C-i>", "<C-i>zz", { desc = "center on <c-i>" })
 
 -- keymap.set({'n','v'}, "<CR>", "A<CR><ESC>", {desc = ""})
 -- keymap.set({'n','v'}, "<S-CR>", "I<CR><ESC>", {desc = ""})
@@ -39,19 +41,11 @@ keymap.set("x", ">", ">gv")
 -- 	desc = "reload init.lua",
 -- })
 
--- Change current working directory locally and print cwd after that,
--- see https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
-keymap.set("n", "<leader>cd", "<cmd>lcd %:p:h<cr><cmd>pwd<cr>", { desc = "change cwd" })
-
 -- Always use very magic mode for searching
-keymap.set("n", "/", [[/\v]])
+-- keymap.set("n", "/", [[/\v]])
 
 -- Use Esc to quit builtin terminal
 keymap.set("t", "<Esc>", [[<c-\><c-n>]])
 
--- Toggle spell checking
--- keymap.set("n", "<F11>", "<cmd>set spell!<cr>", { desc = "toggle spell" })
--- keymap.set("i", "<F11>", "<c-o><cmd>set spell!<cr>", { desc = "toggle spell" })
-
 -- check the syntax group of current cursor position
-keymap.set("n", "<leader>st", "<cmd>call utils#SynGroup()<cr>", { desc = "check syntax group" })
+-- keymap.set("n", "<leader>st", "<cmd>call utils#SynGroup()<cr>", { desc = "check syntax group" })

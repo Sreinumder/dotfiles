@@ -4,230 +4,73 @@
 --│月-> 水 2024/02/29 -> 2024/03/01│
 --└────────────────────────────────┘
 return {
-	"monaqa/dial.nvim",
-	keys = {
-		{
-			"<C-a>",
-			function()
-				require("dial.map").manipulate("increment", "normal")
-			end,
-			expr = true,
-			desc = "Increment",
-			mode = { "n" },
-		},
-		{
-			"<C-x>",
-			function()
-				return require("dial.map").manipulate("decrement", "normal")
-			end,
-			expr = true,
-			desc = "Decrement",
-			mode = { "n" },
-		},
-		{
-			"g<C-a>",
-			function()
-				return require("dial.map").manipulate("increment", "gnormal")
-			end,
-			expr = true,
-			desc = "Increment",
-			mode = { "n" },
-		},
-		{
-			"g<C-a>",
-			function()
-				return require("dial.map").manipulate("decrement", "gnormal")
-			end,
-			expr = true,
-			desc = "Decrement",
-			mode = { "n" },
-		},
-		{
-			"<C-a>",
-			function()
-				return require("dial.map").manipulate("increment", "visual")
-			end,
-			expr = true,
-			desc = "Increment",
-			mode = { "v" },
-		},
-		{
-			"<C-x>",
-			function()
-				return require("dial.map").manipulate("decrement", "visual")
-			end,
-			expr = true,
-			desc = "Decrement",
-			mode = { "v" },
-		},
-		{
-			"g<C-a>",
-			function()
-				return require("dial.map").manipulate("increment", "gvisual")
-			end,
-			expr = true,
-			desc = "Increment",
-			mode = { "v" },
-		},
-		{
-			"g<C-a>",
-			function()
-				return require("dial.map").manipulate("decrement", "gvisual")
-			end,
-			expr = true,
-			desc = "Decrement",
-			mode = { "v" },
-		},
-		-- { "<C-x>", function() return M.dial(false) end, expr = true, desc = "Decrement", mode = {"n", "v"} },
-		-- { "g<C-a>", function() return M.dial(true, true) end, expr = true, desc = "Increment", mode = {"n", "v"} },
-		-- { "g<C-x>", function() return M.dial(false, true) end, expr = true, desc = "Decrement", mode = {"n", "v"} },
-	},
-	opts = function()
-		local augend = require("dial.augend")
+  "monaqa/dial.nvim",
+  keys = { "<C-a>", "<C-x>", "g<C-a>", "g<C-x>", mode = {"n", "x"}},
+  config = function()
+    local augend = require("dial.augend")
+    local rose_rise = augend.constant.new({ elements = { "Rose", "Rise", "rise", "rose"}, word = true, cyclic = true })
+    local logical_alias = augend.constant.new({ elements = { "&&", "||" }, word = false, cyclic = true })
+    local logical_word_alias = augend.constant.new({ elements = { "and", "or" }, word = true, cyclic = true })
+    local capitalized_boolean = augend.constant.new({ elements = { "True", "False" }, word = true, cyclic = true })
+    local ordinal_numbers = augend.constant.new({ elements = {"first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth"},word = false, cyclic = true, })
+    local weekdays = augend.constant.new({ elements = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }, word = true, cyclic = true, })
+    local months = augend.constant.new({ elements = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", }, word = true, cyclic = true, })
+    local dial_config = require "dial.config"
+    local augend_base = {
+      augend.integer.alias.decimal, -- nonnegative decimal number (0, 1, 2, 3, ...)
+      augend.integer.alias.hex, -- nonnegative hex number  (0x01, 0x1a1f, etc.)
+      augend.date.alias["%Y/%m/%d"], -- date (2024/04/23, etc.)
+      augend.constant.alias.bool, -- boolean value (true <-> false)
+      logical_word_alias, -- and<->or
+      logical_alias, -- &&<->||
+      rose_rise, -- Rise <-> Rose
+      ordinal_numbers,
+      weekdays, months,
+      augend.semver.alias.semver, -- versioning (v6.8.3)
+    }
+    local function concat_tables(table1, table2)
+      if table2 == nil then
+        return table1
+      end
+      local result = table1 or {}
+      for _, value in ipairs(table2) do
+        result = concat_tables(result, value)
+      end
+      return result
+    end
 
-		local logical_alias = augend.constant.new({
-			elements = { "&&", "||" },
-			word = false,
-			cyclic = true,
-		})
-
-		local ordinal_numbers = augend.constant.new({
-			-- elements through which we cycle. When we increment, we go down
-			-- On decrement we go up
-			elements = {
-				"first",
-				"second",
-				"third",
-				"fourth",
-				"fifth",
-				"sixth",
-				"seventh",
-				"eighth",
-				"ninth",
-				"tenth",
-			},
-			-- if true, it only matches strings with word boundary. firstDate wouldn't work for example
-			word = false,
-			-- do we cycle back and forth (tenth to first on increment, first to tenth on decrement).
-			-- Otherwise nothing will happen when there are no further values
-			cyclic = true,
-		})
-
-		local weekdays = augend.constant.new({
-			elements = {
-				"Monday",
-				"Tuesday",
-				"Wednesday",
-				"Thursday",
-				"Friday",
-				"Saturday",
-				"Sunday",
-			},
-			word = true,
-			cyclic = true,
-		})
-
-		local months = augend.constant.new({
-			elements = {
-				"January",
-				"February",
-				"March",
-				"April",
-				"May",
-				"June",
-				"July",
-				"August",
-				"September",
-				"October",
-				"November",
-				"December",
-			},
-			word = true,
-			cyclic = true,
-		})
-
-		local capitalized_boolean = augend.constant.new({
-			elements = {
-				"True",
-				"False",
-			},
-			word = true,
-			cyclic = true,
-		})
-
-		return {
-			dials_by_ft = {
-				css = "css",
-				javascript = "typescript",
-				javascriptreact = "typescript",
-				json = "json",
-				lua = "lua",
-				markdown = "markdown",
-				python = "python",
-				sass = "css",
-				scss = "css",
-				typescript = "typescript",
-				typescriptreact = "typescript",
-			},
-			groups = {
-				default = {
-					augend.integer.alias.decimal, -- nonnegative decimal number (0, 1, 2, 3, ...)
-					augend.integer.alias.hex, -- nonnegative hex number  (0x01, 0x1a1f, etc.)
-					augend.date.alias["%Y/%m/%d"], -- date (2022/02/19, etc.)
-				},
-				typescript = {
-					augend.integer.alias.decimal, -- nonnegative and negative decimal number
-					augend.constant.alias.bool, -- boolean value (true <-> false)
-					logical_alias,
-					augend.constant.new({ elements = { "let", "const" } }),
-					ordinal_numbers,
-					weekdays,
-					months,
-				},
-				css = {
-					augend.integer.alias.decimal, -- nonnegative and negative decimal number
-					augend.hexcolor.new({
-						case = "lower",
-					}),
-					augend.hexcolor.new({
-						case = "upper",
-					}),
-				},
-				markdown = {
-					augend.misc.alias.markdown_header,
-					ordinal_numbers,
-					weekdays,
-					months,
-				},
-				json = {
-					augend.integer.alias.decimal, -- nonnegative and negative decimal number
-					augend.semver.alias.semver, -- versioning (v1.1.2)
-				},
-				lua = {
-					augend.integer.alias.decimal, -- nonnegative and negative decimal number
-					augend.constant.alias.bool, -- boolean value (true <-> false)
-					augend.constant.new({
-						elements = { "and", "or" },
-						word = true, -- if false, "sand" is incremented into "sor", "doctor" into "doctand", etc.
-						cyclic = true, -- "or" is incremented into "and".
-					}),
-					ordinal_numbers,
-					weekdays,
-					months,
-				},
-				python = {
-					augend.integer.alias.decimal, -- nonnegative and negative decimal number
-					capitalized_boolean,
-					logical_alias,
-					ordinal_numbers,
-					weekdays,
-					months,
-				},
-			},
-		}
-	end,
-	config = function(_, opts)
-		require("dial.config").augends:register_group(opts.groups)
-		-- M.dials_by_ft = opts.dials_by_ft
-	end,
+    dial_config.augends:register_group{ default = augend_base }
+    dial_config.augends:on_filetype{
+      typescript = concat_tables(augend_base, {augend.constant.new{ elements = { "let", "const" }}}),
+      css, html = concat_tables(augend_base, {augend.integer.alias.decimal, augend.hexcolor.new{ case = "lower" }, augend.hexcolor.new{ case = "upper" } }),
+      markdown = concat_tables(augend_base,  {augend.misc.alias.markdown_header}),
+      json = concat_tables(augend_base, {}),
+      lua =  concat_tables(augend_base,{capitalized_boolean}), 
+      python = concat_tables(augend_base,  {capitalized_boolean}),
+    }
+    vim.keymap.set("n", "<C-a>", function()
+      require("dial.map").manipulate("increment", "normal")
+    end)
+    vim.keymap.set("n", "<C-x>", function()
+      require("dial.map").manipulate("decrement", "normal")
+    end)
+    vim.keymap.set("n", "g<C-a>", function()
+      require("dial.map").manipulate("increment", "gnormal")
+    end)
+    vim.keymap.set("n", "g<C-x>", function()
+      require("dial.map").manipulate("decrement", "gnormal")
+    end)
+    vim.keymap.set("v", "<C-a>", function()
+      require("dial.map").manipulate("increment", "visual")
+    end)
+    vim.keymap.set("v", "<C-x>", function()
+      require("dial.map").manipulate("decrement", "visual")
+    end)
+    vim.keymap.set("v", "g<C-a>", function()
+      require("dial.map").manipulate("increment", "gvisual")
+    end)
+    vim.keymap.set("v", "g<C-x>", function()
+      require("dial.map").manipulate("decrement", "gvisual")
+    end)
+  end,
 }

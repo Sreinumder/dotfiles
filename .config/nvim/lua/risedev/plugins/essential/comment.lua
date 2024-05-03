@@ -7,7 +7,8 @@
 
 return {
 	"numToStr/Comment.nvim",
-	event = { "BufReadPre", "BufNewFile" },
+	-- event = { "BufReadPre", "BufNewFile" },
+	keys = { { "gc", mode = { "v", "n" } } },
 	opts = {},
 	config = true,
 	lazy = true,

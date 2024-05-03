@@ -29,7 +29,7 @@ keymap.set("n", "<leader>j", "*``cgn", { desc = "replace word" })
 -- keymap.set({ "n", "x" }, ";", ":")
 
 -- Shortcut for faster save and quit
-keymap.set("n", "<leader>w", "<cmd>update<cr>", { silent = true, desc = "save buffer" })
+keymap.set("n", "<leader>s", "<cmd>update<cr>", { silent = true, desc = "save buffer" })
 
 -- Saves the file if modified and quit
 keymap.set("n", "<leader>q", "<cmd>x<cr>", { silent = true, desc = "quit current window" })

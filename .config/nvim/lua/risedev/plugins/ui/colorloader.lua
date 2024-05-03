@@ -25,7 +25,7 @@ local spec = {
 			})
 		end,
 	},
-	{ "bluz71/vim-nightfly-guicolors", name = "nightfly" },
+	-- { "bluz71/vim-nightfly-guicolors", name = "nightfly" },
 	{
 		"folke/tokyonight.nvim",
 		name = "tokyonight",

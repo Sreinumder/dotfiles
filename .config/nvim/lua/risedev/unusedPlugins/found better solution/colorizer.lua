@@ -4,7 +4,7 @@
 return {
 	"norcalli/nvim-colorizer.lua",
 	ft = { "css", "html", "config" },
-	keys = { "<leader>,cc", ":ColorizerToggle<CR>", { desc = "toggle Colorizer" } },
+	keys = {{ "<leader>,cc", ":ColorizerToggle<CR>", { desc = "toggle Colorizer" } }},
 	priority = 1000,
 	opts = {
 		RGB = true, -- #RGB hex codes

@@ -4,5 +4,6 @@
 --└────────────────────────────────────────────────────────────────────────┘
 return {
     "SmiteshP/nvim-navic",
-    requires = "neovim/nvim-lspconfig"
+    requires = "neovim/nvim-lspconfig",
+
 }
