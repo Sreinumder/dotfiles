@@ -106,5 +106,14 @@ return {
 			automatic_installation = true,
 		})
 		require("mason-lspconfig").setup_handlers({ setup })
+    require('lspconfig').lua_ls.setup({
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = {'vim'}
+          }
+        }
+      }
+    })
 	end,
 }

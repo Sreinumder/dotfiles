@@ -3,7 +3,7 @@ return {
 	config = true,
 	keys = {
 		{ "<leader>rr", ":MurenToggle<CR>", { desc = "muren toggle" } },
-		{ "<leader>rf", ":MurenFresh<CR>", { desc = "muren toggle" } },
+		{ "<localleader>rf", ":MurenFresh<CR>", { desc = "muren toggle" } },
 	},
 	opts = {
 		create_commands = true,

@@ -2,7 +2,7 @@ return {
   "gbprod/substitute.nvim",
 	opts = {},
 	events = { "BufEnter" },
-  keys = {"s", "S", "<A-s>"},
+  keys = {{"s", "S", "<A-s>", mode={"n","x"}}},
 	config = function()
 		require("substitute").setup()
 		local keymap = vim.keymap

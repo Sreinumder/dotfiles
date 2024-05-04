@@ -9,7 +9,7 @@ return {
       {desc = "ccc pick"}
     },
     {
-      "<leader>c<C-A>",
+      "<leader>c<C-a>",
       ":CccConvert<CR>",
       {desc = "ccc convert"}
     },

@@ -1,4 +1,4 @@
-vim.cmd([[autocmd BufEnter * set formatoptions-=cro]])
+vim.cmd([[autocmd BufEnter * set formatoptions-=cro]]) -- disables auto comment on pressiong o or enter on comment
 
 vim.api.nvim_create_autocmd("BufWinEnter", {
 	pattern = "*.conf",
@@ -30,18 +30,18 @@ vim.api.nvim_create_autocmd("CmdwinEnter", {
 
 
 -- {bg  = "#2D353B" }) background colour
-vim.api.nvim_create_autocmd({ "InsertEnter"}, {
-  callback = function()
-    vim.api.nvim_set_hl(0, "CursorLine", {bg  = "#3D4c3B" })
-    vim.api.nvim_set_hl(0, "CursorColumn", {bg  = "#3D4c3B" })
-  end
-})
-vim.api.nvim_create_autocmd({"InsertLeave" }, {
-  callback = function()
-    vim.api.nvim_set_hl(0, "CursorLine", {bg  = "#383E48" })
-    vim.api.nvim_set_hl(0, "CursorColumn", {bg  = "#383E48" })
-  end
-})
+-- vim.api.nvim_create_autocmd({ "InsertEnter"}, {
+--   callback = function()
+--     vim.api.nvim_set_hl(0, "CursorLine", {bg  = "#3D4c3B" })
+--     vim.api.nvim_set_hl(0, "CursorColumn", {bg  = "#3D4c3B" })
+--   end
+-- })
+-- vim.api.nvim_create_autocmd({"InsertLeave" }, {
+--   callback = function()
+--     vim.api.nvim_set_hl(0, "CursorLine", {bg  = "#383E48" })
+--     vim.api.nvim_set_hl(0, "CursorColumn", {bg  = "#383E48" })
+--   end
+-- })
 
 -- augroup numbertoggle
 --     autocmd!

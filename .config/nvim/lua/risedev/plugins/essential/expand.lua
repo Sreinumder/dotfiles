@@ -56,5 +56,4 @@ return {
       }
       require('expand').setup(config)
     end,
-    opts = {}
-  }
+  } 
