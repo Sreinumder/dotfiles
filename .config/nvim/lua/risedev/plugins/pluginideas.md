@@ -16,3 +16,9 @@ I need all webtf0^$%g_ge motion to work. and it is rather complicated to do by s
 2. Clone: clones the selection and places to the cursor motion or like the substitute command.
 *cursor motion:* w,e,b,W,E,B,ge,gE,0,^,$,%,(,),{,},[[,]],mouse-click etc
 *commandsclone :* clone-left, clone-right
+
+
+```python
+print (hello)
+
+```

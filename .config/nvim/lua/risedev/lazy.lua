@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{ import = "risedev.plugins.ui" },
+  { import = "risedev.plugins.editing" },
 	{ import = "risedev.plugins.essential" },
 	{ import = "risedev.plugins.tools" },
 	{ import = "risedev.plugins.buffer" },

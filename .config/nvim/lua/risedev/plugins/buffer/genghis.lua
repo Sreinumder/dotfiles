@@ -5,7 +5,11 @@
 return {
 	"chrisgrieser/nvim-genghis",
 	version = "*",
-	dependencies = "stevearc/dressing.nvim",
+	dependencies = {
+    "stevearc/dressing.nvim",
+    "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-omni",
+  },
 	keys = {
 		{
 			"<leader>eyp",

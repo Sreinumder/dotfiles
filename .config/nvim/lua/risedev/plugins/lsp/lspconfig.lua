@@ -1,17 +1,17 @@
 return {
-	-- lsp - quickstart configs for nvim lsp
 	"neovim/nvim-lspconfig",
 	event = { "bufreadpre", "bufnewfile" },
 	lazy = true,
-	dependencies = { -- mason
-		-- portable package manager for neovim that runs everywhere neovim runs.
-		-- easily install and manage lsp servers, dap servers, linters, and formatters.
-		{ "williamboman/mason.nvim" },
-		{ "williamboman/mason-lspconfig.nvim" }, -- autocomplete
-
-		-- A completion plugin for neovim coded in Lua.
+  keys = {
+    {"<leader>M", ":Mason<CR>", {desc="open mason"}}
+  },
+	dependencies = {
 		{
-			"hrsh7th/nvim-cmp",
+      "williamboman/mason.nvim",-- easily install and manage lsp servers, dap servers, linters, and formatters.
+    }, 
+		{ "williamboman/mason-lspconfig.nvim" }, -- autocomplete
+		{
+			"hrsh7th/nvim-cmp", -- A completion plugin for neovim coded in Lua.
 			lazy = true,
 			event = { "InsertEnter" },
 			dependencies = {
@@ -106,14 +106,14 @@ return {
 			automatic_installation = true,
 		})
 		require("mason-lspconfig").setup_handlers({ setup })
-    require('lspconfig').lua_ls.setup({
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = {'vim'}
-          }
-        }
-      }
-    })
+		require("lspconfig").lua_ls.setup({
+			settings = {
+				Lua = {
+					diagnostics = {
+						globals = { "vim" },
+					},
+				},
+			},
+		})
 	end,
 }

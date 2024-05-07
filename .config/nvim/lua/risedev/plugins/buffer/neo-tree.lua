@@ -15,8 +15,8 @@ return {
 			},
 		},
 	},
-  event = "BufEnter",
-	cmd = "Neotree",
+ --  event = "BufEnter",
+	-- cmd = "Neotree",
 	keys = {
 		{ "<leader>ee", ":Neotree toggle right<CR>", { desc = "NeoTree toggle" } },
 		{ "<leader>eb", ":Neotree Buffer toggle right<CR>", { desc = "NeoTree buffer" } },

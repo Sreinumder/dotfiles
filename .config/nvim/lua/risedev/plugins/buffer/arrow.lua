@@ -5,7 +5,6 @@ return {
     leader_key = "<leader>f", -- Recommended to be a single key
     buffer_leader_key = "<leader>j", -- Per Buffer Mappings
    index_keys = "asdwuiop;q123",
-  
     mappings = {
       edit = "e",
       delete_mode = "<A-d>",

@@ -27,3 +27,6 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- hide the ~ character on empty lines at the end of the buffer
 opt.fcs = "eob: "
+
+opt.spell = false
+opt.spelllang = { 'en_us' }

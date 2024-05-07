@@ -1,11 +1,16 @@
 return {
-	-- load luasnips + cmp related in insert mode only
-	"hrsh7th/nvim-cmp",
+	"hrsh7th/nvim-cmp", -- load luasnips + cmp related in insert mode only
 	event = "InsertEnter",
 	dependencies = {
-		{
-			-- snippet plugin
-			"L3MON4D3/LuaSnip",
+    {"saadparwaiz1/cmp_luasnip"}, -- cmp sources plugins
+    {"hrsh7th/cmp-nvim-lua"},
+    {"hrsh7th/cmp-nvim-lsp"},
+    {"hrsh7th/cmp-buffer"},
+    -- {"hrsh7th/cmp-path"},
+    {"f3fora/cmp-spell"},
+    "FelipeLema/cmp-async-path",
+    "onsails/lspkind.nvim",
+		{ "L3MON4D3/LuaSnip", -- snippet plugin
 			dependencies = "rafamadriz/friendly-snippets",
 			opts = {
 				history = true,
@@ -44,17 +49,9 @@ return {
 				})
 			end,
 		},
-		{
-			"saadparwaiz1/cmp_luasnip",
-			"hrsh7th/cmp-nvim-lua",
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-		},
-	}, -- cmp sources plugins
+	},
 	opts = function()
 		local cmp = require("cmp")
-
 		local function border(hl_name)
 			return {
 				{ "╭", hl_name },
@@ -124,14 +121,20 @@ return {
 				end, { "i", "s" }),
 			},
 			sources = {
-				{
-					name = "nvim_lsp",
-				},
-				{
-					name = "luasnip",
-				},
-				{
-					name = "buffer",
+				{ name = "nvim_lsp", },
+        { name = 'async_path', --[[ option = {}, ]] },
+        -- { name = "path", },
+				{ name = "luasnip", },
+        { name = "nvim_lua", },
+        { name = 'spell',
+            option = {
+                keep_all_entries = false,
+                enable_in_context = function()
+                    return true
+                end,
+            },
+        },
+				{ name = "buffer",
 					option = {
 						-- Avoid accidentally running on big files
 						get_bufnrs = function()
@@ -144,18 +147,31 @@ return {
 						end,
 					},
 				},
-				{
-					name = "nvim_lua",
-				},
-				{
-					name = "path",
-				},
 			},
+      formatting = {
+        format = require('lspkind').cmp_format({
+          mode = 'symbol', -- show only symbol annotations
+          maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+                         -- can also be a function to dynamically calculate max width such as 
+                         -- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
+          ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+          show_labelDetails = true, -- show labelDetails in menu. Disabled by default
+
+          -- The function below will be called before any actual modifications from lspkind
+          -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+          -- before = function (entry, vim_item)
+          --   return vim_item
+          -- end
+        })
+      }
 		}
 
 		return options
 	end,
 	config = function(_, opts)
 		require("cmp").setup(opts)
+    require("cmp").setup.filetype("DressingInput", {
+      sources = require("cmp").config.sources { { name = "omni" } },
+})
 	end,
 }

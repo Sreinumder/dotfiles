@@ -4,7 +4,7 @@ return {
   ft = {"html", "css", "js", "config", "conf"},
   keys = {
     {
-      "<leader>ccp",
+      "<leader>ccc",
       ":CccPick<CR>",
       {desc = "ccc pick"}
     },

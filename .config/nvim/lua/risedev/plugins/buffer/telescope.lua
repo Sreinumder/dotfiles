@@ -25,6 +25,7 @@ return {
     { "reedes/vim-colors-pencil", name = "colors-pencil" },
     { "t184256/vim-boring", name = "boring" },
     { "olivercederborg/poimandres.nvim", name = "poimandres" },
+    { "rose-pine/neovim", name = "rose-pine" }
 	},
     -- { "princejoogie/dir-telescope.nvim"},
 	keys = {

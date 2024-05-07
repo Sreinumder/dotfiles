@@ -8,7 +8,7 @@ return {
       end,
       { silent = true, desc = "go to context" }, },
     { "<leader>,co",
-    "<cmd>TSContextToggle<cr>",
+    ":TSContextToggle<cr>",
       { silent = true, desc = "go to context" }, },
 	},
 }

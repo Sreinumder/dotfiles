@@ -24,6 +24,7 @@ Plugins that open different panel
 1. treesj: {"n"} <A-u> to open undo tree panel
 2. mini-align: {"v"} ga to open alignment
 3. mueren: {"n"} <leader>rr to open Muren replace with live preview
+4. ccc: {"n"} <leader>ccc to open color picker 
 
 Buffer Jumping
 --------------
@@ -53,3 +54,15 @@ Toggleables(<leader> + , + ?)
 13. cc for highlight colors like #ffffff using ccc.nvim
 14. lc for loading color scheme for telescope to be able to select
 15. ho for enabling hologram image preview
+
+TODO: 
+- [x] lol
+- [ ] lol
+- [x] lol
+
+# Heading1
+## Heading2
+### Heading2
+#### Heading2
+##### Heading2
+###### Heading2
