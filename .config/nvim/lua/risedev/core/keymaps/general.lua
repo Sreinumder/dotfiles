@@ -1,6 +1,6 @@
 local keymap = vim.keymap -- for conciseness
 
-keymap.set("n", "<leader>L", ":Lazy<CR>", { desc = "next text wrapped line" })
+keymap.set("n", "<leader>L", ":Lazy<CR>", { desc = "Lazy nvim" })
 keymap.set("n", "<A-v>", "vlh", { desc = "vi single char under cursor" })
 
 vim.keymap.set("x", "V", "j") -- for convinence
@@ -13,11 +13,11 @@ keymap.set({ "n", "v" }, "gj", "j", { desc = "next line" })
 keymap.set({ "n", "v" }, "gk", "k", { desc = "prev line" })
 
 keymap.set({ "n", "v", "o" }, "H", "^", { desc = "Start of line" })
-keymap.set({ "n", "v", "o" }, "<A-M>", "gM", { desc = "Middle of Line" })
+-- keymap.set({ "n", "v", "o" }, "<A-M>", "gM", { desc = "Middle of Line" })
 keymap.set({ "n", "v", "o" }, "L", "g_", { desc = "End of Line" }) -- Do not include white space characters when using $ in visual mode, see https://vi.stackexchange.com/q/12607/15292
 keymap.set("x", "$", "g_")
 keymap.set("n", "<A-H>", "H", { desc = "Default H" })
-keymap.set("n", "<A-L>", "L", { desc = "Default K" })
+keymap.set("n", "<A-L>", "L", { desc = "Default L" })
 
 -- keymap.set({ "n", "v", "o" }, "K", "H", { desc = "Highest line of screen" })
 -- keymap.set({ "n", "v", "o" }, "J", "L", { desc = "Lowest line of screen" })

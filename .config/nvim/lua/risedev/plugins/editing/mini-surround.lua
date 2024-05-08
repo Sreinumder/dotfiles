@@ -1,7 +1,12 @@
 return {
 	"echasnovski/mini.surround",
 	version = "*",
-  keys = {{ "gs", "ds", "ys", "cs", mode={"n","x"} }},
+  keys = {
+    { "gs", mode={ "n", "x" } },
+    { "ds", mode={ "n", "x" } },
+    { "ys", mode={ "n", "x" } },
+    { "cs", mode={ "n", "x" } },
+  },
 	opts = {
 		-- Add custom surroundings to be used on top of builtin ones. For more
 		-- information with examples, see `:h MiniSurround.config`.

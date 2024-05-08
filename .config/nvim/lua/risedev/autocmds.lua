@@ -28,7 +28,6 @@ vim.api.nvim_create_autocmd("CmdwinEnter", {
 --   command =  "norm! zz"
 -- })
 
-
 -- {bg  = "#2D353B" }) background colour
 -- vim.api.nvim_create_autocmd({ "InsertEnter"}, {
 --   callback = function()

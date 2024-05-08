@@ -5,5 +5,5 @@ return {
 	"ellisonleao/glow.nvim",
 	config = true,
 	cmd = "Glow",
-	ft = "md",
+	-- ft = "md",
 }

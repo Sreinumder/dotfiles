@@ -39,8 +39,8 @@ keymap.set("n", "<leader>p", "o<ESC>p", { desc = "paste below current line" })
 keymap.set("n", "<leader>P", "O<ESC>p", { desc = "paste above current line" })
 
 -- Copy entire buffer.
-keymap.set("n", "<leader>ay", "<cmd>%yank<cr>", { desc = "yank entire buffer" })
-keymap.set("n", "<leader>ad", "<cmd>%delete<cr>", { desc = "delete entire buffer" })
+-- keymap.set("n", "<leader>ay", "<cmd>%yank<cr>", { desc = "yank entire buffer" })
+-- keymap.set("n", "<leader>ad", "<cmd>%delete<cr>", { desc = "delete entire buffer" })
 
 -- Toggle cursor column
-keymap.set("n", "<leader>cl", "<cmd>call utils#ToggleCursorCol()<cr>", { desc = "toggle cursor column" })
+-- keymap.set("n", "<leader>cl", "<cmd>call utils#ToggleCursorCol()<cr>", { desc = "toggle cursor column" })

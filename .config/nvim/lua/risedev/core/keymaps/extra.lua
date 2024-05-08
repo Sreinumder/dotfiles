@@ -44,7 +44,7 @@ keymap.set("n", "<space>O", "printf('m`%sO<ESC>``', v:count1)", {
 	desc = "insert line above",
 })
 
-keymap.set("n", "<leader>j", "*``cgn", { desc = "replace word" })
+keymap.set("n", "<leader>*", "*``cgn", { desc = "replace word" })
 
 -- -- Save your finger
 -- keymap.set({ "n", "x" }, ";", ":")

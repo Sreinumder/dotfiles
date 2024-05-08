@@ -5,5 +5,8 @@
 return {
   'AckslD/nvim-FeMaco.lua',
   ft = {"markdown", "org", "norg"},
+  keys = {
+    {"<leader>df", ":FeMaco<cr>"},
+  },
   opts = {}
 }
