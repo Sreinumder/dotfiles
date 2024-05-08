@@ -2,6 +2,19 @@ import = [
   "~/dotfiles/alacritty/nord.toml"
 ]
 
+[font.normal]
+# family = "Source Code Pro"
+# family = "VictorMono Nerd Font"
+# family = "FiraCode Nerd font"
+# family = "Monoid Nerd Font"
+# family = "Iosevka Nerd Font"
+# family = "JetBrainsMono Nerd Font"
+# family = "SpaceMono Nerd Font"
+# family = "Mononoki Nerd Font"
+# family = "Monofur Nerd Font"
+# family = ""
+style = "Regular"
+
 [window.padding] 
 x = 0
 y = 0
@@ -18,9 +31,10 @@ TERM = "xterm-256color"
 [font]
 size = 10
 
-# [font.bold]
+[font.bold]
 # family = "Source Code Pro"
-# style = "Bold"
+# family = "VictorMono Nerd Font"
+style = "Bold"
 #
 # [font.bold_italic]
 # family = "Source Code Pro"
@@ -30,9 +44,6 @@ size = 10
 # family = "Source Code Pro"
 # style = "Italic"
 #
-# [font.normal]
-# family = "Source Code Pro"
-# style = "Regular"
 
 [font.offset]
 x = 0
