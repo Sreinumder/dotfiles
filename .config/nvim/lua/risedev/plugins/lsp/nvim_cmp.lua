@@ -6,8 +6,10 @@ return {
     {"hrsh7th/cmp-nvim-lua"},
     {"hrsh7th/cmp-nvim-lsp"},
     {"hrsh7th/cmp-buffer"},
+    {"hrsh7th/cmp-calc"},
     -- {"hrsh7th/cmp-path"},
     {"f3fora/cmp-spell"},
+    {"hrsh7th/cmp-cmdline"},
     "FelipeLema/cmp-async-path",
     "onsails/lspkind.nvim",
 		{ "L3MON4D3/LuaSnip", -- snippet plugin
@@ -121,11 +123,13 @@ return {
 				end, { "i", "s" }),
 			},
 			sources = {
-				{ name = "nvim_lsp", },
+
+        { name = "nvim_lsp", },
         { name = 'async_path', --[[ option = {}, ]] },
         -- { name = "path", },
 				{ name = "luasnip", },
         { name = "nvim_lua", },
+        { name = 'calc' },
         { name = 'spell',
             option = {
                 keep_all_entries = false,
@@ -173,5 +177,24 @@ return {
     require("cmp").setup.filetype("DressingInput", {
       sources = require("cmp").config.sources { { name = "omni" } },
 })
+    require("cmp").setup.cmdline('/', {
+      mapping = require("cmp").mapping.preset.cmdline(),
+      sources = {
+        { name = 'buffer' }
+      }
+    })
+    require("cmp").setup.cmdline(':', { -- `:` cmdline setup.
+      mapping = require("cmp").mapping.preset.cmdline(),
+      sources = require("cmp").config.sources({
+        { name = 'path' }
+      }, {
+        {
+          name = 'cmdline',
+          option = {
+            ignore_cmds = { 'Man', '!' }
+          }
+        }
+      })
+    })
 	end,
 }

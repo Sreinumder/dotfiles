@@ -20,6 +20,7 @@ require("lazy").setup({
 	{ import = "risedev.plugins.note" },
 	{ import = "risedev.plugins.treesitter" },
 	{ import = "risedev.plugins.lsp" },
+	{ import = "risedev.plugins.req_internet" },
 }, {
 	checker = {
 		enabled = true,

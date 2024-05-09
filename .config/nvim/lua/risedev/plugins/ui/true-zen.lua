@@ -1,7 +1,12 @@
 return {
     "Pocco81/true-zen.nvim",
-    config = function()
-        require("true-zen").setup {
+    keys = {
+      {"<leader>tzn", ":TZNarrow<CR>"},
+      {"<leader>tza", ":TZAtaraxis<CR>"},
+      {"<leader>tzm", ":TZMinimalist<CR>"},
+      {"<leader>tzf", ":TZFocus<CR>"},
+    },
+    opts = {
             modes = { -- configurations per mode
                 ataraxis = {
                     shade = "dark", -- if `dark` then dim the padding windows, otherwise if it's `light` it'll brighten said windows
@@ -71,13 +76,12 @@ return {
             },
             integrations = {
                 tmux = false, -- hide tmux status bar in (minimalist, ataraxis)
-                kitty = { -- increment font size in Kitty. Note: you must set `allow_remote_control socket-only` and `listen_on unix:/tmp/kitty` in your personal config (ataraxis)
+                kitty = {
                     enabled = false,
                     font = "+3"
                 },
-                twilight = false, -- enable twilight (ataraxis)
+                twilight = true, -- enable twilight (ataraxis)
                 lualine = false -- hide nvim-lualine (ataraxis)
             },
         }
-    end,
 }

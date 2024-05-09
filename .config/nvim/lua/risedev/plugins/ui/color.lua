@@ -4,7 +4,7 @@
 --└─────────────────────────┘
 return {
 	{
-		"sainnhe/everforest",
+		"neanias/everforest-nvim",
 		config = function()
 			-- vim.cmd.colorscheme("ice-cave")
 			-- vim.cmd([[colorscheme everforest]])

@@ -5,7 +5,7 @@
 --└────────────────────────────────┘
 return {
   "monaqa/dial.nvim",
-  keys = { "<C-a>", "<C-x>", "g<C-a>", "g<C-x>", mode = {"n", "x"}},
+  keys = { "<C-a>", "<C-x>", "g<C-a>", "g<C-x>", mode = { "n", "x" } },
   config = function()
     local augend = require("dial.augend")
     local direction_word = augend.constant.new({ elements = { "up", "down", "left", "right"}, word = false, cyclic = true })
@@ -15,6 +15,7 @@ return {
     local capitalized_boolean = augend.constant.new({ elements = { "True", "False" }, word = true, cyclic = true })
     local weekdays = augend.constant.new({ elements = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }, word = true, cyclic = true, })
     local months = augend.constant.new({ elements = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", }, word = true, cyclic = true, })
+    local md_checkbox = augend.constant.new({ elements = {"- [ ]", "- [x]"}, word = false, cyclic = true, })
     -- local ordinal_numbers_a = augend.constant.new({ elements = { "first", "second", "third", "fourth"}, word = false, cyclic = false,})
     -- local numbers_word_a = augend.constant.new({ elements = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"},word = false, cyclic = false, })
     -- local ordinal_numbers_b = augend.constant.new({ elements = { "tenth", "eleventh", "twelveth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth", "nineteenth", "twentieth", "twentyfirst", },word = true, cyclic = false, })
@@ -31,6 +32,7 @@ return {
       direction_word,
       weekdays, months,
       augend.semver.alias.semver, -- versioning (v6.8.3)
+      md_checkbox,
     }
     local function concat_tables(table1, table2)
       if table2 == nil then
@@ -47,7 +49,9 @@ return {
     dial_config.augends:on_filetype{
       typescript = concat_tables(augend_base, {augend.constant.new{ elements = { "let", "const" }}}),
       css, html = concat_tables(augend_base, {augend.integer.alias.decimal, augend.hexcolor.new{ case = "lower" }, augend.hexcolor.new{ case = "upper" } }),
-      markdown = concat_tables(augend_base,  {augend.misc.alias.markdown_header}),
+      markdown = concat_tables(augend_base,  {augend.misc.alias.markdown_header, md_checkbox}),
+      norg = concat_tables(augend_base,  {augend.misc.alias.markdown_header, md_checkbox}),
+      org = concat_tables(augend_base,  {augend.misc.alias.markdown_header, md_checkbox}),
       json = concat_tables(augend_base, {}),
       lua =  concat_tables(augend_base,{capitalized_boolean}), 
       python = concat_tables(augend_base,  {capitalized_boolean}),

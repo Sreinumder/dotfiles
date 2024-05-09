@@ -11,7 +11,11 @@ opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
 
 opt.cursorline = true -- highlight the current cursor line
-opt.cursorcolumn = true -- highlight the current cursor column
+-- opt.cursorcolumn = true -- highlight the current cursor column
+--setlocal cc=80
+-- vim.g.cc = 80
+vim.g.colorcolumn = 80
+
 
 -- turn on termguicolors for nightfly colorscheme to work
 opt.background = "dark" -- colorschemes that can be light or dark will be made dark

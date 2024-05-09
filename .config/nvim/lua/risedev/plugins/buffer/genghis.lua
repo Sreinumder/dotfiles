@@ -56,31 +56,31 @@ return {
 		{
 			"<leader>en",
 			function()
-				require("genghis").createNewFile()
-			end,
-			{ desc = "createNewFile" },
-		},
-		{
-			"<leader>eyy",
-			function()
-				require("genghis").duplicateFile()
-			end,
-			{ desc = "duplicateFile" },
-		},
-		{
-			"<leader>edf",
-			function()
-				require("genghis").trashFile()
-			end,
-			{ desc = "trashFile" },
-		},
+        require("genghis").createNewFile()
+      end,
+      { desc = "createNewFile" },
+    },
+    {
+      "<leader>eyy",
+      function()
+        require("genghis").duplicateFile()
+      end,
+      { desc = "duplicateFile" },
+    },
+    {
+      "<leader>edf",
+      function()
+        require("genghis").trashFile()
+      end,
+      { desc = "trashFile" },
+    },
     {
       "<leader><leader>d",
-      mode = {"x"},
+      mode = { "x" },
       function()
         require("genghis").moveSelectionToNewFile()
       end,
-      {desc = " move selection to new file"},
+      { desc = " move selection to new file" },
     },
-	},
+  },
 }

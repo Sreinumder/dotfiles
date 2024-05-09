@@ -1,12 +1,10 @@
 return {
-	{
-		"vhyrro/luarocks.nvim",
-		priority = 1000,
-		config = true,
-	},
-	{
 		"nvim-neorg/neorg",
-		dependencies = { "luarocks.nvim" },
+		dependencies = { {
+      "vhyrro/luarocks.nvim",
+      priority = 1000,
+      config = true,
+    } },
 		version = "*",
 		ft = "norg",
 		keys = { { "<leader>ne" } },
@@ -50,5 +48,4 @@ return {
 			vim.wo.foldlevel = 99
 			vim.wo.conceallevel = 2
 		end,
-	},
 }
