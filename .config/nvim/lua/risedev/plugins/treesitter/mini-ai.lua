@@ -51,7 +51,7 @@
 return{
   'echasnovski/mini.ai',
   version = '*',
-  config = function()
-    require('mini.ai').setup()
-  end,
+  keys = {
+    {"i", mode={"n", "x"}}, {"a", mode={"n", "x"}},
+  }
 }

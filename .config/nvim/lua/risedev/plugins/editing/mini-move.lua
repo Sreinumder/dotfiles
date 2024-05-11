@@ -6,6 +6,12 @@
 return {
     'echasnovski/mini.move',
     version = false,
+    keys = {
+      {"<A-h>", mode={"x", "n"}},
+      {"<A-j>", mode={"x", "n"}},
+      {"<A-k>", mode={"x", "n"}},
+      {"<A-l>", mode={"x", "n"}},
+    },
     -- config = function()
     -- Module mappings. Use `''` (empty string) to disable one.
     config = function()

@@ -1,18 +1,19 @@
 return {
 	"hrsh7th/nvim-cmp", -- load luasnips + cmp related in insert mode only
-	event = "InsertEnter",
+	event = { "InsertEnter" },
 	dependencies = {
-    {"saadparwaiz1/cmp_luasnip"}, -- cmp sources plugins
-    {"hrsh7th/cmp-nvim-lua"},
-    {"hrsh7th/cmp-nvim-lsp"},
-    {"hrsh7th/cmp-buffer"},
-    {"hrsh7th/cmp-calc"},
-    -- {"hrsh7th/cmp-path"},
-    {"f3fora/cmp-spell"},
-    {"hrsh7th/cmp-cmdline"},
-    "FelipeLema/cmp-async-path",
-    "onsails/lspkind.nvim",
-		{ "L3MON4D3/LuaSnip", -- snippet plugin
+		{ "saadparwaiz1/cmp_luasnip" }, -- cmp sources plugins
+		{ "hrsh7th/cmp-nvim-lua" },
+		{ "hrsh7th/cmp-nvim-lsp" },
+		{ "hrsh7th/cmp-buffer" },
+		{ "hrsh7th/cmp-calc" },
+		-- {"hrsh7th/cmp-path"},
+		{ "f3fora/cmp-spell" },
+		{ "hrsh7th/cmp-cmdline" },
+		"FelipeLema/cmp-async-path",
+		"onsails/lspkind.nvim",
+		{
+			"L3MON4D3/LuaSnip", -- snippet plugin
 			dependencies = "rafamadriz/friendly-snippets",
 			opts = {
 				history = true,
@@ -22,9 +23,10 @@ return {
 				require("luasnip").config.set_config(opts)
 
 				-- vscode format
-				require("luasnip.loaders.from_vscode").lazy_load()
+				-- require("luasnip.loaders.from_vscode").lazy_load()
 				require("luasnip.loaders.from_vscode").lazy_load({
 					paths = vim.g.vscode_snippets_path or "",
+          -- paths = "~/.config/nvim/snippets/snippet.json"
 				})
 
 				-- snipmate format
@@ -124,21 +126,25 @@ return {
 			},
 			sources = {
 
-        { name = "nvim_lsp", },
-        { name = 'async_path', --[[ option = {}, ]] },
-        -- { name = "path", },
-				{ name = "luasnip", },
-        { name = "nvim_lua", },
-        { name = 'calc' },
-        { name = 'spell',
-            option = {
-                keep_all_entries = false,
-                enable_in_context = function()
-                    return true
-                end,
-            },
-        },
-				{ name = "buffer",
+				{ name = "nvim_lsp" },
+				{
+					name = "async_path", --[[ option = {}, ]]
+				},
+				-- { name = "path", },
+				{ name = "luasnip" },
+				{ name = "nvim_lua" },
+				{ name = "calc" },
+				{
+					name = "spell",
+					option = {
+						keep_all_entries = false,
+						enable_in_context = function()
+							return true
+						end,
+					},
+				},
+				{
+					name = "buffer",
 					option = {
 						-- Avoid accidentally running on big files
 						get_bufnrs = function()
@@ -152,49 +158,71 @@ return {
 					},
 				},
 			},
-      formatting = {
-        format = require('lspkind').cmp_format({
-          mode = 'symbol', -- show only symbol annotations
-          maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-                         -- can also be a function to dynamically calculate max width such as 
-                         -- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
-          ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-          show_labelDetails = true, -- show labelDetails in menu. Disabled by default
+			formatting = {
+				format = require("lspkind").cmp_format({
+					mode = "symbol", -- show only symbol annotations
+					maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+					-- can also be a function to dynamically calculate max width such as
+					-- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
+					ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+					show_labelDetails = true, -- show labelDetails in menu. Disabled by default
 
-          -- The function below will be called before any actual modifications from lspkind
-          -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-          -- before = function (entry, vim_item)
-          --   return vim_item
-          -- end
-        })
-      }
+					-- The function below will be called before any actual modifications from lspkind
+					-- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+					-- before = function (entry, vim_item)
+					--   return vim_item
+					-- end
+				}),
+			},
 		}
 
 		return options
 	end,
 	config = function(_, opts)
+		local cmp = require("cmp")
 		require("cmp").setup(opts)
-    require("cmp").setup.filetype("DressingInput", {
-      sources = require("cmp").config.sources { { name = "omni" } },
-})
-    require("cmp").setup.cmdline('/', {
-      mapping = require("cmp").mapping.preset.cmdline(),
-      sources = {
-        { name = 'buffer' }
-      }
-    })
-    require("cmp").setup.cmdline(':', { -- `:` cmdline setup.
-      mapping = require("cmp").mapping.preset.cmdline(),
-      sources = require("cmp").config.sources({
-        { name = 'path' }
-      }, {
-        {
-          name = 'cmdline',
-          option = {
-            ignore_cmds = { 'Man', '!' }
-          }
-        }
-      })
-    })
+		require("cmp").setup.filetype("DressingInput", {
+			sources = require("cmp").config.sources({ { name = "omni" } }),
+		})
+		require("cmp").setup.cmdline("/", {
+			mapping = require("cmp").mapping.preset.cmdline(),
+			sources = {
+				{ name = "buffer" },
+			},
+		})
+		require("cmp").setup.cmdline(":", { -- `:` cmdline setup.
+			-- mapping = require("cmp").mapping.preset.cmdline(),
+			sources = require("cmp").config.sources({
+				{ name = "path" },
+			}, {
+				{
+					name = "cmdline",
+					option = {
+						ignore_cmds = { "Man", "!" },
+					},
+				},
+			}),
+			mapping = cmp.mapping.preset.insert({
+				["<C-n>"] = cmp.mapping(
+					cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+					{ "i", "c" }
+				),
+				["<C-p>"] = cmp.mapping(
+					cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+					{ "i", "c" }
+				),
+				["<C-b>"] = cmp.mapping.scroll_docs(-4),
+				["<C-f>"] = cmp.mapping.scroll_docs(4),
+				["<C-Space>"] = cmp.mapping.complete(),
+				["<C-e>"] = cmp.mapping.abort(),
+				["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+				-- ["<Tab>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+				-- ["<S-Tab>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+				["<Esc>"] = cmp.mapping(function(fallback)
+					require("luasnip").unlink_current()
+					fallback()
+				end),
+			}),
+		})
 	end,
 }

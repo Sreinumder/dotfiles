@@ -3,7 +3,7 @@
 --└──────────────────────────────────┘
 return {
   "folke/which-key.nvim",
-  event = "VeryLazy",
+  event = "InsertEnter",
   init = function()
     vim.o.timeout = true
     vim.o.timeoutlen = 500

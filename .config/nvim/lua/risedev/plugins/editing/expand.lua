@@ -2,7 +2,8 @@ return {
     "Sam-programs/expand.nvim",
     dependencies = { 'Sam-Programs/indent.nvim' },
     -- event = 'InsertEnter',
-    ft = {"python", "lua", "sh", "bash", "zsh", "c", "cpp"},
+    -- ft = {"python", "lua", "sh", "bash", "zsh", "c", "cpp"},
+    keys = { { "<A-space>", mode={"i"}}, },
     config = function()
       local sh_rules = {
         { 'elif',  { ' ;then', '' },   { lua_pattern = true, endpair_new_line = false } },
@@ -57,3 +58,4 @@ return {
       require('expand').setup(config)
     end,
   } 
+  

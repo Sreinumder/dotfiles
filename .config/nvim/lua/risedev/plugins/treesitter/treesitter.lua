@@ -5,5 +5,5 @@ return {
 		ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
 		highlight = { enable = true },
 	},
-  pin = true
+  -- pin = true
 }

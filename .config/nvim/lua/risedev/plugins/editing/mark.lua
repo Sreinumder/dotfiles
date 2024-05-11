@@ -1,6 +1,10 @@
 return {
 	"chentoast/marks.nvim",
-	event = "BufEnter",
+	-- event = "BufEnter",
+  keys = {
+    {"m", mode = {"n", "x"}},
+    {"dm", mode = {"n", "x"}},
+  },
 	opts = {
 		mappings = {
 			toggle = "m<leader>",

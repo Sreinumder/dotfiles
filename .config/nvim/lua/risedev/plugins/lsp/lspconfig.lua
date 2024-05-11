@@ -1,14 +1,16 @@
 return {
 	"neovim/nvim-lspconfig",
 	-- event = { "bufreadpre", "bufnewfile" },
-	event = { "VeryLazy"},
-	lazy = true,
-  keys = {
-    {"<leader>M", ":Mason<CR>", {desc="open mason"}}
-  },
-	dependencies = {{
-      "williamboman/mason.nvim",-- easily install and manage lsp servers, dap servers, linters, and formatters.
-    },
+	event = { "InsertEnter" },
+	-- event = { "VeryLazy"},
+	-- lazy = true,
+	keys = {
+		{ "<leader>M", ":Mason<CR>", { desc = "open mason" } },
+	},
+	dependencies = {
+		{
+			"williamboman/mason.nvim", -- easily install and manage lsp servers, dap servers, linters, and formatters.
+		},
 		{ "williamboman/mason-lspconfig.nvim" }, -- autocomplete
 		{ "mfussenegger/nvim-lint" }, -- linter
 		{
@@ -36,13 +38,26 @@ return {
 		},
 		-- LSP Server Settings
 		servers = {
-			jsonls = {},
-			dockerls = {},
+      ast_grep = {}, -- C, C++, RUST, GO, JAVA, PYTHON, C#, JAVASCRIPT, JSX, TYPESCRIPT, HTML, CSS, KOTLIN, DART, LUA
 			bashls = {},
+			cssls = {}, -- C, C++
+			clangd = {}, -- C, C++
+      deno = {},
+			dockerls = {},
+      emmet_ls = {},
 			gopls = {},
-			ruff_lsp = {},
+      html = {},
+      jsonls = {},
+      ltex = {},
+			-- ruff_lsp = {},
+      sqlls = {},
+			stylelint = {}, -- 
+			taplo = {},
+      unocss = {},
+      -- ventur-vls = {}, -- VUE
 			vimls = {},
 			yamlls = {},
+			yamls = {},
 		},
 		-- you can do any additional lsp server setup here
 		-- return true if you don"t want this server to be setup with lspconfig
@@ -114,24 +129,11 @@ return {
 						globals = { "vim" },
 					},
 				},
-        HTML = {
-          LSP = {"HTML-lsp", "emment-ls", "css-lsp", "css-variables-language-server", "cssmodules-language-server" },
-          -- diagnostics = {"stylelint"},
-        },
-        css = {
-          LSP = { "emment-ls", "css-lsp", "css-variables-language-server", "cssmodules-language-server" },
-          diagnostics = {"stylelint"},
-        },
-        markdown = { LSP = { "marksman", "ltex-lsp" } },
-        -- latex = { LSP = { "ltex-lsp", "texlab"} },
-        sh  = { LSP = { "bash-language-server" } },
-        toml  = { LSP = { "taplo", } },
-        yaml  = { LSP = { "yaml-language-server", } },
 			},
 		})
-    require('lint').linters_by_ft = {
-      markdown = {'vale',}
-    }
-  require("lspconfig").pyright.setup({ capabilities = capabilities, })
+		require("lint").linters_by_ft = {
+			markdown = { "vale" },
+		}
+		require("lspconfig").pyright.setup({ capabilities = capabilities })
 	end,
 }

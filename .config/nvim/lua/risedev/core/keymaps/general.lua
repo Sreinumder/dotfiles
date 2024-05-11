@@ -1,4 +1,6 @@
 local keymap = vim.keymap -- for conciseness
+keymap.set("n", "<leader>", "<NOP>", { desc = "Lazy nvim" })
+
 
 keymap.set("n", "<leader>L", ":Lazy<CR>", { desc = "Lazy nvim" })
 keymap.set("n", "<A-v>", "vlh", { desc = "vi single char under cursor" })

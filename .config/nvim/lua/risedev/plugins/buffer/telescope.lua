@@ -9,19 +9,19 @@ return {
 		{ "2kabhishek/nerdy.nvim"},
     "folke/todo-comments.nvim",
     { "ellisonleao/gruvbox.nvim", name = "gruvbox" },
-    -- { "folke/tokyonight.nvim", name = "tokyonight" },
     { "catppuccin/nvim", name = "catppuccin" },
+    { "mcchrish/zenbones.nvim", name = "zenbones", dependencies = "rktjmp/lush.nvim" },
+    { "folke/tokyonight.nvim", name = "tokyonight" },
     -- { "rebelot/kanagawa.nvim", name = "kanagawa" },
     -- { "bluz71/vim-nightfly-guicolors", name = "nightfly" },
-    { "mcchrish/zenbones.nvim", name = "zenbones", dependencies = "rktjmp/lush.nvim" },
-    { "ntk148v/komau.vim", name = "komau" },
+    -- { "ntk148v/komau.vim", name = "komau" },
     -- { "mcauley-penney/ice-cave.nvim", name = "ice-cave" },{{}}
     -- { "nyoom-engineering/oxocarbon.nvim",name="oxocarbon"},
     -- { "bluz71/vim-moonfly-colors", name = "moonfly" },
-    { "jaredgorski/fogbell.vim", name = "fogbell" },
-    { "reedes/vim-colors-pencil", name = "colors-pencil" },
-    { "olivercederborg/poimandres.nvim", name = "poimandres" },
-    { "rose-pine/neovim", name = "rose-pine" }
+    -- { "jaredgorski/fogbell.vim", name = "fogbell" },
+    -- { "reedes/vim-colors-pencil", name = "colors-pencil" },
+    -- { "olivercederborg/poimandres.nvim", name = "poimandres" },
+    -- { "rose-pine/neovim", name = "rose-pine" }
 	},
     -- { "princejoogie/dir-telescope.nvim"},
 	keys = {
