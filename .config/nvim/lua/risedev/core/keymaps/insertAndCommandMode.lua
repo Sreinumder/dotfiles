@@ -2,10 +2,9 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 local keymap = vim.keymap -- for conciseness
 
--- Turn the word Under cursor to upper case
-keymap.set("i", "<c-u>", "<Esc>viw~ea")
--- Turn the current word into title case
-keymap.set("i", "<c-t>", "<Esc>b~lea")
+keymap.set("i", "<c-u>", "<Esc>viw~ea", {desc="toggle case"})
+keymap.set("i", "<c-t>", "<Esc>b~lea", {desc="change word case to title"})
+keymap.set("i", "<C-l>", '<C-r>=expand("%:p:h") . "/" <CR>', {desc = "write file path"})
 
 keymap.set({ "i", "c" }, "<A-h>", "<Left>", { desc = "Insert mode left" })
 keymap.set({ "i", "c" }, "<A-j>", "<Down>", { desc = "Insert mode down" })

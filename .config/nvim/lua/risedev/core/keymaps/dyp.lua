@@ -21,7 +21,6 @@ keymap.set({ "n", "v", "x" }, "<A-c><A-c>", "cc")
 -- deletes without letting the *selection* selection the contents of default register
 keymap.set({ "v", "x" }, "p", '"_dP')
 keymap.set({ "v", "x" }, "P", '"_dp')
-
 keymap.set({ "v", "x" }, "<A-p>", "p")
 keymap.set({ "v", "x" }, "<A-P>", "P")
 
@@ -32,11 +31,12 @@ keymap.set({ "v", "x" }, "<A-P>", "P")
 -- Reselect the text that has just been pasted like gv, see also https://stackoverflow.com/a/4317090/6064933.
 keymap.set("n", "gV", "printf('`[%s`]', getregtype()[0])", { expr = true, desc = "true" })
 
--- Paste non-linewise text above or below current line, see https://stackoverflow.com/a/1346777/6064933
-keymap.set("n", "<leader><A-p>", "m`o<ESC>p``", { desc = "paste below current line" })
-keymap.set("n", "<leader><A-P>", "m`O<ESC>p``", { desc = "paste above current line" })
-keymap.set("n", "<leader>p", "o<ESC>p", { desc = "paste below current line" })
-keymap.set("n", "<leader>P", "O<ESC>p", { desc = "paste above current line" })
+keymap.set("n", "<leader>ajp", "m`o<ESC>p``", { desc = "paste below current line(jump)" })
+keymap.set("n", "<leader>ajP", "m`O<ESC>p``", { desc = "paste above current line(jump)" })
+keymap.set("n", "<leader>ap", "o<ESC>p", { desc = "paste below current line" })
+keymap.set("n", "<leader>aP", "O<ESC>p", { desc = "paste above current line" })
+keymap.set("n", "<leader>ao", "printf('m`%so<ESC>``', v:count1)", { expr = true, desc = "insert line below", })
+keymap.set("n", "<leader>aO", "printf('m`%sO<ESC>``', v:count1)", { expr = true, desc = "insert line above", })
 
 -- Copy entire buffer.
 -- keymap.set("n", "<leader>ay", "<cmd>%yank<cr>", { desc = "yank entire buffer" })

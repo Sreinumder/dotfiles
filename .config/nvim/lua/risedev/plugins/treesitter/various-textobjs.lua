@@ -40,7 +40,7 @@ return {
 		{ "ib", "<cmd>lua require('various-textobjs').number('inner')<CR>", mode = { "o", "x" } },
 		{ "ab", "<cmd>lua require('various-textobjs').number('outer')<CR>", mode = { "o", "x" } },
 
-		{ "!", "<cmd>lua require('various-textobjs').diagnostic()<CR>", mode = { "o", "x" } },
+		{ "id", "<cmd>lua require('various-textobjs').diagnostic()<CR>", mode = { "o", "x" } },
 
 		{ "iz", "<cmd>lua require('various-textobjs').closedFold('inner')<CR>", mode = { "o", "x" } },
 		{ "az", "<cmd>lua require('various-textobjs').closedFold('outer')<CR>", mode = { "o", "x" } },

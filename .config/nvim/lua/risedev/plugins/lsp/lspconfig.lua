@@ -1,15 +1,16 @@
 return {
 	"neovim/nvim-lspconfig",
-	event = { "bufreadpre", "bufnewfile" },
+	-- event = { "bufreadpre", "bufnewfile" },
+	event = { "VeryLazy"},
 	lazy = true,
   keys = {
     {"<leader>M", ":Mason<CR>", {desc="open mason"}}
   },
-	dependencies = {
-		{
+	dependencies = {{
       "williamboman/mason.nvim",-- easily install and manage lsp servers, dap servers, linters, and formatters.
-    }, 
+    },
 		{ "williamboman/mason-lspconfig.nvim" }, -- autocomplete
+		{ "mfussenegger/nvim-lint" }, -- linter
 		{
 			"hrsh7th/nvim-cmp", -- A completion plugin for neovim coded in Lua.
 			lazy = true,
@@ -113,7 +114,24 @@ return {
 						globals = { "vim" },
 					},
 				},
+        HTML = {
+          LSP = {"HTML-lsp", "emment-ls", "css-lsp", "css-variables-language-server", "cssmodules-language-server" },
+          -- diagnostics = {"stylelint"},
+        },
+        css = {
+          LSP = { "emment-ls", "css-lsp", "css-variables-language-server", "cssmodules-language-server" },
+          diagnostics = {"stylelint"},
+        },
+        markdown = { LSP = { "marksman", "ltex-lsp" } },
+        -- latex = { LSP = { "ltex-lsp", "texlab"} },
+        sh  = { LSP = { "bash-language-server" } },
+        toml  = { LSP = { "taplo", } },
+        yaml  = { LSP = { "yaml-language-server", } },
 			},
 		})
+    require('lint').linters_by_ft = {
+      markdown = {'vale',}
+    }
+  require("lspconfig").pyright.setup({ capabilities = capabilities, })
 	end,
 }
