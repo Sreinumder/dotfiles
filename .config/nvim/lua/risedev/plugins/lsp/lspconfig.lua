@@ -132,7 +132,7 @@ return {
 			},
 		})
 		require("lint").linters_by_ft = {
-			markdown = { "vale" },
+			-- markdown = { "vale" },
 		}
 		require("lspconfig").pyright.setup({ capabilities = capabilities })
 	end,

@@ -1,14 +1,13 @@
 return {
 	"hrsh7th/nvim-cmp", -- load luasnips + cmp related in insert mode only
-	event = { "InsertEnter" },
+	event = { "VeryLazy" },
 	dependencies = {
 		{ "saadparwaiz1/cmp_luasnip" }, -- cmp sources plugins
 		{ "hrsh7th/cmp-nvim-lua" },
-		{ "hrsh7th/cmp-nvim-lsp" },
 		{ "hrsh7th/cmp-buffer" },
 		{ "hrsh7th/cmp-calc" },
 		-- {"hrsh7th/cmp-path"},
-		{ "f3fora/cmp-spell" },
+		-- { "f3fora/cmp-spell" },
 		{ "hrsh7th/cmp-cmdline" },
 		"FelipeLema/cmp-async-path",
 		"onsails/lspkind.nvim",
