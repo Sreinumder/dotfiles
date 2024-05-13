@@ -7,7 +7,7 @@ return {
     } },
 		version = "*",
 		ft = "norg",
-		keys = { { "<leader>ne" } },
+		-- keys = { { "<leader>ne" } },
 		config = function()
 			require("neorg").setup({
 				load = {
@@ -19,9 +19,9 @@ return {
 							-- icon_preset = "varied",
 							icons = {
 								definition = {
-									multi_prefix = { icon = " " },
-									multi_suffix = { icon = " " },
-									single = { icon = "󰇼 " },
+									multi_prefix = { icon = "" },
+									multi_suffix = { icon = "" },
+									single = { icon = " 󰇼 " },
 								},
 								delimiter = {
 									-- hrizontal_line = { icon = "󰇼 ", },
