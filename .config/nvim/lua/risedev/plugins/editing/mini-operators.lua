@@ -1,6 +1,11 @@
 return {
   'echasnovski/mini.operators',
   version = '*',
+  keys = {
+    {"g=", mode={'n','v'}},
+    {"gm", mode={'n','v'}},
+    {"<leader>gs", mode={'n','v'}},
+  },
   opts = {
   -- Evaluate text and replace with output
   evaluate = {
@@ -10,8 +15,8 @@ return {
 
   -- Exchange text regions
   exchange = {
-    prefix = 'gx', -- Whether to reindent new text to match previous indent
-    reindent_linewise = true,
+    prefix = '', -- Whether to reindent new text to match previous indent
+    -- reindent_linewise = true,
   },
 
   -- Multiply (duplicate) text
@@ -22,7 +27,7 @@ return {
 
   -- Replace text with register
   replace = {
-    prefix = 'gr', -- Whether to reindent new text to match previous indent
+    prefix = '', -- Whether to reindent new text to match previous indent
     reindent_linewise = true,
   },
 

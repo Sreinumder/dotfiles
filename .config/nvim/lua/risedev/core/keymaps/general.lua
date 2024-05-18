@@ -45,9 +45,12 @@ keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
 keymap.set("x", "<", "<gv")
 keymap.set("x", ">", ">gv")
 
-keymap.set("n", "<leader>rs", "!!sh<cr>")
+keymap.set("n", "<leader>rs", '"byy"bp!!sh<cr>', {desc = "filter the line with bash"})
+keymap.set("n", "<leader>rS", "!!sh<cr>", {desc = "filter the line with bash"})
 
 -- keymap.set("n", "<leader>sv", function() vim.cmd([[ update $MYVIMRC source $MYVIMRC ]])
+keymap.set("n", "<leader>sv", function() vim.cmd(" update source $MYVIMRC ") end, {desc = "source the config"})
+
 -- 	vim.notify("Nvim config successfully reloaded!", vim.log.levels.INFO, { title = "nvim-config" })
 -- end, {
 -- 	silent = true,

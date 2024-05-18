@@ -4,11 +4,15 @@
 --└─────────────────────────┘
 return {
 	{
-		"Sreinumder/everforest-nvim",
+		-- "Sreinumder/everforest-nvim",
 		-- "neanias/everforest-nvim",
+		"mcchrish/zenbones.nvim",
+		name = "zenbones",
+		dependencies = "rktjmp/lush.nvim",
 		config = function()
-			-- vim.cmd.colorscheme("ice-cave")
+      vim.cmd([[colorscheme forestbones]])
 			-- vim.cmd([[colorscheme everforest]])
+			-- vim.cmd.colorscheme("ice-cave")
 			-- vim.cmd([[colorscheme catppuccin]])
 			-- vim.cmd([[colorscheme nord]])
 			-- vim.cmd([[colorscheme tokyonight]])
