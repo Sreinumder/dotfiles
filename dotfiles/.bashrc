@@ -9,6 +9,7 @@
 # ~/.bashrc
 # -----------------------------------------------------
 
+alias fman="compgen -c | fzf | xargs man"
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 PS1='[\u@\h \W]\$ '
@@ -22,6 +23,7 @@ export MYVIMRC=~/.config/nvim/init.lua
 
 # export KITTY_CONFIG_DIRECTORY="~/dotfiles/kitty/kitty.conf"
 eval "$(zoxide init bash)"
+alias sudo='sudo '
 
 alias py=python
 alias py3=python3
@@ -53,6 +55,9 @@ alias w='~/dotfiles/scripts/./wallpaper.sh'
 alias l='lf'
 alias fixsc='~/dotfiles/scripts/./screenShareEnable.sh'
 alias rm='rmtrash'
+alias rmls='trash-list'
+alias rmrec='trash-restore'
+alias rmrm='trash-rm'
 alias rmm='rm'
 alias rmdir='rmdirtrash'
 alias rmdirr='rmdir'
@@ -171,3 +176,7 @@ export NVM_DIR="$HOME/.nvm"
 # Source the Lazyman .nvimsbind for nvims key binding
 # shellcheck source=.config/nvim-Lazyman/.nvimsbind
 [ -f ~/.config/nvim-Lazyman/.nvimsbind ] && source ~/.config/nvim-Lazyman/.nvimsbind
+# Bob neovim version manager path
+[ -d ${HOME}/.local/share/bob/nvim-bin ] && {
+  export PATH="${HOME}/.local/share/bob/nvim-bin${PATH:+:${PATH}}"
+}

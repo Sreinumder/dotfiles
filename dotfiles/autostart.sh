@@ -17,8 +17,8 @@ xfce4-power-manager &
 dunst &
 
 # Setup Wallpaper and update colors
-exec-once=~/dotfiles/scripts/wallpaper.sh init &
-sleep 2
+# exec-once=~/dotfiles/scripts/wallpaper.sh init &
+# sleep 2
 
 #load touchpad gestures
 # fusuma &

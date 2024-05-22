@@ -178,6 +178,10 @@ cmd onlycentre &{{
 	lf -remote "send $id set preview"
 	lf -remote "send $id set ratios 1:200:1"
 }}
+cmd onlyPreview &{{
+	lf -remote "send $id set preview"
+	lf -remote "send $id set ratios 1:1:200"
+}}
 
 map W push <enter>~/./dotfiles/scripts/wallpaper.sh<space>$fx<enter>
 
@@ -185,6 +189,7 @@ map ( preview
 map * default
 map ) nopreview
 map | onlycentre
+map ^ onlyPreview
 
 
 #unbind defaults
