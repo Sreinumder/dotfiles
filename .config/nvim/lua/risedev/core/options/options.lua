@@ -10,8 +10,10 @@ opt.number = true
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
 
+-- opt.rulerformat = ""
 opt.cursorline = true -- highlight the current cursor line
 -- opt.cursorcolumn = true -- highlight the current cursor column
+-- opt.cursorlineopt = "number"
 --setlocal cc=80
 -- vim.g.cc = 80
 vim.g.colorcolumn = 80

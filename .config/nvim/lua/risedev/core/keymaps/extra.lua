@@ -3,36 +3,36 @@ local keymap = vim.keymap -- for conciseness
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- clone sentences up and down
--- keymap.set("n", "<A-K>", 'V"by"bgpgv', { desc = "clone line Up(n)" })
--- keymap.set("n", "<A-J>", 'V"by"bPgv', { desc = "clone line Down(n)" })
--- keymap.set("v", "<A-K>", '"by"bgpgv', { desc = "clone selection Up(v)" })
--- keymap.set("v", "<A-J>", '"by"bPgv', { desc = "clone selection Down(v)" })
+keymap.set("n", "<A-K>", 'V"by"bgpgv', { desc = "clone line Up(n)" })
+keymap.set("n", "<A-J>", 'V"by"bPgv', { desc = "clone line Down(n)" })
+keymap.set("v", "<A-K>", '"by"bgpgv', { desc = "clone selection Up(v)" })
+keymap.set("v", "<A-J>", '"by"bPgv', { desc = "clone selection Down(v)" })
 
 -- word shit well
 -- Map a key combination to the function with count as input
 -- vim.api.nvim_set_keymap('n', '<A-K>', ':lua repeat_action(vim.v.count)<CR>', { noremap = true, silent = true })
-
-function execute_keybinds(keys)
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(keys, true, false, true), 'n', true)
-end
- keymap.set({'n', 'v'}, '<A-J>', function()
-   local count = vim.v.count
-   local mode = vim.api.nvim_get_mode().mode
-   if vim.v.count == 0 then count = 1 end
-   if mode == 'n' then execute_keybinds("V") end
-   execute_keybinds('"by')
-   for _ = 1, count do execute_keybinds('"bgP') end
-   execute_keybinds('gv')
- end, { noremap = true, silent = true })
- keymap.set({'n', 'v'}, '<A-K>', function()
-   local count = vim.v.count
-   local mode = vim.api.nvim_get_mode().mode
-   if vim.v.count == 0 then count = 1 end
-   if mode == 'n' then execute_keybinds("V") end
-   execute_keybinds('"by')
-   for _ = 1, count do execute_keybinds('"bp') end
-   execute_keybinds('gv')
- end, { noremap = true, silent = true })
+--
+-- function execute_keybinds(keys)
+--     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(keys, true, false, true), 'n', true)
+-- end
+--  keymap.set({'n', 'v'}, '<A-J>', function()
+--    local count = vim.v.count
+--    local mode = vim.api.nvim_get_mode().mode
+--    if vim.v.count == 0 then count = 1 end
+--    if mode == 'n' then execute_keybinds("V") end
+--    execute_keybinds('"by')
+--    for _ = 1, count do execute_keybinds('"bgP') end
+--    execute_keybinds('gv')
+--  end, { noremap = true, silent = true })
+--  keymap.set({'n', 'v'}, '<A-K>', function()
+--    local count = vim.v.count
+--    local mode = vim.api.nvim_get_mode().mode
+--    if vim.v.count == 0 then count = 1 end
+--    if mode == 'n' then execute_keybinds("V") end
+--    execute_keybinds('"by')
+--    for _ = 1, count do execute_keybinds('"bp') end
+--    execute_keybinds('gv')
+--  end, { noremap = true, silent = true })
 
 -- keymap.set("n", "<A-K>", "<count><repeat>1j<repeat>", { desc = "clone line Up(n)" })
 -- keymap.set("n", "<A-J>", "<count>normal qq<Esc>j<repeat>./<cr><repeat>", { desc = "clone line Down(n)" })

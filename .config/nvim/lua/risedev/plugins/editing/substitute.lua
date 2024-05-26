@@ -1,12 +1,15 @@
 return {
-  "gbprod/substitute.nvim",
-	opts = {},
+	"gbprod/substitute.nvim",
+	dependencies = { "gbprod/yanky.nvim" },
+	opts = {
+		-- on_substitute = require("yanky.integration").substitute(),
+	},
 	events = { "BufEnter" },
-  keys = {
-    { "s", mode={ "n", "x" } },
-    { "S", mode={ "n", "x" } },
-    { "<A-s>", mode={ "n", "x" } },
-  },
+	keys = {
+		{ "s", mode = { "n", "x" } },
+		{ "S", mode = { "n", "x" } },
+		{ "<A-s>", mode = { "n", "x" } },
+	},
 	config = function()
 		require("substitute").setup()
 		local keymap = vim.keymap
