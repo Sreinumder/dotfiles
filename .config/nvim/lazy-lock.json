@@ -22,7 +22,7 @@
   "everforest-nvim": { "branch": "main", "commit": "c88fc2f599c9356bee1e9543d3955b52bfcadce4" },
   "expand.nvim": { "branch": "main", "commit": "c8fb5726e8ca747e709966737566fb628cb95894" },
   "flash.nvim": { "branch": "main", "commit": "7bb4a9c75d1e20cd24185afedeaa11681829ba23" },
-  "friendly-snippets": { "branch": "main", "commit": "3e9a3f5a0cfcef1741e352c37bda4e82e5eb846a" },
+  "friendly-snippets": { "branch": "main", "commit": "d0610077b6129cf9f7f78afbe3a1425d60f6e2f1" },
   "glow.nvim": { "branch": "main", "commit": "238070a686c1da3bccccf1079700eb4b5e19aea4" },
   "highlight-undo.nvim": { "branch": "main", "commit": "1ea1c79372d7d93c88fd97543880927b7635e3d2" },
   "hlargs.nvim": { "branch": "main", "commit": "0ee7783f9f40a6dd15fbb4e497b24818342a9940" },
