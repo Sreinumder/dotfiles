@@ -5,35 +5,11 @@
 -- └────────────────────────────────┘
 return {
   "monaqa/dial.nvim",
-  keys = { "<C-a>", "<C-x>", "g<C-a>", "g<C-x>", mode = { "n", "x" } },
+  -- keys = { "<C-a>", "<C-x>", "g<C-a>", "g<C-x>", mode = { "n", "x" } },
   config = function()
     local augend = require("dial.augend")
-    local direction_word = augend.constant.new({ elements = { "up", "down", "left", "right"}, word = false, cyclic = true })
-    -- local direction_word = augend.constant.new({ elements = { "{U,u}p", "{D,d}own", "{L,l}eft", "{R,r}ight"}, word = true, cyclic = true })
-    local logical_alias = augend.constant.new({ elements = { "&&", "||" }, word = false, cyclic = true })
-    local logical_word_alias = augend.constant.new({ elements = { "and", "or" }, word = true, cyclic = true })
-    local capitalized_boolean = augend.constant.new({ elements = { "True", "False" }, word = true, cyclic = true })
-    local weekdays = augend.constant.new({ elements = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }, word = true, cyclic = true, })
-    local months = augend.constant.new({ elements = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", }, word = true, cyclic = true, })
-    local md_checkbox = augend.constant.new({ elements = {"- [ ]", "- [x]"}, word = false, cyclic = true, })
-    -- local ordinal_numbers_a = augend.constant.new({ elements = { "first", "second", "third", "fourth"}, word = false, cyclic = false,})
-    -- local numbers_word_a = augend.constant.new({ elements = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"},word = false, cyclic = false, })
-    -- local ordinal_numbers_b = augend.constant.new({ elements = { "tenth", "eleventh", "twelveth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth", "nineteenth", "twentieth", "twentyfirst", },word = true, cyclic = false, })
-    -- local numbers_word_b = augend.constant.new({ elements = { "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty" },word = true, cyclic = true, })
-    -- local numbers_word_c = augend.constant.new({ elements = { "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety", "hundred" },word = false, cyclic = true, })
     local dial_config = require "dial.config"
-    local augend_base = {
-      augend.integer.alias.decimal, -- nonnegative decimal number (0, 1, 2, 3, ...)
-      augend.integer.alias.hex, -- nonnegative hex number  (0x01, 0x1a1f, etc.)
-      augend.date.alias["%Y/%m/%d"], -- date (2024/04/23, etc.)
-      augend.constant.alias.bool, -- boolean value (true <-> false)
-      logical_word_alias, -- and<->or
-      logical_alias, -- &&<->||
-      direction_word,
-      weekdays, months,
-      augend.semver.alias.semver, -- versioning (v6.8.3)
-      md_checkbox,
-    }
+
     local function concat_tables(table1, table2)
       if table2 == nil then
         return table1
@@ -45,40 +21,93 @@ return {
       return result
     end
 
-    dial_config.augends:register_group{ default = augend_base }
-    dial_config.augends:on_filetype{
-      typescript = concat_tables(augend_base, {augend.constant.new{ elements = { "let", "const" }}}),
-      css, html = concat_tables(augend_base, {augend.integer.alias.decimal, augend.hexcolor.new{ case = "lower" }, augend.hexcolor.new{ case = "upper" } }),
-      markdown = concat_tables(augend_base,  {augend.misc.alias.markdown_header, md_checkbox}),
-      norg = concat_tables(augend_base,  {augend.misc.alias.markdown_header, md_checkbox}),
-      org = concat_tables(augend_base,  {augend.misc.alias.markdown_header, md_checkbox}),
-      json = concat_tables(augend_base, {}),
-      lua =  concat_tables(augend_base,{capitalized_boolean}), 
-      python = concat_tables(augend_base,  {capitalized_boolean}),
+    local function AGN(Elements, Word, Cyclic)
+      Word = true and Word
+      Cyclic = true and Cyclic
+      if Elements == nil then
+        return nil
+      end
+      return augend.constant.new({ elements = Elements, word = Word, cyclic = Cyclic, })
+    end
+
+    local augend_base = {
+      -- augend.semver.alias.semver, -- versioning (v10.0.0)
     }
-    vim.keymap.set("n", "<C-a>", function()
-      require("dial.map").manipulate("increment", "normal")
-    end)
-    vim.keymap.set("n", "<C-x>", function()
-      require("dial.map").manipulate("decrement", "normal")
-    end)
-    vim.keymap.set("n", "g<C-a>", function()
-      require("dial.map").manipulate("increment", "gnormal")
-    end)
-    vim.keymap.set("n", "g<C-x>", function()
-      require("dial.map").manipulate("decrement", "gnormal")
-    end)
-    vim.keymap.set("v", "<C-a>", function()
-      require("dial.map").manipulate("increment", "visual")
-    end)
-    vim.keymap.set("v", "<C-x>", function()
-      require("dial.map").manipulate("decrement", "visual")
-    end)
-    vim.keymap.set("v", "g<C-a>", function()
-      require("dial.map").manipulate("increment", "gvisual")
-    end)
-    vim.keymap.set("v", "g<C-x>", function()
-      require("dial.map").manipulate("decrement", "gvisual")
-    end)
+    dial_config.augends:register_group{
+      default = augend_base,
+      number = {
+        augend.integer.alias.decimal_int, -- decimal number (-1, 0, 1, 2, 3, ...)
+        augend.integer.alias.hex, -- nonnegative hex number  (0x01, 0x1a1f, etc.)
+      },
+      logical = {
+        augend.constant.alias.bool, -- boolean value (true <-> false)
+        AGN({"True","False"}),
+        AGN({"and","or"}),
+        AGN({"&&", "||"}, false),
+        AGN({"==", "!="}, false),
+        AGN({"<", ">="}, false),
+        AGN({">", "<="}, false),
+      },
+      word = {
+        AGN({ "yes", "no" }),
+      },
+      character = { augend.constant.alias.alpha, augend.constant.alias.Alpha}, -- a b c  A B C
+      quote = { augend.paren.alias.quote }, -- 'rose'
+      parenthesis = { augend.paren.alias.brackets },
+      date = {
+        augend.date.alias["%Y/%m/%d"], -- date (2024/04/23, etc.)
+        augend.date.alias["%d/%m/%Y"], -- date (24/04/2024, etc.)
+        augend.date.alias["%Y年%-m月%-d日(%ja)"],
+        augend.date.alias["%Y年%-m月%-d日"],
+        augend.date.alias["%H:%M:%S"],
+        augend.date.alias["%H:%M"],
+        augend.constant.alias.ja_weekday, augend.constant.alias.ja_weekday_full, -- 月 金曜日
+        AGN({"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", }),
+        AGN({"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }),
+      },
+      notes = {
+        AGN({"- [ ]", "- [x]"}),
+        AGN({"┘","┐","c", "└", "┌"}, false),
+        AGN({"e","─","│"}, false),
+        AGN({"◄", "h","►", "▼","▲"}, false),
+      }
+    }
+    dial_config.augends:on_filetype{
+      typescript = concat_tables(augend_base,  {augend.constant.new                              { elements                           = { "let", "const" }}}),
+      css, html  = concat_tables(augend_base,  {augend.integer.alias.decimal, augend.hexcolor.new{ case = "lower" }, augend.hexcolor.new{ case = "upper" } }),
+      markdown   = concat_tables(augend_base,  {augend.misc.alias.markdown_header, md_checkbox}),
+      norg       = concat_tables(augend_base,  {augend.misc.alias.markdown_header, md_checkbox}),
+      org        = concat_tables(augend_base,  {augend.misc.alias.markdown_header, md_checkbox}),
+      json       = concat_tables(augend_base,  {}),
+      lua        = concat_tables(augend_base,  {}),
+      python     = concat_tables(augend_base,  {}),
+      haskell    = concat_tables(augend_base,  {
+        augend.constant.new({ elements = { "/=", "==" }, word = false, cyclic = true }),
+      }),
+    }
+    local mode = {"n", "v"}
+    local arga = {"increment", "decrement"}
+    local argb = {"normal", "gnormal", "visual", "gvisual"}
+    local group = { "default", "number", "date", "word", "character", "logical", "parenthesis", "quote", "notes", }
+    local keymaps = {
+      -- {"<C-a>",  "<C-x>",  "g<C-a>",  "g<C-x>"},
+      {"<leader>ii",  "<leader>uu",  "g<leader>ii",  "g<leader>uu"},-- "default
+      {"<leader>in",  "<leader>un",  "g<leader>in",  "g<leader>un"},-- "number" 
+      {"<leader>id",  "<leader>ud",  "g<leader>id",  "g<leader>ud"},-- "date",  
+      {"<leader>iw",  "<leader>uw",  "g<leader>iw",  "g<leader>uw"},-- "word",  
+      {"<leader>ic",  "<leader>uc",  "g<leader>ic",  "g<leader>uc"},-- "character 
+      {"<leader>il",  "<leader>ul",  "g<leader>il",  "g<leader>ul"},-- "logical 
+      {"<leader>ip",  "<leader>up",  "g<leader>ip",  "g<leader>up"},-- "parenthesis 
+      {"<leader>iq",  "<leader>uq",  "g<leader>iq",  "g<leader>uq"},-- "quote", 
+      {"<leader>is",  "<leader>us",  "g<leader>is",  "g<leader>us"},-- "notes", 
+    }
+    for j = 1, #group do
+      for i = 0, 7 do
+        -- vim.print(mode[math.floor(i/4)+1] .. " " .. keymaps[j][i%4+1] .. " " .. arga[i%2+1] .. " " .. argb[math.floor(i/2)+1] .. " " .. group[j])
+        vim.keymap.set(mode[math.floor(i/4)+1], keymaps[j][i%4+1],  function()
+          require("dial.map").manipulate(arga[i%2+1], argb[math.floor(i/2)+1], group[j])
+        end)
+      end
+    end
   end,
 }
