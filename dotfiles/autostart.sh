@@ -22,6 +22,7 @@ dunst &
 
 #load touchpad gestures
 # fusuma &
+kill $(ps aux | grep 'swww-daemon' | awk '{print $2}')
 swww-daemon -f xrgb &
 notify-send -u normal "working??"
 # enables screen sharing

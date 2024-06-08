@@ -3,13 +3,15 @@ local keymap = vim.keymap -- for conciseness
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- clone sentences up and down
-keymap.set("n", "<A-K>", 'V"by"bgpgv', { desc = "clone line Up(n)" })
 keymap.set("n", "<A-J>", 'V"by"bPgv', { desc = "clone line Down(n)" })
-keymap.set("v", "<A-K>", '"by"bgpgv', { desc = "clone selection Up(v)" })
-keymap.set("v", "<A-J>", '"by"bPgv', { desc = "clone selection Down(v)" })
+keymap.set("n", "<A-K>", 'V"by"bgpgv', { desc = "clone line Up(n)" })
+keymap.set("x", "<A-J>", '"by"bPgv', { desc = "clone selection Down(v)" })
+keymap.set("x", "<A-K>", '"by"bgpgv', { desc = "clone selection Up(v)" })
 
--- keymap.set("x", "<leader><A-k>", '"bdO<ESC>"bpgv', { desc = "delete paste above current line(jump)" })
--- keymap.set("x", "<leader><A-j>", '"bdo<ESC>"bpgv', { desc = "delete paste below current line(jump)" })
+keymap.set("x", "<leader><A-j>", '"bdo<esc>"bp^vg_', { desc = "move selection Down(v) to new line" })
+keymap.set("x", "<leader><A-k>", '"bdO<esc>"bp^vg_', { desc = "move selection Up(v) to new line" })
+keymap.set("x", "<leader><A-J>", '"byo<esc>"bp^vg_', { desc = "clone selection Down(v) to new line" })
+keymap.set("x", "<leader><A-K>", '"byO<esc>"bp^vg_', { desc = "clone selection Up(v) to new line" })
 
 -- move selection
 keymap.set("v", "<A-w>", '"bdw"bp`[v`]',       { desc = "move selection with w" })

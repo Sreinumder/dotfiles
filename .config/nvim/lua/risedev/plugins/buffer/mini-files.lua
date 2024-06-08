@@ -1,6 +1,7 @@
 return {
 	"echasnovski/mini.files",
 	version = "*",
+  events = "",
   keys = {
     {
       "<leader><leader>e",
@@ -40,7 +41,7 @@ return {
 		-- General options
 		options = {
 			permanent_delete = false,
-			use_as_default_explorer = false,
+			use_as_default_explorer = true,
 		},
 
 		-- Customization of explorer windows
