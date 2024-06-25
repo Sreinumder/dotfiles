@@ -9,6 +9,7 @@ return {
 		-- "mcchrish/zenbones.nvim",
 		-- name = "zenbones",
 		-- dependencies = "rktjmp/lush.nvim",
+    events = "VeryLazy",
 		config = function()
       vim.cmd([[colorscheme everforest]])
       -- vim.cmd([[colorscheme forestbones]])

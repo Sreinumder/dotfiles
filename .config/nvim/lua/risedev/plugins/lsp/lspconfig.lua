@@ -51,13 +51,13 @@ return {
       ltex = {},
 			-- ruff_lsp = {},
       sqlls = {},
-			stylelint = {}, -- 
+			-- stylelint = {}, -- 
 			taplo = {},
-      unocss = {},
+      -- unocss = {},
       -- ventur-vls = {}, -- VUE
-			vimls = {},
-			yamlls = {},
-			yamls = {},
+			-- vimls = {},
+			-- yamlls = {},
+			-- yamls = {},
 		},
 		-- you can do any additional lsp server setup here
 		-- return true if you don"t want this server to be setup with lspconfig
@@ -131,9 +131,9 @@ return {
 				},
 			},
 		})
-		require("lint").linters_by_ft = { 
-      markdown = { "vale" },
-    }
+		-- require("lint").linters_by_ft = { 
+  --     markdown = { "vale" },
+  --   }
 		require("lspconfig").pyright.setup({ capabilities = capabilities })
 	end,
 }

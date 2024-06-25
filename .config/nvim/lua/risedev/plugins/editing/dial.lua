@@ -47,6 +47,8 @@ return {
         AGN({"==", "!="}, false),
         AGN({"<", ">="}, false),
         AGN({">", "<="}, false),
+        AGN({"+=", "-=", "*=", "/="}, false),
+        AGN({"++", "--"}, false),
       },
       word = {
         AGN({ "yes", "no" }),
@@ -57,19 +59,30 @@ return {
       date = {
         augend.date.alias["%Y/%m/%d"], -- date (2024/04/23, etc.)
         augend.date.alias["%d/%m/%Y"], -- date (24/04/2024, etc.)
-        augend.date.alias["%Y年%-m月%-d日(%ja)"],
+        -- augend.date.alias["%Y-%m-%d"], -- date (2024-04-23, etc.)
+        -- augend.date.alias["%d-%m-%Y"], -- date (24-04-2024, etc.)
+        augend.date.alias["%Y年%-m月%-d日(%ja)"],-- date (2024年-04月-20日, etc.)
         augend.date.alias["%Y年%-m月%-d日"],
+        AGN({"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", }),
+        AGN({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", }),
+        augend.constant.alias.ja_weekday, augend.constant.alias.ja_weekday_full, -- 月 金曜日
+        AGN({"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }),
+        AGN({"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }),
+      },
+      -- week = {
+      --
+      -- },
+      time = {
         augend.date.alias["%H:%M:%S"],
         augend.date.alias["%H:%M"],
-        augend.constant.alias.ja_weekday, augend.constant.alias.ja_weekday_full, -- 月 金曜日
-        AGN({"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", }),
-        AGN({"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }),
       },
       notes = {
         AGN({"- [ ]", "- [x]"}),
-        AGN({"┘","┐","c", "└", "┌"}, false),
-        AGN({"e","─","│"}, false),
-        AGN({"◄", "h","►", "▼","▲"}, false),
+        AGN({"*", "**", "***","****","*****","******","*******"}),
+        AGN({"#", "##", "###","####","#####","######","#######"}),
+        -- AGN({"┘","┐","c", "└", "┌"}, false),
+        -- AGN({"e","─","│"}, false),
+        -- AGN({"◄", "h","►", "▼","▲"}, false),
       }
     }
     dial_config.augends:on_filetype{
@@ -88,12 +101,13 @@ return {
     local mode = {"n", "v"}
     local arga = {"increment", "decrement"}
     local argb = {"normal", "gnormal", "visual", "gvisual"}
-    local group = { "default", "number", "date", "word", "character", "logical", "parenthesis", "quote", "notes", }
+    local group = { "default", "number", "date", "time", "word", "character", "logical", "parenthesis", "quote", "notes", }
     local keymaps = {
       -- {"<C-a>",  "<C-x>",  "g<C-a>",  "g<C-x>"},
       {"<leader>ii",  "<leader>uu",  "g<leader>ii",  "g<leader>uu"},-- "default
       {"<leader>in",  "<leader>un",  "g<leader>in",  "g<leader>un"},-- "number" 
-      {"<leader>id",  "<leader>ud",  "g<leader>id",  "g<leader>ud"},-- "date",  
+      {"<leader>id",  "<leader>ud",  "g<leader>id",  "g<leader>ud"},-- "date",
+      {"<leader>it",  "<leader>ut",  "g<leader>it",  "g<leader>ut"},-- "time",
       {"<leader>iw",  "<leader>uw",  "g<leader>iw",  "g<leader>uw"},-- "word",  
       {"<leader>ic",  "<leader>uc",  "g<leader>ic",  "g<leader>uc"},-- "character 
       {"<leader>il",  "<leader>ul",  "g<leader>il",  "g<leader>ul"},-- "logical 

@@ -11,7 +11,7 @@ return {
 	keys = {
     { "gc", mode = { "v", "n" } },
     { "gb", mode = { "v", "n" } },
-    {'<C-/>', function() require('Comment.api').toggle.linewise.current() end,},
+    -- {'<C-/>', function() require('Comment.api').toggle.linewise.current() end, mode = {"n", "i"}},
     {'<C-/>', function() vim.api.nvim_feedkeys('<esc>', 'nx', false)
       require('Comment.api').toggle.linewise(vim.fn.visualmode()) end, mode = {'x'}},
     -- {'<c-/>', function()

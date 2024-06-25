@@ -124,13 +124,10 @@ return {
 				end, { "i", "s" }),
 			},
 			sources = {
-
+        { name = "luasnip" },
 				{ name = "nvim_lsp" },
-				{
-					name = "async_path", --[[ option = {}, ]]
-				},
+				{ name = "async_path"},
 				-- { name = "path", },
-				{ name = "luasnip" },
 				{ name = "nvim_lua" },
 				{ name = "calc" },
 				{
