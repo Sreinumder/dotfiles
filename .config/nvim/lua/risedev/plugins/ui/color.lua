@@ -5,10 +5,6 @@
 return {
 	{
 		"Sreinumder/everforest-nvim",
-		-- "neanias/everforest-nvim",
-		-- "mcchrish/zenbones.nvim",
-		-- name = "zenbones",
-		-- dependencies = "rktjmp/lush.nvim",
     events = "VeryLazy",
 		config = function()
       vim.cmd([[colorscheme everforest]])

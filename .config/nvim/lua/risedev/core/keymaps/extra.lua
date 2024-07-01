@@ -41,8 +41,10 @@ keymap.set("v", "<A-G>", '"bdG"bp`[v`]',      { desc = "move selection with G" }
 
 keymap.set("n", "<leader>*", "*``cgn", { desc = "replace word" })
 
--- -- Save your finger
+-- Save your finger
 -- keymap.set({ "n", "x" }, ";", ":")
+
+-- keymap.set("x", "gs<CR>", "<Esc>a<CR>gvo<Esc>i<CR><Esc>gv")
 
 keymap.set("n", "<leader>qw", ":exit<cr>", { silent = true, desc = "save buffer" }) -- Shortcut for faster save and quit
 keymap.set("n", "<leader>qq", "<cmd>x<cr>", { silent = true, desc = "quit current window" }) -- Saves the file if modified and quit

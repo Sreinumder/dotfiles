@@ -23,7 +23,7 @@ return {
 
 		-- {"C", "<cmd>lua require('various-textobjs').toNextClosingBracket()<CR>", mode = { "o", "x" }},
 		-- {"Q", "<cmd>lua require('various-textobjs').toNextQuotationMark()<CR>", mode = { "o", "x" }},
-		{ "R", "<cmd>lua require('various-textobjs').restOfParagraph()<CR>", mode = { "o", "x" } },
+		-- { "R", "<cmd>lua require('various-textobjs').restOfParagraph()<CR>", mode = { "o", "x" } },
 		{ "gG", "<cmd>lua require('various-textobjs').entireBuffer()<CR>", mode = { "o", "x" } },
 		-- {"n", "<cmd>lua require('various-textobjs').nearEoL()<CR>", mode = { "o", "x" }},
 		{ "ih", "<cmd>lua require('various-textobjs').lineCharacterwise('inner')<CR>", mode = { "o", "x" } },
