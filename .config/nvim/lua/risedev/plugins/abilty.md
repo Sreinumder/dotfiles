@@ -44,5 +44,7 @@ shuf -n 3
 This is super good shit xd
 shuf
 [e, d, b, a, f, c,]
-sed 's/,/\n/g'
+sed 's/,/\n/g' > echo | sort | sed 's/\n/,/g'
 [a, b, c, d, e, f,]
+``` sed 's/, */\n/g'| grep -v '^$' | sort | sed -z 's/\n/, /g' ```
+a,b,c,d,e,f,

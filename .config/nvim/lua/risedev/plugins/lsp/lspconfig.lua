@@ -38,21 +38,21 @@ return {
 		},
 		-- LSP Server Settings
 		servers = {
-      ast_grep = {}, -- C, C++, RUST, GO, JAVA, PYTHON, C#, JAVASCRIPT, JSX, TYPESCRIPT, HTML, CSS, KOTLIN, DART, LUA
-			bashls = {},
-			cssls = {}, -- C, C++
-			clangd = {}, -- C, C++
-      deno = {},
-			dockerls = {},
-      emmet_ls = {},
-			gopls = {},
-      html = {},
-      jsonls = {},
-      ltex = {},
-			-- ruff_lsp = {},
-      sqlls = {},
-			-- stylelint = {}, -- 
-			taplo = {},
+   --    ast_grep = {}, -- C, C++, RUST, GO, JAVA, PYTHON, C#, JAVASCRIPT, JSX, TYPESCRIPT, HTML, CSS, KOTLIN, DART, LUA
+			-- bashls = {},
+			-- cssls = {}, -- C, C++
+			-- clangd = {}, -- C, C++
+   --    deno = {},
+			-- dockerls = {},
+   --    emmet_ls = {},
+			-- gopls = {},
+   --    html = {},
+   --    jsonls = {},
+   --    ltex = {},
+			-- -- ruff_lsp = {},
+   --    sqlls = {},
+			-- -- stylelint = {}, -- 
+			-- taplo = {},
       -- unocss = {},
       -- ventur-vls = {}, -- VUE
 			-- vimls = {},

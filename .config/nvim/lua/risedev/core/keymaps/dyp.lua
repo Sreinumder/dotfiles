@@ -41,6 +41,9 @@ keymap.set("n", "<leader>o", "printf('m`%so<ESC>``', v:count1)", { expr = true, 
 keymap.set("n", "<leader>O", "printf('m`%sO<ESC>``', v:count1)", { expr = true, desc = "insert line above", })
 keymap.set("x", "<leader>o", "<esc>o<esc>gv", { desc = "insert line below", })
 keymap.set("x", "<leader>O", "<esc>O<esc>gv", { desc = "insert line above", })
+keymap.set("x", "<A-o>", "<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^vg_", { desc = "insert new line below and above", })
+keymap.set("x", "<A-x>", '<esc>"_x`<"_xv`>h', { desc = "delete surrounding of visual mode", })
+-- riseisthegreatestneovimuser
 -- keymap.set("n", "<leader>jp", "o<ESC>pv'[']", { desc = "paste below current line" })
 -- keymap.set("n", "<leader>jP", "O<ESC>pv'[']", { desc = "paste above current line" })
 
