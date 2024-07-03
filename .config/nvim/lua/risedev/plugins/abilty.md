@@ -20,6 +20,10 @@ sort
 
 use bash filters or commands directly
 -------------------------------------
+<A-o> in visual will take comma seperated value and filter them with sort or shuf or others
+{
+2, 5, 5, 4, 3, 1, 2, 6, 
+}
 generate random number
 echo $((1 + $RANDOM % 100))
 38
@@ -46,5 +50,8 @@ shuf
 [e, d, b, a, f, c,]
 sed 's/,/\n/g' > echo | sort | sed 's/\n/,/g'
 [a, b, c, d, e, f,]
-``` sed 's/, */\n/g'| grep -v '^$' | sort | sed -z 's/\n/, /g' ```
-a,b,c,d,e,f,
+```
+sed 's/, */\n/g'| grep -v '^$' | sort | sed -z 's/\n/, /g'
+```
+
+a, b, c, d, e, f, 

@@ -37,13 +37,23 @@ keymap.set("x", "<leader>dp", '"bdm`o<ESC>"bp``', { desc = "delete paste below c
 keymap.set("x", "<leader>dP", '"bdm`O<ESC>"bp``', { desc = "delete paste above current line(jump)" })
 -- keymap.set("x", "<leader>y", '"bym`o<ESC>"bp``', { desc = "copy paste below current line(jump)" })
 -- keymap.set("x", "<leader>y", '"bym`O<ESC>"bp``', { desc = "copy paste above current line(jump)" })
-keymap.set("n", "<leader>o", "printf('m`%so<ESC>``', v:count1)", { expr = true, desc = "insert line below", })
-keymap.set("n", "<leader>O", "printf('m`%sO<ESC>``', v:count1)", { expr = true, desc = "insert line above", })
-keymap.set("x", "<leader>o", "<esc>o<esc>gv", { desc = "insert line below", })
-keymap.set("x", "<leader>O", "<esc>O<esc>gv", { desc = "insert line above", })
-keymap.set("x", "<A-o>", "<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^vg_", { desc = "insert new line below and above", })
+keymap.set("n", "<A-a>", "printf('m`%so<ESC>``', v:count1)", { expr = true, desc = "insert line below", })
+keymap.set("n", "<A-i>", "printf('m`%sO<ESC>``', v:count1)", { expr = true, desc = "insert line above", })
+keymap.set("x", "<A-a>", "<esc>o<esc>gv", { desc = "insert line below", })
+keymap.set("x", "<A-i>", "<esc>O<esc>gv", { desc = "insert line above", })
+keymap.set("n", "<A-A>", '<esc>j"_ddk', { desc = "delete the line below", })
+keymap.set("n", "<A-I>", '<esc>k"_dd', { desc = "delete the line above", })
+
+keymap.set("n", "<A-m>", "o<esc>kO<esc>j", { desc = "insert new line below and above", })
+keymap.set("x", "<A-m>", "<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^vg_", { desc = "insert new line below and above", })
+keymap.set("n", "<A-n>", "JkJ", { desc = "join with prev and next line", })
+keymap.set("x", "<A-n>", "<Esc>^mgk$JJ", { desc = "join with prev and next line", })
 keymap.set("x", "<A-x>", '<esc>"_x`<"_xv`>h', { desc = "delete surrounding of visual mode", })
--- riseisthegreatestneovimuser
+keymap.set("x", "<A-c>", '"bdo<esc>"bpk"_dd', { desc = "delete except the selection of current line", })
+
+-- {{ rise is me }}
+
+-- riseisthe greates tneovimuser
 -- keymap.set("n", "<leader>jp", "o<ESC>pv'[']", { desc = "paste below current line" })
 -- keymap.set("n", "<leader>jP", "O<ESC>pv'[']", { desc = "paste above current line" })
 

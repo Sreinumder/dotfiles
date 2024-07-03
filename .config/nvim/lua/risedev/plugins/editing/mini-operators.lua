@@ -16,7 +16,7 @@ return {
 			mode = { "x" },
 		},
 		{ "gm", mode = { "n", "v" } },
-		{ "<leader>gs", mode = { "n", "v" } },
+		-- { "<leader>gs", mode = { "n", "v" } },
 	},
 	opts = {
 		-- Evaluate text and replace with output
@@ -45,7 +45,7 @@ return {
 
 		-- Sort text
 		sort = {
-			prefix = "<leader>gs", -- Function which does the sort
+			prefix = "", -- Function which does the sort
 			func = nil,
 		},
 	},
