@@ -77,7 +77,7 @@ alias ls="eza --icons=always"
 alias lls="eza"
 alias ll="eza -al"
 alias swf="( swww-daemon -f xrgb & )"
-alias swr="kill $(ps aux | grep 'swww-daemon' | awk '{print $2}');( swww-daemon -f xrgb & )"
+alias swr="kill $(ps aux | grep 'swww-daemon' | awk '{print $2}');( swww-daemon -f xrgb & );( fcitx5 & );"
 
 # alias lf=lfrun
 # alias lff=lf
