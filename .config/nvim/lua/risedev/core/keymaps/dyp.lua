@@ -50,10 +50,14 @@ keymap.set("n", "<A-n>", "JkJ", { desc = "join with prev and next line", })
 keymap.set("x", "<A-n>", "<Esc>^mgk$JJ", { desc = "join with prev and next line", })
 keymap.set("x", "<A-x>", '<esc>"_x`<"_xv`>h', { desc = "delete surrounding of visual mode", })
 keymap.set("x", "<A-c>", '"bdo<esc>"bpk"_dd', { desc = "delete except the selection of current line", })
+keymap.set("x", "<C-l>", 'loho', { desc = "increase vi range", })
+keymap.set("x", "<C-h>", 'holo', { desc = "decrease vi range", })
+keymap.set("x", "<C-S-l>", 'lolo', { desc = "increase vi range", })
+keymap.set("x", "<C-S-h>", 'hoho', { desc = "decrease vi range", })
 
 -- {{ rise is me }}
 
--- riseisthe greates tneovimuser
+-- rise is the greatest neovim user
 -- keymap.set("n", "<leader>jp", "o<ESC>pv'[']", { desc = "paste below current line" })
 -- keymap.set("n", "<leader>jP", "O<ESC>pv'[']", { desc = "paste above current line" })
 

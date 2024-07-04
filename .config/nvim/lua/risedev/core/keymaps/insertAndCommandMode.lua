@@ -24,15 +24,16 @@ keymap.set({ "i", "c" }, "<C-E>", "<END>")
 keymap.set("c", "<A-K>", "\\(.*\\)")
 -- lmao useful but weird ass key bind for sort shuf and many more to filter from a list like a, b, c, d, e, f
 keymap.set("x", "<A-o>", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" |  | sed -z "s/\\n/, /g"<C-Left><C-Left><C-Left><C-Left><C-Left><C-Left>')
-keymap.set("x", "<leader>vso", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" | sort | sed -z "s/\\n/, /g"<CR>kgJgJ')
-keymap.set("x", "<leader>vsr", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" | sort -r | sed -z "s/\\n/, /g"<CR>kgJgJ')
-keymap.set("x", "<leader>vss", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" | shuf | sed -z "s/\\n/, /g"<CR>kgJgJ')
+-- keymap.set("x", "<leader>vso", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" | sort | sed -z "s/\\n/, /g"<CR>kgJgJ')
+-- keymap.set("x", "<leader>vsr", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" | sort -r | sed -z "s/\\n/, /g"<CR>kgJgJ')
+-- keymap.set("x", "<leader>vss", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" | shuf | sed -z "s/\\n/, /g"<CR>kgJgJ')
 
 -- {e, a, b, d, c, f, }
 -- {a, b, c, d, e, f, }
 -- shuf -i 1-10 -n 10 -r  | sed -z "s/\\n/, /g"
 -- keymap.set("n", "<leader>vrl", 'i<enter><esc>!!shuf -i 1-10 -n 10 -r  | sed -z "s/\\n/, /g"<CR>kgJ')
-keymap.set("n", "<A-o>", 'i<enter><esc>!! | sed -z "s/\\n/, /g"<Home><Right><Right>', {desc = "genearate comma seperated seq or shuf or any bash output"})
+keymap.set("n", "<A-o>", 'i<enter><enter><Up><esc>!! | sed -z "s/\\n/, /g"<Home><Right><Right>', {desc = "genearate comma seperated seq or shuf or any bash output"})
+keymap.set("i", "<A-o>", '<enter><enter><Up><esc>!! | sed -z "s/\\n/, /g"<Home><Right><Right>', {desc = "genearate comma seperated seq or shuf or any bash output"})
 
 -- generating 10 random 
 
