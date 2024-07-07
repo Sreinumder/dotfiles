@@ -5,10 +5,10 @@ keymap.set("i", "<c-u>", "<Esc>viw~ea", {desc="toggle case"})
 keymap.set("i", "<c-t>", "<Esc>b~lea", {desc="change word case to title"})
 keymap.set("i", "<C-l>", '<C-r>=expand("%:p:h") . "/" <CR>', {desc = "write file path"})
 
-keymap.set({ "i", "c" }, "<A-h>", "<Left>", { desc = "Insert mode left" })
-keymap.set({ "i", "c" }, "<A-j>", "<Down>", { desc = "Insert mode down" })
-keymap.set({ "i", "c" }, "<A-k>", "<Up>", { desc = "Insert mode up" })
-keymap.set({ "i", "c" }, "<A-l>", "<Right>", { desc = "Insert mode Right" })
+keymap.set({ "i", "c", "t"}, "<A-h>", "<Left>", { desc = "Insert mode left" })
+keymap.set({ "i", "c", "t"}, "<A-j>", "<Down>", { desc = "Insert mode down" })
+keymap.set({ "i", "c", "t"}, "<A-k>", "<Up>", { desc = "Insert mode up" })
+keymap.set({ "i", "c", "t"}, "<A-l>", "<Right>", { desc = "Insert mode Right" })
 
 keymap.set("i", "<A-H>", "<C-Left>", { desc = "Insert mode left" })
 keymap.set("i", "<A-J>", "<C-Down>", { desc = "Insert mode down" })
@@ -24,9 +24,9 @@ keymap.set({ "i", "c" }, "<C-E>", "<END>")
 keymap.set("c", "<A-K>", "\\(.*\\)")
 -- lmao useful but weird ass key bind for sort shuf and many more to filter from a list like a, b, c, d, e, f
 keymap.set("x", "<A-o>", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" |  | sed -z "s/\\n/, /g"<C-Left><C-Left><C-Left><C-Left><C-Left><C-Left>')
--- keymap.set("x", "<leader>vso", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" | sort | sed -z "s/\\n/, /g"<CR>kgJgJ')
--- keymap.set("x", "<leader>vsr", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" | sort -r | sed -z "s/\\n/, /g"<CR>kgJgJ')
--- keymap.set("x", "<leader>vss", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" | shuf | sed -z "s/\\n/, /g"<CR>kgJgJ')
+keymap.set("x", "<leader>vso", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" | sort -g | sed -z "s/\\n/, /g"<CR>kJJ')
+keymap.set("x", "<leader>vsr", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" | sort -gr | sed -z "s/\\n/, /g"<CR>kJJ')
+keymap.set("x", "<leader>vss", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" | shuf | sed -z "s/\\n/, /g"<CR>kJJ')
 
 -- {e, a, b, d, c, f, }
 -- {a, b, c, d, e, f, }

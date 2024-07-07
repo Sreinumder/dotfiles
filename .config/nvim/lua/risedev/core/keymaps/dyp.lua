@@ -47,13 +47,17 @@ keymap.set("n", "<A-I>", '<esc>k"_dd', { desc = "delete the line above", })
 keymap.set("n", "<A-m>", "o<esc>kO<esc>j", { desc = "insert new line below and above", })
 keymap.set("x", "<A-m>", "<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^vg_", { desc = "insert new line below and above", })
 keymap.set("n", "<A-n>", "JkJ", { desc = "join with prev and next line", })
-keymap.set("x", "<A-n>", "<Esc>^mgk$JJ", { desc = "join with prev and next line", })
+keymap.set("x", "<A-n>", ":j<cr>^mgk$JJgv", { desc = "join with prev and next line", })
 keymap.set("x", "<A-x>", '<esc>"_x`<"_xv`>h', { desc = "delete surrounding of visual mode", })
 keymap.set("x", "<A-c>", '"bdo<esc>"bpk"_dd', { desc = "delete except the selection of current line", })
 keymap.set("x", "<C-l>", 'loho', { desc = "increase vi range", })
 keymap.set("x", "<C-h>", 'holo', { desc = "decrease vi range", })
 keymap.set("x", "<C-S-l>", 'lolo', { desc = "increase vi range", })
 keymap.set("x", "<C-S-h>", 'hoho', { desc = "decrease vi range", })
+keymap.set("x", "<C-j>", 'joko', { desc = "increase vi range", })
+keymap.set("x", "<C-k>", 'kojo', { desc = "decrease vi range", })
+keymap.set("x", "<C-S-j>", 'jojo', { desc = "increase vi range", })
+keymap.set("x", "<C-S-k>", 'koko', { desc = "decrease vi range", })
 
 -- {{ rise is me }}
 
