@@ -3,6 +3,7 @@
 --│uncomment them to use lol│
 --└─────────────────────────┘
 return {
+  -- { "ellisonleao/gruvbox.nvim", name = "gruvbox" },
 	{
 		"Sreinumder/everforest-nvim",
     events = "VeryLazy",
@@ -13,9 +14,9 @@ return {
 			-- vim.cmd([[colorscheme catppuccin]])
 			-- vim.cmd([[colorscheme nord]])
 			-- vim.cmd([[colorscheme tokyonight]])
+			-- vim.cmd([[colorscheme gruvbox]])
 		end,
 	},
-    -- { "ellisonleao/gruvbox.nvim", name = "gruvbox" },
     -- { "catppuccin/nvim", name = "catppuccin" },
     -- { "mcchrish/zenbones.nvim", name = "zenbones", dependencies = "rktjmp/lush.nvim" },
     -- { "folke/tokyonight.nvim", name = "tokyonight" },

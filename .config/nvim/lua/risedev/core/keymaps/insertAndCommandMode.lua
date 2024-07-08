@@ -24,9 +24,10 @@ keymap.set({ "i", "c" }, "<C-E>", "<END>")
 keymap.set("c", "<A-K>", "\\(.*\\)")
 -- lmao useful but weird ass key bind for sort shuf and many more to filter from a list like a, b, c, d, e, f
 keymap.set("x", "<A-o>", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" |  | sed -z "s/\\n/, /g"<C-Left><C-Left><C-Left><C-Left><C-Left><C-Left>')
-keymap.set("x", "<leader>vso", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" | sort -g | sed -z "s/\\n/, /g"<CR>kJJ')
-keymap.set("x", "<leader>vsr", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" | sort -gr | sed -z "s/\\n/, /g"<CR>kJJ')
-keymap.set("x", "<leader>vss", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" | shuf | sed -z "s/\\n/, /g"<CR>kJJ')
+keymap.set("x", "<leader>oso", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" | sort -g | sed -z "s/\\n/, /g"<CR>kJxJhx')
+keymap.set("x", "<leader>osr", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" | sort -gr | sed -z "s/\\n/, /g"<CR>kJxJhx')
+keymap.set("x", "<leader>oss", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" | shuf | sed -z "s/\\n/, /g"<CR>kJxJhx')
+keymap.set("x", "<leader>on", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" | wc -l<CR>kJxJhx')
 
 -- {e, a, b, d, c, f, }
 -- {a, b, c, d, e, f, }
