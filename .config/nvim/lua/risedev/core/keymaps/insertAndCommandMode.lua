@@ -21,7 +21,7 @@ keymap.set("i", "<A-N>", "<esc>bbcT, ", { desc = "change inside next csv surroun
 -- Go to the beginning and end of current line in insert mode quickly
 keymap.set({ "i", "c" }, "<C-A>", "<HOME>")
 keymap.set({ "i", "c" }, "<C-E>", "<END>")
-keymap.set("c", "<A-K>", "\\(.*\\)")
+keymap.set("c", "<C-A-K>", "\\(.*\\)", {desc="kirby "})
 -- lmao useful but weird ass key bind for sort shuf and many more to filter from a list like a, b, c, d, e, f
 keymap.set("x", "<A-o>", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" |  | sed -z "s/\\n/, /g"<C-Left><C-Left><C-Left><C-Left><C-Left><C-Left>')
 keymap.set("x", "<leader>oso", '<esc>a<Enter><esc>gvo<esc>i<Enter><esc>^"_d0vg_!sed "s/, */\\n/g"| grep -v "^$" | sort -g | sed -z "s/\\n/, /g"<CR>kJxJhx')

@@ -1,8 +1,7 @@
 All of my keybindings for neovim
 ================================
 
-Makes Faster Editing
---------------------
+# Makes Faster Editing
 1. mini-surround: gs, cs, ds, ysf, ysh, ysn adds/deletes/changes/finds surrounding like {}, ""
 2. substitute: s, S, substitute(select and paste)
                <A-s>, exchange two text-obj
@@ -31,8 +30,7 @@ Makes Faster Editing
     dgG to delete all buffer, ygG to yank all buffer
     alt + tab1234; => 567890
 
-Plugins that open different panel
----------------------------------
+# Plugins that open different panel
 1. treesj: {"n"} <leader>m
 2. mini-align: {"v"} ga to open alignment
 3. mueren: {"n"} <leader>rr to open Muren replace with live preview
@@ -45,26 +43,19 @@ Plugins that open different panel
 </html>
 to correctly use lsp and formatters
 
-Buffer Jumping
---------------
+# Buffer Jumping
 1. <leader>f for arrow.nvim pinned files jumping
 2. <leader><leader>f for reach.nvim for local buffers
 3. <leader>j for arrow.nvim pinned line jumping
 4. <leader>s prefix for telescope
 
-File explorers
---------------
+# File explorers
 1. <leader><leader>e for mini.files which edit files like buffers like oil.nvim
     - <leader>h go_back <leader>l go_in 
 2. <leader>>ee for neo-tree which shows files in tree like format
     - <leader>h go_back <leader>l go_in 
 
-Telescope(<leader> + s + ?)
----------------------------
-
-
-Toggleables(<leader> + , + ?)
------------------------------
+# Telescope(<leader> + s + ?)
 1. hydra.nvim panel for all 'o'
 2. nn for number 
 3. nr for relative number
