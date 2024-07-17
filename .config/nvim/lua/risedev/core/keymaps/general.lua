@@ -46,7 +46,7 @@ keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
 keymap.set("x", "<", "<gv")
 keymap.set("x", ">", ">gv")
 
-keymap.set("n", "<leader>rs", '"byy"bp!!sh<cr>', {desc = "filter the line with bash"})
+keymap.set("n", "<leader>rs", '"byy"bp"bp0d}k!!sh<cr>', {desc = "filter the line with bash"})
 keymap.set("n", "<leader><leader>rs", '0"by$0j"_d}"bp!!sh<cr>mb}O<esc>`b', {desc = "filter the line with bash"})
 keymap.set("n", "<leader>rS", "!!sh<cr>", {desc = "filter the line with bash"})
 

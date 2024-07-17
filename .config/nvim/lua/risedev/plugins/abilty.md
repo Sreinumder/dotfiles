@@ -1,57 +1,109 @@
+Why my nvim config is cooleset thing on earth!! -rise
+=====================================================
+
+Note: I got those things working using plugins and my own custom keybinds.
+
 clone
 -----
-        line or word
+gmm and <A-S-j>
+line or word
 
-exchange
---------
+move
+----
+<A-h> <A-j> and other alt commands
+
+oxo oxo        
+oxo oxo        
+
+this is typo
+
+align
+----
+>>gajc or l or r
+rizz 100
+rizz 100 rizz 100
+rizz 100
+
+>>ga=
+int a                        = 100;
+str word                     = 100;
+vector<str> longVariableName = {};
+
+exchange with neoswap and substitute.nvim
+-----------------------------------------
  two words left <-> right
          or anything 34 rose $%^
 
-move oxo oxo        
-     oxo oxo        
+surround
+--------
+{gs create surround}
+ds delete surround
+"cs change surround"
 
-dial weekday Sunday Monday Tuesday Wednesday Thursday Friday Saturday
-             日     月     火      水        木       金     土
+comment
+-------
+gcc
+```<!-- python -->
+# def hello:
+    yo
+```
+venn
+----
+<leader>,v to toggle      ┌────┐
+ ┌────┐                 ┌►│cool│
+ │venn├──────┐ ┌──┐     │ └────┘
+ └────┘      └►│is├─────┘
+               └──┘
+dial
+----
+weekday 
+Sunday Monday Tuesday Wednesday Thursday Friday Saturday
+日 月 火 水 木 金 土
 
 calculate 
-        144 <= 12^2
-
-sort
+----------
+144 <= 12^2
+1.9545454545455 <= (33+32-22)/22
 
 use bash filters or commands directly
 -------------------------------------
 <A-o> in visual will take comma seperated value and filter them with sort or shuf or others
-{
-2, 5, 5, 4, 3, 1, 2, 6, 
-}
-generate random number
-echo $((1 + $RANDOM % 100))
-38
+{ 2, 1, 3, 4, 5, 6, 5, 2, }
 
-generate 10 random number
-for r in {1..10}; do echo $((1+RANDOM%100)); done
+shuf can be used to shufle a list, generate random number(s) from a range
+seq can generate a sequence of numbers with start diff end as its arguments
+sort can sort alphabetically
 
-generate random seq from 1-10 every number occurs one time
-shuf -i 1-10 -n 10
+test and print bash commands on the buffer
+------------------------------------------
+date
+Fri Jul 12 10:51:14 PM +0545 2024
 
-generate random numbers between 1-10 numbers repeating
-shuf -i 1-10 -n 10 -r 
+curl -s "https://zenquotes.io/api/random" | jq -r '.[0] | "\(.q) - \(.a)"'
+In order to be walked over, you have to be lying down. - Celestine Chua
 
-generate sequnce from 1 to 9 first increment last
-seq 9
-seq 2 9
-seq 2 2 9
+Oil / Mini.files
+----------------
+use file system like a buffer!!!
+'-' to open Oil
+<leader><leader>e Mini.files
 
-shuffles 3 selected lines use it in visual mode
-shuf -n 3 
 
-This is super good shit xd
-shuf
-[e, d, b, a, f, c,]
-sed 's/,/\n/g' > echo | sort | sed 's/\n/,/g'
-[a, b, c, d, e, f,]
-```
-sed 's/, */\n/g'| grep -v '^$' | sort | sed -z 's/\n/, /g'
-```
+Undo Tree
+---------
+vim has builtin undo tree mechanism
+we can traverse this tree using u <C-r> g- and g+
+change 3
+change 2
+change 1
 
-a, b, c, d, e, f, 
+Multiple-cursor
+---------------
+
+treesj
+------
+treesj.lua
+
+outline
+-------
+<leader>to to open jumplist of functions or classes or whatever is releant in the file
