@@ -26,9 +26,18 @@ keymap.set("v", "<A-g><A-e>", '"bdge"bp`[v`]', { desc = "move selection with ge"
 keymap.set("v", "<A-g><A-g>", '"bdgg"bp`[v`]', { desc = "move selection with gg" })
 keymap.set("v", "<A-G>", '"bdG"bp`[v`]',      { desc = "move selection with G" })
 
--- word this fix
--- keymap.set("v", "<A-E>", '"bdE"bp`[v`]', { desc = "move selection e" })
+-- keymap.set("n", "<A-g><A-h>", '"bdG"bp`[v`]',      { desc = "move selection with G" })
+keymap.set( "n", "<A-g><A-l>",
+ '"_yiw:s/\\(\\%#\\w\\+\\)\\(\\_W\\+\\)\\(\\w\\+\\)/\\3\\2\\1/<CR><c-o><c-i>',
+ -- '"_yiw:s/\\(\\%#\\w\\+\\)\\(\\_W\\+\\)\\(\\w\\+\\)/\\3\\2\\1/<CR><c-o>/\\w\\+\\_W\\+<CR><c-l>',
+{ desc = "move selection with G" }
+)
 
+-- nnoremap <silent> gl "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l>
+-- nnoremap <silent> gh "_yiw?\w\+\_W\+\%#<CR>mb:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
+-- :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/',
+-- this waord[[]] fix
+-- keymap.set("v", "<A-E>", '"bdE"bp`[v`]', { desc = "move selection e" })
 -- keymap.set("v", "<A-B>", '"bdB"bP`[v`]', { desc = "move selection b" })
 
 -- operations in nvim
@@ -43,7 +52,6 @@ keymap.set("n", "<leader>*", "*``cgn", { desc = "replace word" })
 
 -- Save your finger
 -- keymap.set({ "n", "x" }, ";", ":")
-
 -- keymap.set("x", "gs<CR>", "<Esc>a<CR>gvo<Esc>i<CR><Esc>gv")
 
 keymap.set("n", "<leader>qw", ":exit<cr>", { silent = true, desc = "save buffer" }) -- Shortcut for faster save and quit
