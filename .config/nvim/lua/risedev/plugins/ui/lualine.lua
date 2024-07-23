@@ -37,6 +37,7 @@ return {
             sections = {
                 lualine_a = { { 'mode', separator = { left = '' } } },
                 lualine_b = { 'branch'},
+                -- lualine_b = {get(b:,'gitsigns_status','')},
                 lualine_c = {
                     '%=', -- centers the text
                     function()
