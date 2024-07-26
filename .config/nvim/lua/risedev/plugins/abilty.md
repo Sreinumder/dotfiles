@@ -11,10 +11,11 @@ line or word
 move
 ----
 <A-h> <A-j> and other alt commands
-
-oxo oxo        
-oxo oxo        
-
+┌─────────┐
+│     x   │
+│         │
+│         │
+└─────────┘
 this is typo
 
 align

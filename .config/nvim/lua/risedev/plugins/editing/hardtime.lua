@@ -3,7 +3,7 @@ return {
   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
   opts = {},
   events = {"VeryLazy"},
-  -- keys = {
-  --   { "<leader>tth", ":Hardtime toggle<CR>", { desc = "Toggle hardtime" } }
-  -- },
+  keys = {
+    { "<leader>tth", ":Hardtime toggle<CR>", { desc = "Toggle hardtime" } },
+  }
 }
