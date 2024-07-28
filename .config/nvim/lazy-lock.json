@@ -1,5 +1,6 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb" },
+  "Hypersonic.nvim": { "branch": "main", "commit": "87fee832b5fbc51d39b93495805814a26e3d361f" },
   "LuaSnip": { "branch": "master", "commit": "ce0a05ab4e2839e1c48d072c5236cce846a387bc" },
   "NeoSwap.nvim": { "branch": "main", "commit": "7dcc99748814795c9e528e8b6e403701a68c47f8" },
   "arrow.nvim": { "branch": "master", "commit": "0b0191d967d9fd837a850f2ccaa95d5917239404" },
@@ -84,7 +85,6 @@
   "pathlib.nvim": { "branch": "main", "commit": "7a5a6facd29e306bc73a37719fa67c0d2226f852" },
   "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
   "promise-async": { "branch": "main", "commit": "28c1d5a295eb5310afa2523d4ae9aa41ec5a9de2" },
-  "regex.nvim": { "branch": "main", "commit": "3249d58f685727191666d4fcad4eaed63377e20b" },
   "scrollEOF.nvim": { "branch": "master", "commit": "38fd5880021e90c15dc61fa325f714bd8077f0a6" },
   "substitute.nvim": { "branch": "main", "commit": "97f49d16f8eea7967d41db4f657dd63af53eeba1" },
   "suda.vim": { "branch": "master", "commit": "b97fab52f9cdeabe2bbb5eb98d82356899f30829" },
