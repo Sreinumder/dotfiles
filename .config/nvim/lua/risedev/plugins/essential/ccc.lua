@@ -1,7 +1,7 @@
 return {
 	"uga-rosa/ccc.nvim",
   -- events = "BufEnter",
-  ft = {"html", "css", "js", "config", "conf"},
+  ft = { "html", "css", "js", "config", "conf" },
   keys = {
     {
       "<leader>ccc",
@@ -26,5 +26,5 @@ return {
 		},
 	},
 }
--- #11aa7766
--- #f3aa72
+-- #11ac7922
+-- #c6b493

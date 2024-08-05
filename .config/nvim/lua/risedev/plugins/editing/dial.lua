@@ -32,6 +32,7 @@ return {
 
     local augend_base = {
       -- augend.semver.alias.semver, -- versioning (v10.0.0)
+        augend.hexcolor.new{ case = "lower" }, augend.hexcolor.new{ case = "upper" }
     }
     dial_config.augends:register_group{
       default = augend_base,
@@ -86,11 +87,11 @@ return {
       }
     }
     dial_config.augends:on_filetype{
-      typescript = concat_tables(augend_base,  {augend.constant.new                              { elements                           = { "let", "const" }}}),
-      css, html  = concat_tables(augend_base,  {augend.integer.alias.decimal, augend.hexcolor.new{ case = "lower" }, augend.hexcolor.new{ case = "upper" } }),
-      markdown   = concat_tables(augend_base,  {augend.misc.alias.markdown_header, md_checkbox}),
-      norg       = concat_tables(augend_base,  {augend.misc.alias.markdown_header, md_checkbox}),
-      org        = concat_tables(augend_base,  {augend.misc.alias.markdown_header, md_checkbox}),
+      typescript = concat_tables(augend_base,  {augend.constant.new   { elements= { "let", "const" }}}),
+      css, html  = concat_tables(augend_base,  {augend.integer.alias.decimal,}),
+      markdown   = concat_tables(augend_base,  {augend.misc.alias.markdown_header}),
+      norg       = concat_tables(augend_base,  {augend.misc.alias.markdown_header}),
+      org        = concat_tables(augend_base,  {augend.misc.alias.markdown_header}),
       json       = concat_tables(augend_base,  {}),
       lua        = concat_tables(augend_base,  {}),
       python     = concat_tables(augend_base,  {}),
@@ -103,8 +104,8 @@ return {
     local argb = {"normal", "gnormal", "visual", "gvisual"}
     local group = { "default", "number", "date", "time", "word", "character", "logical", "parenthesis", "quote", "notes", }
     local keymaps = {
-      -- {"<C-a>",  "<C-x>",  "g<C-a>",  "g<C-x>"},
-      {"<leader>ii",  "<leader>uu",  "g<leader>ii",  "g<leader>uu"},-- "default
+      {"<C-a>",  "<C-x>",  "g<C-a>",  "g<C-x>"},
+      -- {"<leader>ii",  "<leader>uu",  "g<leader>ii",  "g<leader>uu"},-- "default
       {"<leader>in",  "<leader>un",  "g<leader>in",  "g<leader>un"},-- "number" 
       {"<leader>id",  "<leader>ud",  "g<leader>id",  "g<leader>ud"},-- "date",
       {"<leader>it",  "<leader>ut",  "g<leader>it",  "g<leader>ut"},-- "time",

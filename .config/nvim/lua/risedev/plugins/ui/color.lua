@@ -1,13 +1,17 @@
---┌─────────────────────────┐
---│color schemes            │
---│uncomment them to use lol│
---└─────────────────────────┘
 return {
   {
-    "neanias/everforest-nvim",
+    -- "neanias/everforest-nvim",
+    "Sreinumder/everforest-nvim",
     events = "VeryLazy",
     config = function()
-      vim.cmd([[colorscheme everforest]])
+      -- vim.cmd([[colorscheme everforest]])
     end,
+  },
+  {
+    "EdenEast/nightfox.nvim",
+    config = function()
+      vim.cmd([[colorscheme nordfox]])
+    end,
+    opts = {},
   },
 }

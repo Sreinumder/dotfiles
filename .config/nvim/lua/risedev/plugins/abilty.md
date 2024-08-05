@@ -26,8 +26,8 @@ rizz 100 rizz 100
 rizz 100
 
 >>ga=
-int a                        = 100;
-str word                     = 100;
+int a = 100;
+str word = 100;
 vector<str> longVariableName = {};
 
 exchange with neoswap and substitute.nvim
@@ -78,10 +78,10 @@ sort can sort alphabetically
 test and print bash commands on the buffer
 ------------------------------------------
 date
-Fri Jul 12 10:51:14 PM +0545 2024
+Thu Aug  1 07:35:30 PM +0545 2024
 
 curl -s "https://zenquotes.io/api/random" | jq -r '.[0] | "\(.q) - \(.a)"'
-In order to be walked over, you have to be lying down. - Celestine Chua
+Some of us learn from other people's mistakes and the rest of us have to be other people.   - Zig Ziglar
 
 Oil / Mini.files
 ----------------

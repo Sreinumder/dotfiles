@@ -14,9 +14,7 @@ return {
     },
 
     mappings = {
-      -- close = "q",
       close = "<esc>",
-      -- close = "<leader>",
       go_in = "]",
       go_in_plus = "}",
       go_out = "[",

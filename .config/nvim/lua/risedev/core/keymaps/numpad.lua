@@ -1,6 +1,4 @@
 local keymap = vim.keymap -- for conciseness
-vim.g.mapleader = " "
-
 vim.keymap.set({ "n", "v", "o", "i" }, "<A-Tab>", "5")
 vim.keymap.set({ "n", "v", "o", "i" }, "<A-1>", "6")
 vim.keymap.set({ "n", "v", "o", "i" }, "<A-2>", "7")

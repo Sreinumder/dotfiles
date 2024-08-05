@@ -1,5 +1,5 @@
 --┌──────────────────────────────────┐
---│<leader>ttt to toggle transparency│
+--│<leader>,t  to toggle transparency│
 --└──────────────────────────────────┘
 return {
 	"xiyaowong/transparent.nvim",
@@ -35,5 +35,7 @@ return {
 		exclude_groups = {}, -- table: groups you don't want to clear
 	},
 	cmd = "TransparentToggle",
-	keys = { { "<leader>,t", ":TransparentToggle<CR>", { desc = "toggle transparency" } } },
+	keys = {
+    { "<leader>,t", ":TransparentToggle<CR>", { desc = "toggle transparency" }},
+  },
 }

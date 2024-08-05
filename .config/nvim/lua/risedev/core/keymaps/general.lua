@@ -16,11 +16,10 @@ end
 vim.keymap.set("x", "V", "j") -- for convinence
 vim.keymap.set("x", "J", "j")
 
-keymap.set({ "n", "v" }, "j", "gj", { desc = "next text wrapped line" })
-keymap.set({ "n", "v" }, "k", "gk", { desc = "prev text wrapped line" })
-
-keymap.set({ "n", "v" }, "gj", "j", { desc = "next line" })
-keymap.set({ "n", "v" }, "gk", "k", { desc = "prev line" })
+keymap.set({ "n", "x" }, "j", "gj", { desc = "next text wrapped line" })
+keymap.set({ "n", "x" }, "k", "gk", { desc = "prev text wrapped line" })
+keymap.set({ "n", "x" }, "gj", "j", { desc = "next line" })
+keymap.set({ "n", "x" }, "gk", "k", { desc = "prev line" })
 
 keymap.set({ "n", "v", "o" }, "H", "^", { desc = "Start of line" })
 -- keymap.set({ "n", "v", "o" }, "<A-M>", "gM", { desc = "Middle of Line" })

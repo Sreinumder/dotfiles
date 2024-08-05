@@ -4,10 +4,8 @@
 --└─────────────────────────────────────────┘
 return {
 	"gregorias/coerce.nvim",
-	tag = "v0.3",
 	-- keys = {
 	-- 	{ "cr", mode = { "v", "n" } },
 	-- },
   opts = {},
-	-- config = true,
 }

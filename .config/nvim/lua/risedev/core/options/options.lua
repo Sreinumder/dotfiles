@@ -2,6 +2,7 @@ local opt = vim.opt
 --opt.nofoldenable = true
 --opt.nohlsearch = true
 vim.o.cmdheight = 0 -- sets cmd height as 0
+vim.opt.laststatus = 2
 opt.lazyredraw = false
 opt.termguicolors = true
 opt.relativenumber = true --show relative number
